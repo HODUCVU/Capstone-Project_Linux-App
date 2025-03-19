@@ -7,10 +7,7 @@ CPUCore::CPUCore() {
     coreFrequency = 0.0;
 }
 
-CPUCore::CPUCore(int coreID) : coreID(coreID)
-{
-
-}
+CPUCore::CPUCore(int coreID) : coreID(coreID){}
 
 CPUCore::CPUCore(int coreID, float coreCPUUtilization, float coreTemperature, float coreFrequency)
 {
@@ -34,7 +31,7 @@ float CPUCore::getCoreCPUUilization()
 
 void CPUCore::setCoreCPUUtilization(float coreCPUUtilization)
 {
-
+    this->coreCPUUtilization = coreCPUUtilization;
 }
 
 float CPUCore::getCoreTemperature()
@@ -44,7 +41,7 @@ float CPUCore::getCoreTemperature()
 
 void CPUCore::setCoreTemperature(float coreTemperature)
 {
-
+    this->coreTemperature = coreTemperature;
 }
 
 float CPUCore::getCoreFrequency()
@@ -54,5 +51,5 @@ float CPUCore::getCoreFrequency()
 
 void CPUCore::setCoreFrequency(float coreFrequency)
 {
-
+    this->coreFrequency = coreFrequency;
 }

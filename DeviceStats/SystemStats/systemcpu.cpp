@@ -122,7 +122,7 @@ void SystemCPU::extractCoreCPUFrequencyInfo(QStringList lines)
     for(int i = 0; i < lines.size(); i++) {
         float freqMHz = lines[i].toFloat()/1000.0;
         this->cores[i].setCoreFrequency(freqMHz);
-        qDebug() << "Freq core " << i << ": " << freqMHz << " MHz";
+        // qDebug() << "Freq core " << i << ": " << freqMHz << " MHz";
     }
 }
 
