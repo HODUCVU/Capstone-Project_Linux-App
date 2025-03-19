@@ -5,16 +5,25 @@
 class ExecuteCPUCoreCommand {
 private:
     QString CPUUtilizationCommand;
+    QString CPUTemperatureCommand;
+    QString CPUFrequencyMaxMinCommand;
+    QString CPUFrequencyPercentCommand;
+
     QString numberOfCoreCPUCommand;
     QString coreCPUUtilizationCommand;
-    QString coreTemperatureCommand;
-    QString coreFrequencyCommand;
+    QString coreCPUTemperatureCommand;
+    QString coreCPUFrequencyCommand;
+
 protected:
     QString getCPUUtilizationCommand();
+    QString getCPUTemperatureCommand();
+    QString getCPUFrequencyMaxMinCommand();
+    QString getCPUFrequencyPercentCommand();
+
     QString getnumberOfCoreCPUCommand();
     QString getcoreCPUUtilizationCommand();
-    QString getcoreTemperatureCommand();
-    QString getcoreFrequencyCommand();
+    QString getcoreCPUTemperatureCommand();
+    QString getcoreCPUFrequencyCommand();
 public:
     ExecuteCPUCoreCommand();
 };

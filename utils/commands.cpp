@@ -3,21 +3,34 @@
 
 ExecuteCPUCoreCommand::ExecuteCPUCoreCommand()
 {
-    // /all/ -> chỉ lấy all, $NF là cái cuối cùng = idle time, 100 - idle time = useage time
     CPUUtilizationCommand = "mpstat -P ALL 1 1 | awk '/all/ {print 100 - $NF}'";
-    numberOfCoreCPUCommand = "nproc";
-    // coreCPUUtilizationCommand = "mpstat -P ALL 1 1 | awk 'NR>4 && NR<13 {print $3,100-$NF}'";
-    coreCPUUtilizationCommand = "mpstat -P ALL 1 1 | awk 'NR>4 && NR<13 {print 100-$NF}'";
-    coreTemperatureCommand = "sensors | awk '/Core/ {print $3}'";
+    CPUTemperatureCommand = "sensors | grep 'CPU' | awk '{print $NF}'";
+    CPUFrequencyMaxMinCommand = "lscpu | grep 'MHz' | awk 'NR>1 {print $NF}'";
+    CPUFrequencyPercentCommand = "lscpu | grep 'MHz' | awk 'NR==1 {print $NF}'";
 
-    // QString CPUTemperature = "sensors | grep 'CPU' | awk '{print $NF}'";
-    // QString Commands::CPUFrequency = "lscpu | grep 'MHz' | awk '{print $NF}'";
-    // coreTemperatureCommand = "sensors | grep 'Core' | awk '{print $2 $3}'";
-    // coreFrequencyCommand = "awk -F ': ' '/cpu MHz/ {print $2}' /proc/cpuinfo";
+    numberOfCoreCPUCommand = "nproc";
+    coreCPUUtilizationCommand = "mpstat -P ALL 1 1 | awk 'NR>4 && NR<13 {print 100-$NF}'";
+    coreCPUTemperatureCommand = "sensors | awk '/Core/ {print $3}'";
+    coreCPUFrequencyCommand = "cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_cur_freq";
 }
 QString ExecuteCPUCoreCommand::getCPUUtilizationCommand()
 {
     return CPUUtilizationCommand;
+}
+
+QString ExecuteCPUCoreCommand::getCPUTemperatureCommand()
+{
+    return CPUTemperatureCommand;
+}
+
+QString ExecuteCPUCoreCommand::getCPUFrequencyPercentCommand()
+{
+    return CPUFrequencyPercentCommand;
+}
+
+QString ExecuteCPUCoreCommand::getCPUFrequencyMaxMinCommand()
+{
+    return CPUFrequencyMaxMinCommand;
 }
 
 QString ExecuteCPUCoreCommand::getnumberOfCoreCPUCommand()
@@ -29,13 +42,13 @@ QString ExecuteCPUCoreCommand::getcoreCPUUtilizationCommand()
 {
     return coreCPUUtilizationCommand;
 }
-QString ExecuteCPUCoreCommand::getcoreTemperatureCommand()
+QString ExecuteCPUCoreCommand::getcoreCPUTemperatureCommand()
 {
-    return coreTemperatureCommand;
+    return coreCPUTemperatureCommand;
 }
-QString ExecuteCPUCoreCommand::getcoreFrequencyCommand()
+QString ExecuteCPUCoreCommand::getcoreCPUFrequencyCommand()
 {
-    return coreFrequencyCommand;
+    return coreCPUFrequencyCommand;
 }
 
 // ========================================

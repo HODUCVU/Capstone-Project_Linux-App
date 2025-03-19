@@ -13,8 +13,7 @@ public:
     CPUCore();
     CPUCore(int coreID);
     CPUCore(int coreID, float coreCPUUtilization, float coreTemperature, float coreFrequency);
-    // ~CPUCore();
-
+public: // Getter and Setter
     int getCoreID();
 
     float getCoreCPUUilization();
