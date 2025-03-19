@@ -1,6 +1,5 @@
 #ifndef CPUCORE_H
 #define CPUCORE_H
-#include <QObject>
 class CPUCore
 {
 private:

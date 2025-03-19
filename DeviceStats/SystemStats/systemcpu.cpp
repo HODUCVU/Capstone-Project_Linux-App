@@ -131,9 +131,9 @@ void SystemCPU::testtingCPUStats()
     getCPUUtilizationStatsFromDevice();
     getCPUTemperatureStatsFromDevice();
     getCPUFrequencyPercentFromDevice();
-    qDebug() << "%CPU: " << this->CPUUtilization;
+    qDebug() << "*****************************";
+    qDebug() << "%CPU: " << this->CPUUtilization << "%";
     qDebug() << "Temperature: " << this->CPUTemperature;
-    qDebug() << "Max Freq: " << this->CPUFrequencyMax << " Min Freq: " << this->CPUFrequencyMin;
     qDebug() << "Frequency: " << getCPUFrequency() << "MHz occupied: "<< this->CPUFrequencyPercent << "%" ;
 }
 
