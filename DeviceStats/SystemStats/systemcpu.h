@@ -3,7 +3,6 @@
 #include "../../utils/commands.h"
 #include "cpucore.h"
 #include <QObject>
-
 /*
  * Công việc tiếp theo
  * Lấy nhiệt độ -> done
@@ -21,9 +20,8 @@
  * Có thể kết hợp %,t,f vào 1 command và chạy 1 function?
  * => hạn chế delay do trích xuất thông tin nhiều lần -> được, nhưng như vậy thì code khó bảo trì và khó đọc
 */
-class SystemCPU : public QObject, public ExecuteCPUCoreCommand
+class SystemCPU : public ExecuteCPUCoreCommand
 {
-    Q_OBJECT
 public:
     QVector<CPUCore> cores;
 private:
@@ -32,17 +30,17 @@ private:
     float CPUFrequencyPercent;
     float CPUFrequencyMax;
     float CPUFrequencyMin;
-    // should I put timer here?
-
 public: // Getter
     float getCPUUtilization();
     float getCPUTemperature();
     float getCPUFrequencyPercent();
     float getCPUFrequency();
+
 public:
-    explicit SystemCPU(QObject *parent = nullptr);
+    SystemCPU();
     ~SystemCPU();
 
+    // Get stats from device
     void getCPUUtilizationStatsFromDevice();
     void getCPUTemperatureStatsFromDevice();
     void getCPUFrequencyPercentFromDevice();
@@ -51,19 +49,13 @@ public:
     void getCoresCPUUtilizationStatsFromDevice();
     void getCoresTemperatureStatsFromDevice();
     void getCoresFrequencyStatsFromDevice();
+
 private:
     void setupCores();
     void getFrequencyMaxMinFromDevice();
     void extractCoresCPUUsageInfo(QStringList lines);
     void extractCoresCPUTemperatureInfo(QStringList lines);
     void extractCoreCPUFrequencyInfo(QStringList lines);
-
-public: // Testing Functions
-    void testtingCPUStats();
-    void printCPUStats();
-
-    void testtingCoreCPUStats();
-    void printCoreCPUStats();
 };
 
 #endif // SYSTEMCPU_H

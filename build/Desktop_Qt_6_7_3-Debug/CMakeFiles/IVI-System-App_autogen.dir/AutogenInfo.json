@@ -135,6 +135,18 @@
 			null
 		],
 		[
+			"/home/duc-vu/Documents/QtProjects/IVI-System-App/DeviceStats/SystemStats/systemmem.h",
+			"MU",
+			"4LVNR74F5U/moc_systemmem.cpp",
+			null
+		],
+		[
+			"/home/duc-vu/Documents/QtProjects/IVI-System-App/DeviceStats/SystemStats/systemstats.h",
+			"MU",
+			"4LVNR74F5U/moc_systemstats.cpp",
+			null
+		],
+		[
 			"/home/duc-vu/Documents/QtProjects/IVI-System-App/utils/commands.h",
 			"MU",
 			"7HEHEGDA3T/moc_commands.cpp",
@@ -211,6 +223,16 @@
 		],
 		[
 			"/home/duc-vu/Documents/QtProjects/IVI-System-App/DeviceStats/SystemStats/systemcpu.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/duc-vu/Documents/QtProjects/IVI-System-App/DeviceStats/SystemStats/systemmem.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/duc-vu/Documents/QtProjects/IVI-System-App/DeviceStats/SystemStats/systemstats.cpp",
 			"MU",
 			null
 		],

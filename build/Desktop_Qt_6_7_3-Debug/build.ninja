@@ -97,6 +97,22 @@ build CMakeFiles/IVI-System-App.dir/utils/processcommand.cpp.o: CXX_COMPILER__IV
   OBJECT_DIR = CMakeFiles/IVI-System-App.dir
   OBJECT_FILE_DIR = CMakeFiles/IVI-System-App.dir/utils
 
+build CMakeFiles/IVI-System-App.dir/DeviceStats/SystemStats/systemmem.cpp.o: CXX_COMPILER__IVI-System-App_unscanned_Debug /home/duc-vu/Documents/QtProjects/IVI-System-App/DeviceStats/SystemStats/systemmem.cpp || cmake_object_order_depends_target_IVI-System-App
+  DEFINES = -DQT_CORE_LIB
+  DEP_FILE = CMakeFiles/IVI-System-App.dir/DeviceStats/SystemStats/systemmem.cpp.o.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fcolor-diagnostics -fPIC
+  INCLUDES = -I/home/duc-vu/Documents/QtProjects/IVI-System-App/build/Desktop_Qt_6_7_3-Debug/IVI-System-App_autogen/include -isystem /home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore -isystem /home/duc-vu/Qt/6.7.3/gcc_64/include -isystem /home/duc-vu/Qt/6.7.3/gcc_64/mkspecs/linux-g++
+  OBJECT_DIR = CMakeFiles/IVI-System-App.dir
+  OBJECT_FILE_DIR = CMakeFiles/IVI-System-App.dir/DeviceStats/SystemStats
+
+build CMakeFiles/IVI-System-App.dir/DeviceStats/SystemStats/systemstats.cpp.o: CXX_COMPILER__IVI-System-App_unscanned_Debug /home/duc-vu/Documents/QtProjects/IVI-System-App/DeviceStats/SystemStats/systemstats.cpp || cmake_object_order_depends_target_IVI-System-App
+  DEFINES = -DQT_CORE_LIB
+  DEP_FILE = CMakeFiles/IVI-System-App.dir/DeviceStats/SystemStats/systemstats.cpp.o.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fcolor-diagnostics -fPIC
+  INCLUDES = -I/home/duc-vu/Documents/QtProjects/IVI-System-App/build/Desktop_Qt_6_7_3-Debug/IVI-System-App_autogen/include -isystem /home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore -isystem /home/duc-vu/Qt/6.7.3/gcc_64/include -isystem /home/duc-vu/Qt/6.7.3/gcc_64/mkspecs/linux-g++
+  OBJECT_DIR = CMakeFiles/IVI-System-App.dir
+  OBJECT_FILE_DIR = CMakeFiles/IVI-System-App.dir/DeviceStats/SystemStats
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target IVI-System-App
@@ -105,7 +121,7 @@ build CMakeFiles/IVI-System-App.dir/utils/processcommand.cpp.o: CXX_COMPILER__IV
 #############################################
 # Link the executable IVI-System-App
 
-build IVI-System-App: CXX_EXECUTABLE_LINKER__IVI-System-App_Debug CMakeFiles/IVI-System-App.dir/IVI-System-App_autogen/mocs_compilation.cpp.o CMakeFiles/IVI-System-App.dir/main.cpp.o CMakeFiles/IVI-System-App.dir/utils/commands.cpp.o CMakeFiles/IVI-System-App.dir/DeviceStats/SystemStats/systemcpu.cpp.o CMakeFiles/IVI-System-App.dir/DeviceStats/SystemStats/cpucore.cpp.o CMakeFiles/IVI-System-App.dir/utils/processcommand.cpp.o | /home/duc-vu/Qt/6.7.3/gcc_64/lib/libQt6Core.so.6.7.3 || IVI-System-App_autogen IVI-System-App_autogen_timestamp_deps
+build IVI-System-App: CXX_EXECUTABLE_LINKER__IVI-System-App_Debug CMakeFiles/IVI-System-App.dir/IVI-System-App_autogen/mocs_compilation.cpp.o CMakeFiles/IVI-System-App.dir/main.cpp.o CMakeFiles/IVI-System-App.dir/utils/commands.cpp.o CMakeFiles/IVI-System-App.dir/DeviceStats/SystemStats/systemcpu.cpp.o CMakeFiles/IVI-System-App.dir/DeviceStats/SystemStats/cpucore.cpp.o CMakeFiles/IVI-System-App.dir/utils/processcommand.cpp.o CMakeFiles/IVI-System-App.dir/DeviceStats/SystemStats/systemmem.cpp.o CMakeFiles/IVI-System-App.dir/DeviceStats/SystemStats/systemstats.cpp.o | /home/duc-vu/Qt/6.7.3/gcc_64/lib/libQt6Core.so.6.7.3 || IVI-System-App_autogen IVI-System-App_autogen_timestamp_deps
   FLAGS = -DQT_QML_DEBUG -g
   LINK_LIBRARIES = -Wl,-rpath,/home/duc-vu/Qt/6.7.3/gcc_64/lib:  /home/duc-vu/Qt/6.7.3/gcc_64/lib/libQt6Core.so.6.7.3
   OBJECT_DIR = CMakeFiles/IVI-System-App.dir

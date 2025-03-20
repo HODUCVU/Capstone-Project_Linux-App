@@ -1,4 +1,5 @@
-#include "DeviceStats/SystemStats/systemcpu.h"
+#include "DeviceStats/SystemStats/systemstats.h"
+
 #include <QCoreApplication>
 #include <QDebug>
 #include <QTimer>
@@ -7,13 +8,13 @@ int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
     // Khi khởi động thì chạy install.sh
-    SystemCPU systemCPU;
-
+    SystemStats systemStats;
     QTimer timer;
-    // QObject::connect(&timer, &QTimer::timeout, &systemCPU, &SystemCPU::getCPUUtilizationStatsFromDevice);
-    // QObject::connect(&timer, &QTimer::timeout, &systemCPU, &SystemCPU::getCoresCPUUtilizationStatsFromDevice);
     // QObject::connect(&timer, &QTimer::timeout, &systemCPU, &SystemCPU::testtingCPUStats);
-    QObject::connect(&timer, &QTimer::timeout, &systemCPU, &SystemCPU::testtingCoreCPUStats);
+    // QObject::connect(&timer, &QTimer::timeout, &systemCPU, &SystemCPU::testtingCoreCPUStats);
+    // QObject::connect(&timer, &QTimer::timeout, &systemMEM, &SystemMEM::testingMEMUStats);
+    // QObject::connect(&timer, &QTimer::timeout, &systemStats, &SystemStats::testingCPUStats);
+    QObject::connect(&timer, &QTimer::timeout, &systemStats, &SystemStats::testingMEMUStats);
     timer.start(1000);
 
     return a.exec();

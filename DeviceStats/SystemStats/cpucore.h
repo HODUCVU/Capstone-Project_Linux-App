@@ -7,11 +7,6 @@ private:
     float coreCPUUtilization;
     float coreTemperature;
     float coreFrequency;
-public:
-    static int numberOfCore;
-    CPUCore();
-    CPUCore(int coreID);
-    CPUCore(int coreID, float coreCPUUtilization, float coreTemperature, float coreFrequency);
 public: // Getter and Setter
     int getCoreID();
 
@@ -23,6 +18,11 @@ public: // Getter and Setter
 
     float getCoreFrequency();
     void setCoreFrequency(float coreFrequency);
+public:
+    static int numberOfCore;
+    CPUCore();
+    CPUCore(int coreID);
+    CPUCore(int coreID, float coreCPUUtilization, float coreTemperature, float coreFrequency);
 };
 
 #endif // CPUCORE_H

@@ -31,12 +31,12 @@ public:
 class ExecuteSystemMEMCommand {
 private:
     QString MEMUtilizationCommand;
+    QString maxMEMSystemCommand;
 protected:
     QString getMEMUtilizationCommand();
+    QString getMaxMEMSystemCommand();
 public:
     ExecuteSystemMEMCommand();
-    // virtual void getSystemMEMUtilizationFromDevice() = 0;
-    // virtual void getMaxSystemMEMInfoFromDevice() = 0;
 };
 
 class ExecuteSystemNetworkIOCommand {

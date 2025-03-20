@@ -32,13 +32,13 @@
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 28,
+				"line" : 30,
 				"parent" : 0
 			},
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 25,
+				"line" : 27,
 				"parent" : 0
 			}
 		]
@@ -102,7 +102,9 @@
 				3,
 				5,
 				7,
-				9
+				9,
+				11,
+				13
 			]
 		}
 	],
@@ -173,7 +175,9 @@
 				3,
 				5,
 				7,
-				9
+				9,
+				11,
+				13
 			]
 		},
 		{
@@ -183,21 +187,23 @@
 				2,
 				4,
 				6,
-				8
+				8,
+				10,
+				12
 			]
 		},
 		{
 			"name" : "",
 			"sourceIndexes" : 
 			[
-				10
+				14
 			]
 		},
 		{
 			"name" : "CMake Rules",
 			"sourceIndexes" : 
 			[
-				11
+				15
 			]
 		}
 	],
@@ -258,6 +264,28 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "utils/processcommand.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "DeviceStats/SystemStats/systemmem.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "DeviceStats/SystemStats/systemmem.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "DeviceStats/SystemStats/systemstats.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "DeviceStats/SystemStats/systemstats.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{

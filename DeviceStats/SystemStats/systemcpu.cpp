@@ -2,8 +2,9 @@
 #include "../../utils/processcommand.h"
 #include <QDebug>
 
-SystemCPU::SystemCPU(QObject *parent)
-    : QObject(parent), ExecuteCPUCoreCommand() {
+SystemCPU::SystemCPU()
+    : ExecuteCPUCoreCommand()
+{
     getNumberOfCoreCPUFromDevice();
     setupCores();
     getFrequencyMaxMinFromDevice();
@@ -86,7 +87,6 @@ void SystemCPU::extractCoresCPUUsageInfo(QStringList lines)
     for(int i = 0; i < lines.size(); i++) {
         float coreCPUUsage = lines[i].toFloat();
         this->cores[i].setCoreCPUUtilization(coreCPUUsage);
-        // qDebug() << "%CPU Core " << i << ": " << coreCPUUsage;
     }
 }
 
@@ -105,7 +105,6 @@ void SystemCPU::extractCoresCPUTemperatureInfo(QStringList lines)
         float temperature = lines[physicalCore].toFloat();
         this->cores[physicalCore].setCoreTemperature(temperature);
         this->cores[LogicalCore++].setCoreTemperature(temperature);
-        // qDebug() << "Temperature Core " << i << ": " << temperature;
     }
 }
 
@@ -122,43 +121,6 @@ void SystemCPU::extractCoreCPUFrequencyInfo(QStringList lines)
     for(int i = 0; i < lines.size(); i++) {
         float freqMHz = lines[i].toFloat()/1000.0;
         this->cores[i].setCoreFrequency(freqMHz);
-        // qDebug() << "Freq core " << i << ": " << freqMHz << " MHz";
     }
 }
-
-void SystemCPU::testtingCPUStats()
-{
-    getCPUUtilizationStatsFromDevice();
-    getCPUTemperatureStatsFromDevice();
-    getCPUFrequencyPercentFromDevice();
-    printCPUStats();
-}
-
-void SystemCPU::printCPUStats()
-{
-    qDebug() << "*****************************";
-    qDebug() << "%CPU: " << this->CPUUtilization << "%";
-    qDebug() << "Temperature: " << this->CPUTemperature;
-    qDebug() << "Frequency: " << getCPUFrequency() << "MHz occupied: "<< this->CPUFrequencyPercent << "%" ;
-}
-
-void SystemCPU::testtingCoreCPUStats()
-{
-    getCoresCPUUtilizationStatsFromDevice();
-    getCoresTemperatureStatsFromDevice();
-    getCoresFrequencyStatsFromDevice();
-    printCoreCPUStats();
-}
-
-void SystemCPU::printCoreCPUStats()
-{
-    for(auto &core:this->cores) {
-        qDebug() << "*****************************";
-        qDebug() << "Core " << core.getCoreID();
-        qDebug() << "\t%CPU: " << core.getCoreCPUUilization();
-        qDebug() << "\t%Temperature: " << core.getCoreTemperature();
-        qDebug() << "\t%Frequency: " << core.getCoreFrequency();
-    }
-}
-
 
