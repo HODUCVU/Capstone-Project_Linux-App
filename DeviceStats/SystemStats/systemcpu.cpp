@@ -131,10 +131,34 @@ void SystemCPU::testtingCPUStats()
     getCPUUtilizationStatsFromDevice();
     getCPUTemperatureStatsFromDevice();
     getCPUFrequencyPercentFromDevice();
+    printCPUStats();
+}
+
+void SystemCPU::printCPUStats()
+{
     qDebug() << "*****************************";
     qDebug() << "%CPU: " << this->CPUUtilization << "%";
     qDebug() << "Temperature: " << this->CPUTemperature;
     qDebug() << "Frequency: " << getCPUFrequency() << "MHz occupied: "<< this->CPUFrequencyPercent << "%" ;
+}
+
+void SystemCPU::testtingCoreCPUStats()
+{
+    getCoresCPUUtilizationStatsFromDevice();
+    getCoresTemperatureStatsFromDevice();
+    getCoresFrequencyStatsFromDevice();
+    printCoreCPUStats();
+}
+
+void SystemCPU::printCoreCPUStats()
+{
+    for(auto &core:this->cores) {
+        qDebug() << "*****************************";
+        qDebug() << "Core " << core.getCoreID();
+        qDebug() << "\t%CPU: " << core.getCoreCPUUilization();
+        qDebug() << "\t%Temperature: " << core.getCoreTemperature();
+        qDebug() << "\t%Frequency: " << core.getCoreFrequency();
+    }
 }
 
 

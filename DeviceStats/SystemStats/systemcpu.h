@@ -33,6 +33,7 @@ private:
     float CPUFrequencyMax;
     float CPUFrequencyMin;
     // should I put timer here?
+
 public: // Getter
     float getCPUUtilization();
     float getCPUTemperature();
@@ -50,14 +51,19 @@ public:
     void getCoresCPUUtilizationStatsFromDevice();
     void getCoresTemperatureStatsFromDevice();
     void getCoresFrequencyStatsFromDevice();
-
-    void testtingCPUStats();
 private:
     void setupCores();
     void getFrequencyMaxMinFromDevice();
     void extractCoresCPUUsageInfo(QStringList lines);
     void extractCoresCPUTemperatureInfo(QStringList lines);
     void extractCoreCPUFrequencyInfo(QStringList lines);
+
+public: // Testing Functions
+    void testtingCPUStats();
+    void printCPUStats();
+
+    void testtingCoreCPUStats();
+    void printCoreCPUStats();
 };
 
 #endif // SYSTEMCPU_H
