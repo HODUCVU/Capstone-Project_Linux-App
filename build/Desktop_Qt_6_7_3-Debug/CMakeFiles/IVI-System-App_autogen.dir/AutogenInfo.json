@@ -135,6 +135,12 @@
 			null
 		],
 		[
+			"/home/duc-vu/Documents/QtProjects/IVI-System-App/DeviceStats/SystemStats/systemdiskio.h",
+			"MU",
+			"4LVNR74F5U/moc_systemdiskio.cpp",
+			null
+		],
+		[
 			"/home/duc-vu/Documents/QtProjects/IVI-System-App/DeviceStats/SystemStats/systemmem.h",
 			"MU",
 			"4LVNR74F5U/moc_systemmem.cpp",
@@ -229,6 +235,11 @@
 		],
 		[
 			"/home/duc-vu/Documents/QtProjects/IVI-System-App/DeviceStats/SystemStats/systemcpu.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/duc-vu/Documents/QtProjects/IVI-System-App/DeviceStats/SystemStats/systemdiskio.cpp",
 			"MU",
 			null
 		],

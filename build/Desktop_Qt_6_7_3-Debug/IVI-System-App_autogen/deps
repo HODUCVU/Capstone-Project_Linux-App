@@ -4,6 +4,8 @@ IVI-System-App_autogen/timestamp: \
 	/home/duc-vu/Documents/QtProjects/IVI-System-App/DeviceStats/SystemStats/cpucore.h \
 	/home/duc-vu/Documents/QtProjects/IVI-System-App/DeviceStats/SystemStats/systemcpu.cpp \
 	/home/duc-vu/Documents/QtProjects/IVI-System-App/DeviceStats/SystemStats/systemcpu.h \
+	/home/duc-vu/Documents/QtProjects/IVI-System-App/DeviceStats/SystemStats/systemdiskio.cpp \
+	/home/duc-vu/Documents/QtProjects/IVI-System-App/DeviceStats/SystemStats/systemdiskio.h \
 	/home/duc-vu/Documents/QtProjects/IVI-System-App/DeviceStats/SystemStats/systemmem.cpp \
 	/home/duc-vu/Documents/QtProjects/IVI-System-App/DeviceStats/SystemStats/systemmem.h \
 	/home/duc-vu/Documents/QtProjects/IVI-System-App/DeviceStats/SystemStats/systemnetworkio.cpp \

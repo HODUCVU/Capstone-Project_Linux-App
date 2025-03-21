@@ -32,13 +32,13 @@
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 30,
+				"line" : 32,
 				"parent" : 0
 			},
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 27,
+				"line" : 29,
 				"parent" : 0
 			}
 		]
@@ -104,7 +104,9 @@
 				7,
 				9,
 				11,
-				13
+				13,
+				15,
+				17
 			]
 		}
 	],
@@ -177,7 +179,9 @@
 				7,
 				9,
 				11,
-				13
+				13,
+				15,
+				17
 			]
 		},
 		{
@@ -189,21 +193,23 @@
 				6,
 				8,
 				10,
-				12
+				12,
+				14,
+				16
 			]
 		},
 		{
 			"name" : "",
 			"sourceIndexes" : 
 			[
-				14
+				18
 			]
 		},
 		{
 			"name" : "CMake Rules",
 			"sourceIndexes" : 
 			[
-				15
+				19
 			]
 		}
 	],
@@ -286,6 +292,28 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "DeviceStats/SystemStats/systemstats.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "DeviceStats/SystemStats/systemnetworkio.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "DeviceStats/SystemStats/systemnetworkio.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "DeviceStats/SystemStats/systemdiskio.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "DeviceStats/SystemStats/systemdiskio.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{

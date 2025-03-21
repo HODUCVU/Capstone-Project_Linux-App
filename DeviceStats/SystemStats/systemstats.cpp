@@ -7,6 +7,7 @@ SystemStats::SystemStats(QObject *parent)
     CPUStats = SystemCPU();
     MEMStats = SystemMEM();
     NetworkIOStats = SystemNetworkIO();
+    DiskIOStats = SystemDiskIO();
 }
 
 void SystemStats::testingCPUStats()
@@ -59,8 +60,19 @@ void SystemStats::testingNetworkIDStats()
     NetworkIOStats.getNetworkSendFromDevice();
     qDebug() << "*****************************";
     qDebug() << "Receiving: " << NetworkIOStats.getReceivingSpeed() << "Kb/s"
-             << "\tSending: " << NetworkIOStats.getSendingSpeed() << "Kb/s";
+             << "\t\tSending: " << NetworkIOStats.getSendingSpeed() << "Kb/s";
     qDebug() << "Total Received: " << NetworkIOStats.getTotalReceivedMB() << "MB"
-             << "Total Sent: " << NetworkIOStats.getTotalSentMB() << "MB";
+             << "\tTotal Sent: " << NetworkIOStats.getTotalSentMB() << "MB";
+
+}
+
+void SystemStats::testingDiskIOStats()
+{
+    DiskIOStats.getDiskIOInfoFromDevice();
+    qDebug() << "*****************************";
+    qDebug() << "Reading: " << DiskIOStats.getReadingSpeed() << "Kb/s"
+             << "\t\tWriting: " << DiskIOStats.getWritingSpeed() << "Kb/s";
+    qDebug() << "Total Read: " << DiskIOStats.getTotalReadGB() << "Gb"
+             << "\tTotal Write" << DiskIOStats.getTotalWrittenGB() << "Gb";
 
 }

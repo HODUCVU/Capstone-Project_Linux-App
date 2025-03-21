@@ -7,6 +7,8 @@ SystemNetworkIO::SystemNetworkIO()
     getNetworkInterfaceTypeFromDevice();
     totalReceivedMB = 0.0;
     totalSentMB = 0.0;
+    receiving = 0.0;
+    sending = 0.0;
 }
 
 float SystemNetworkIO::getReceivingSpeed()

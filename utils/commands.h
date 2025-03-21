@@ -52,15 +52,12 @@ public:
 
 class ExecuteSystemDiskIOCommand{
 private:
-    QString readAndwriteSpeedInfoCommand;
-    QString totalDiskIOCommand;
+    QString DiskTypeCommand;
 protected:
-    QString getreadAndwriteSpeedInfoCommand();
-    QString gettotalDiskIOCommand();
+    QString getDiskTypeCommand();
+    QString getDiskIOInfoCommand(QString diskType);
 public:
     ExecuteSystemDiskIOCommand();
-    // virtual void getDiskReadAndWriteSpeedFomDevice() = 0;
-    // virtual void getTotalReadAndTotalWriteFromDevice() = 0;
 };
 
 class ExecuteProcessStatsCommand {

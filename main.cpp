@@ -1,5 +1,4 @@
 #include "DeviceStats/SystemStats/systemstats.h"
-
 #include <QCoreApplication>
 #include <QDebug>
 #include <QTimer>
@@ -16,7 +15,8 @@ int main(int argc, char *argv[])
     // QObject::connect(&timer, &QTimer::timeout, &systemStats, &SystemStats::testingCPUStats);
     // QObject::connect(&timer, &QTimer::timeout, &systemStats, &SystemStats::testingCoreCPUStats);
     // QObject::connect(&timer, &QTimer::timeout, &systemStats, &SystemStats::testingMEMUStats);
-    QObject::connect(&timer, &QTimer::timeout, &systemStats, &SystemStats::testingNetworkIDStats);
+    // QObject::connect(&timer, &QTimer::timeout, &systemStats, &SystemStats::testingNetworkIDStats);
+    QObject::connect(&timer, &QTimer::timeout, &systemStats, &SystemStats::testingDiskIOStats);
     timer.start(1000);
 
     return a.exec();

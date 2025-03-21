@@ -87,7 +87,6 @@ ExecuteSystemNetworkIOCommand::ExecuteSystemNetworkIOCommand()
      *  -> Đang dùng wlp0s20f3
     */
     networkInterfaceTypeCommand = "ip link show | grep 'state UP' | awk -F: '{print $2}' | tr -d ' '";
-    // QString Commands::NETUsage = "ifstat 1 1 | tail -n 1";
 }
 QString ExecuteSystemNetworkIOCommand::getnetworkInterfaceTypeCommand()
 {
@@ -107,18 +106,20 @@ QString ExecuteSystemNetworkIOCommand::getTotalSentCommand(QString interface)
 // ========================================
 ExecuteSystemDiskIOCommand::ExecuteSystemDiskIOCommand()
 {
-    // QString Commands::DiskIO = "iostat -d 1 1 | awk 'NR==4 {print $3 \" KB/s Read, \" $4 \" KB/s Write\"}'";
-    readAndwriteSpeedInfoCommand = "command";
-    totalDiskIOCommand = "command";
+    // QString Commands::DiskIO = "iostat -d 1 1 | awk '{print $3 \" KB/s Read, \" $4 \" KB/s Write\"}'";
+    // Có nhiều loại disk, vì vậy cần kiểm tra loại disk để lấy thông tin chính xác
+    DiskTypeCommand = "lsblk -d -o NAME,TYPE | grep disk | awk '{print $1}'";
 }
-QString ExecuteSystemDiskIOCommand::getreadAndwriteSpeedInfoCommand()
+QString ExecuteSystemDiskIOCommand::getDiskTypeCommand()
 {
-    return readAndwriteSpeedInfoCommand;
+    return DiskTypeCommand;
 }
-QString ExecuteSystemDiskIOCommand::gettotalDiskIOCommand()
+
+QString ExecuteSystemDiskIOCommand::getDiskIOInfoCommand(QString diskType)
 {
-    return totalDiskIOCommand;
+    return "iostat -d 1 1 | grep " + diskType +" | awk '{print $3, $4, $6, $7}'";
 }
+
 // ========================================
 ExecuteProcessStatsCommand::ExecuteProcessStatsCommand()
 {
