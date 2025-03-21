@@ -76,19 +76,39 @@ QString ExecuteSystemMEMCommand::getMaxMEMSystemCommand()
     return maxMEMSystemCommand;
 }
 // ========================================
+/*
+ *  Đang dùng wifỉ: wlp0s20f3
+ *  Đang dùng ethernet: enp0s31f6@
+ *  ip link show | grep "state UP"
+ *  -> 3: wlp0s20f3: <BROADCAST,MULTICAST,UP,LOWER_UP>
+ *      mtu 1500 qdisc noqueue state UP mode DORMANT group default qlen 1000
+ *  -> Đang dùng wlp0s20f3
+*/
+
 ExecuteSystemNetworkIOCommand::ExecuteSystemNetworkIOCommand()
 {
+
+    networkInterfaceTypeCommand = "ip link show | grep 'state UP' | awk -F: '{print $2}' | tr -d ' '";
     // QString Commands::NETUsage = "ifstat 1 1 | tail -n 1";
-    readAndwriteSpeedInfoCommand = "command";
-    bandwidthInfoCommand = "command";
 }
-QString ExecuteSystemNetworkIOCommand::getreadAndwriteSpeedInfoCommand()
+QString ExecuteSystemNetworkIOCommand::getnetworkInterfaceTypeCommand()
 {
-    return readAndwriteSpeedInfoCommand;
+    return networkInterfaceTypeCommand;
 }
-QString ExecuteSystemNetworkIOCommand::getbandwidthInfoCommand()
+
+QString ExecuteSystemNetworkIOCommand::getreceivingAndsendingSpeedInfoCommand()
 {
-    return bandwidthInfoCommand;
+    return receivingAndsendingSpeedInfoCommand;
+}
+
+QString ExecuteSystemNetworkIOCommand::getTotalReceivedCommand(QString interface)
+{
+    return "cat /sys/class/net/" + interface + "/statistics/rx_bytes";
+}
+
+QString ExecuteSystemNetworkIOCommand::getTotalSentCommand(QString interface)
+{
+    return "cat /sys/class/net/" + interface + "/statistics/tx_bytes";
 }
 
 // ========================================

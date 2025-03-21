@@ -41,15 +41,13 @@ public:
 
 class ExecuteSystemNetworkIOCommand {
 private:
-    QString readAndwriteSpeedInfoCommand;
-    QString bandwidthInfoCommand;
+    QString networkInterfaceTypeCommand;
 protected:
-    QString getreadAndwriteSpeedInfoCommand();
-    QString getbandwidthInfoCommand();
+    QString getnetworkInterfaceTypeCommand();
+    QString getTotalReceivedCommand(QString interface);
+    QString getTotalSentCommand(QString interface);
 public:
     ExecuteSystemNetworkIOCommand();
-    // virtual void getNetworkReadAndWriteSpeedFromDevice() = 0;
-    // virtual void getBandwidthFromDevice() = 0;
 };
 
 class ExecuteSystemDiskIOCommand{

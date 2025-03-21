@@ -141,6 +141,12 @@
 			null
 		],
 		[
+			"/home/duc-vu/Documents/QtProjects/IVI-System-App/DeviceStats/SystemStats/systemnetworkio.h",
+			"MU",
+			"4LVNR74F5U/moc_systemnetworkio.cpp",
+			null
+		],
+		[
 			"/home/duc-vu/Documents/QtProjects/IVI-System-App/DeviceStats/SystemStats/systemstats.h",
 			"MU",
 			"4LVNR74F5U/moc_systemstats.cpp",
@@ -228,6 +234,11 @@
 		],
 		[
 			"/home/duc-vu/Documents/QtProjects/IVI-System-App/DeviceStats/SystemStats/systemmem.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/duc-vu/Documents/QtProjects/IVI-System-App/DeviceStats/SystemStats/systemnetworkio.cpp",
 			"MU",
 			null
 		],

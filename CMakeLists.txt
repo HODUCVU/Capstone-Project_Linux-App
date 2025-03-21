@@ -21,6 +21,7 @@ add_executable(IVI-System-App
   utils/processcommand.h utils/processcommand.cpp
   DeviceStats/SystemStats/systemmem.h DeviceStats/SystemStats/systemmem.cpp
   DeviceStats/SystemStats/systemstats.h DeviceStats/SystemStats/systemstats.cpp
+  DeviceStats/SystemStats/systemnetworkio.h DeviceStats/SystemStats/systemnetworkio.cpp
 
 
 )

@@ -2,8 +2,11 @@
 #include <QDebug>
 
 SystemStats::SystemStats(QObject *parent)
-    : QObject(parent), CPUStats(), MEMStats()
-{}
+    : QObject(parent)
+{
+    CPUStats = SystemCPU();
+    MEMStats = SystemMEM();
+}
 
 void SystemStats::testingCPUStats()
 {

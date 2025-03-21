@@ -3,6 +3,7 @@
 
 #include "systemcpu.h"
 #include "systemmem.h"
+#include "systemnetworkio.h"
 #include <QObject>
 
 class SystemStats : public QObject
@@ -11,6 +12,7 @@ class SystemStats : public QObject
 public:
     SystemCPU CPUStats;
     SystemMEM MEMStats;
+    SystemNetworkIO NetworkIOStats;
 public:
     explicit SystemStats(QObject *parent = nullptr);
 

@@ -14,7 +14,8 @@ int main(int argc, char *argv[])
     // QObject::connect(&timer, &QTimer::timeout, &systemCPU, &SystemCPU::testtingCoreCPUStats);
     // QObject::connect(&timer, &QTimer::timeout, &systemMEM, &SystemMEM::testingMEMUStats);
     // QObject::connect(&timer, &QTimer::timeout, &systemStats, &SystemStats::testingCPUStats);
-    QObject::connect(&timer, &QTimer::timeout, &systemStats, &SystemStats::testingMEMUStats);
+    QObject::connect(&timer, &QTimer::timeout, &systemStats, &SystemStats::testingCoreCPUStats);
+    // QObject::connect(&timer, &QTimer::timeout, &systemStats, &SystemStats::testingMEMUStats);
     timer.start(1000);
 
     return a.exec();
