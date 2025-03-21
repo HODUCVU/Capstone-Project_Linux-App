@@ -54,7 +54,6 @@ QString ExecuteCPUCoreCommand::getcoreCPUFrequencyCommand()
 // ========================================
 ExecuteSystemMEMCommand::ExecuteSystemMEMCommand()
 {
-    // QString Commands::MEMUsage = "free -m | awk 'NR==2{printf \"%.2f%% (%dMB/%dMB)\", $3*100/$2, $3, $2}'";
     /*
     > free -m
             total        used        free      shared  buff/cache   available
@@ -75,30 +74,24 @@ QString ExecuteSystemMEMCommand::getMaxMEMSystemCommand()
 {
     return maxMEMSystemCommand;
 }
-// ========================================
-/*
- *  Đang dùng wifỉ: wlp0s20f3
- *  Đang dùng ethernet: enp0s31f6@
- *  ip link show | grep "state UP"
- *  -> 3: wlp0s20f3: <BROADCAST,MULTICAST,UP,LOWER_UP>
- *      mtu 1500 qdisc noqueue state UP mode DORMANT group default qlen 1000
- *  -> Đang dùng wlp0s20f3
-*/
 
+// ========================================
 ExecuteSystemNetworkIOCommand::ExecuteSystemNetworkIOCommand()
 {
-
+    /*
+     *  Đang dùng wifỉ: wlp0s20f3
+     *  Đang dùng ethernet: enp0s31f6@
+     *  ip link show | grep "state UP"
+     *  -> 3: wlp0s20f3: <BROADCAST,MULTICAST,UP,LOWER_UP>
+     *      mtu 1500 qdisc noqueue state UP mode DORMANT group default qlen 1000
+     *  -> Đang dùng wlp0s20f3
+    */
     networkInterfaceTypeCommand = "ip link show | grep 'state UP' | awk -F: '{print $2}' | tr -d ' '";
     // QString Commands::NETUsage = "ifstat 1 1 | tail -n 1";
 }
 QString ExecuteSystemNetworkIOCommand::getnetworkInterfaceTypeCommand()
 {
     return networkInterfaceTypeCommand;
-}
-
-QString ExecuteSystemNetworkIOCommand::getreceivingAndsendingSpeedInfoCommand()
-{
-    return receivingAndsendingSpeedInfoCommand;
 }
 
 QString ExecuteSystemNetworkIOCommand::getTotalReceivedCommand(QString interface)

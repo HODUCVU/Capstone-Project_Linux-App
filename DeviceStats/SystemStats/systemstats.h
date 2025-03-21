@@ -27,6 +27,9 @@ public: // Unit Tests
     // Testing MEM Stats
     void testingMEMUStats();
 
+    // Testing Network IO Stats
+    void testingNetworkIDStats();
+
 };
 
 #endif // SYSTEMSTATS_H

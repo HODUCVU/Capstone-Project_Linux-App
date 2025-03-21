@@ -6,6 +6,7 @@ SystemStats::SystemStats(QObject *parent)
 {
     CPUStats = SystemCPU();
     MEMStats = SystemMEM();
+    NetworkIOStats = SystemNetworkIO();
 }
 
 void SystemStats::testingCPUStats()
@@ -47,7 +48,19 @@ void SystemStats::printCoreCPUStats()
 void SystemStats::testingMEMUStats()
 {
     MEMStats.getMEMUtilizationFromDevice();
-    qDebug() << "******************************";
+    qDebug() << "*****************************";
     qDebug() << "Max MEM" << "\tMEM Usage" << "\tOccupied";
     qDebug() << SystemMEM::maxMEMSystem << "\t" << MEMStats.getMEMUtilization() << "\t" << MEMStats.getMEMUtilizationPercent();
+}
+
+void SystemStats::testingNetworkIDStats()
+{
+    NetworkIOStats.getNetworkReceiveFromDevice();
+    NetworkIOStats.getNetworkSendFromDevice();
+    qDebug() << "*****************************";
+    qDebug() << "Receiving: " << NetworkIOStats.getReceivingSpeed() << "Kb/s"
+             << "\tSending: " << NetworkIOStats.getSendingSpeed() << "Kb/s";
+    qDebug() << "Total Received: " << NetworkIOStats.getTotalReceivedMB() << "MB"
+             << "Total Sent: " << NetworkIOStats.getTotalSentMB() << "MB";
+
 }
