@@ -79,3 +79,5 @@ Tôi không hiểu các device đó là gì? tôi chỉ muốn lấy tốc độ
 ------
 sudo apt update
 sudo apt install sysstat
+# install ps
+sudo apt install procps

@@ -65,11 +65,13 @@ private:
     QString processesInfoCommand;
 protected:
     QString getprocessesInfoCommand();
+    QString getprocessesDiskIOCommand(int PID);
 public:
     ExecuteProcessStatsCommand();
-    // virtual void getProcessesStatsFromDevice() = 0; // pass processStats[]
 };
 
-class ExecuteTerminateProcessesCommand{};
+class ExecuteTerminateProcessesCommand{
+    // kill theo PName: pkill command
+};
 class ExecuteDeviceSpeakerCommand{};
 #endif // COMMANDS_H

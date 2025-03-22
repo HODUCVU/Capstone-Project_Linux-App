@@ -123,10 +123,10 @@ QString ExecuteSystemDiskIOCommand::getDiskIOInfoCommand(QString diskType)
 // ========================================
 ExecuteProcessStatsCommand::ExecuteProcessStatsCommand()
 {
-    // QString Commands::ProcessStats = "ps -eo pid,comm,%cpu,%mem,rss --sort=-%cpu | awk '$4>0'";
-    // ps -eo pid,comm,%cpu --sort=-%cpu | awk -v cores=$(nproc) '{if (NR>1) printf "%d %s %.2f\n", $1, $2, $3/cores}'
     /*
-    > pidstat -druht 1 5
+    // QString Commands::ProcessStats = "ps -eo pid,comm,%cpu,%mem,rss --sort=-%cpu | awk '$4>0'";
+    > ps -eo pid,comm,%cpu --sort=-%cpu | awk -v cores=$(nproc) '{if (NR>1) printf "%d %s %.2f\n", $1, $2, $3/cores}'
+    > pidstat -druht 1 1
     =>  # Time        UID      TGID       TID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
         04:30:55 PM     0        56         -    0.00    0.75    0.00    0.00    0.75     6      0.00      0.00       0       0   0.00     -1.00     -1.00     -1.00       0  ksoftirqd/6
         04:30:55 PM     0         -        56    0.00    0.75    0.00    0.00    0.75     6      0.00      0.00       0       0   0.00     -1.00     -1.00     -1.00       0  |__ksoftirqd/6
@@ -142,10 +142,35 @@ ExecuteProcessStatsCommand::ExecuteProcessStatsCommand()
        sudo iotop -botq | head -n 10
        sudo nethogs -t | head -n 10
 
+    > ps -eo pid,comm,%cpu,%mem --sort=%cpu | awk 'NR>1 {print $1,$2,$3,$4}
+    > ps -eo user,pid,comm,%cpu,%mem --sort=-%cpu | grep $(whoami)
+
+    >  pidstat -druh 1 1 | awk 'NR>3 {
+                           cmd = $NF;
+                           uid[cmd] = $3;  # Lấy UID của tiến trình
+                           if (!(cmd in pid)) pid[cmd] = $4;  # Lấy PID chính (chỉ lấy lần đầu)
+
+                           cpu[cmd] += $9;
+                           mem[cmd] += $15;
+                           rd[cmd] += $16;
+                           wr[cmd] += $17;
+                       }
+                       END {
+                           printf "%-10s %-20s %-10s %-10s %-10s %-10s %-10s\n", "UID", "Command", "PID", "%CPU", "%MEM", "kB_rd/s", "kB_wr/s";
+                           for (cmd in cpu) {
+                               printf "%-10s %-20s %-10s %-10.2f %-10.2f %-10.2f %-10.2f\n", uid[cmd], cmd, pid[cmd], cpu[cmd], mem[cmd], rd[cmd], wr[cmd];
+                           }
+                       }'
+
     */
-    processesInfoCommand = "command";
+    processesInfoCommand = "ps -eo comm,user,pid,%cpu,%mem --sort=-%cpu | awk 'NR>1'";
 }
 QString ExecuteProcessStatsCommand::getprocessesInfoCommand()
 {
     return processesInfoCommand;
+}
+
+QString ExecuteProcessStatsCommand::getprocessesDiskIOCommand(int PID)
+{
+    return "";
 }

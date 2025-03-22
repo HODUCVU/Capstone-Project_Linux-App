@@ -4,19 +4,7 @@
 #include "cpucore.h"
 #include <QObject>
 /*
- * Công việc tiếp theo
- * Lấy nhiệt độ -> done
- * và tần số của từng core -> done
- * Test các module này -> done
- * Gộp vào hệ thống -> done
  * Tối ưu thông qua các công việc dưới đây ↓
-*/
-/*
- * Có thể tại lệnh %, chỉ cần lấy % là được rồi,
- * không cần lấy ID, dù gì thì nó cũng sắp xếp theo thứ tự tăng dần rồi,
- * không cần phải lấy thông tin thừa, làm tăng runtime -> done
-*/
-/*
  * Có thể kết hợp %,t,f vào 1 command và chạy 1 function?
  * => hạn chế delay do trích xuất thông tin nhiều lần -> được, nhưng như vậy thì code khó bảo trì và khó đọc
 */

@@ -23,6 +23,8 @@ add_executable(IVI-System-App
   DeviceStats/SystemStats/systemstats.h DeviceStats/SystemStats/systemstats.cpp
   DeviceStats/SystemStats/systemnetworkio.h DeviceStats/SystemStats/systemnetworkio.cpp
   DeviceStats/SystemStats/systemdiskio.h DeviceStats/SystemStats/systemdiskio.cpp
+  DeviceStats/ProcessesStats/processesstats.h DeviceStats/ProcessesStats/processesstats.cpp
+  DeviceStats/ProcessesStats/processstats.h DeviceStats/ProcessesStats/processstats.cpp
 
 
 )

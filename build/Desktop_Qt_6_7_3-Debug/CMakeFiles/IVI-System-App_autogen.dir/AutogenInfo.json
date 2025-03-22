@@ -123,6 +123,18 @@
 	"HEADERS" : 
 	[
 		[
+			"/home/duc-vu/Documents/QtProjects/IVI-System-App/DeviceStats/ProcessesStats/processesstats.h",
+			"MU",
+			"6AQ2N5VXZX/moc_processesstats.cpp",
+			null
+		],
+		[
+			"/home/duc-vu/Documents/QtProjects/IVI-System-App/DeviceStats/ProcessesStats/processstats.h",
+			"MU",
+			"6AQ2N5VXZX/moc_processstats.cpp",
+			null
+		],
+		[
 			"/home/duc-vu/Documents/QtProjects/IVI-System-App/DeviceStats/SystemStats/cpucore.h",
 			"MU",
 			"4LVNR74F5U/moc_cpucore.cpp",
@@ -228,6 +240,16 @@
 	"SETTINGS_FILE" : "/home/duc-vu/Documents/QtProjects/IVI-System-App/build/Desktop_Qt_6_7_3-Debug/CMakeFiles/IVI-System-App_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
+		[
+			"/home/duc-vu/Documents/QtProjects/IVI-System-App/DeviceStats/ProcessesStats/processesstats.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/duc-vu/Documents/QtProjects/IVI-System-App/DeviceStats/ProcessesStats/processstats.cpp",
+			"MU",
+			null
+		],
 		[
 			"/home/duc-vu/Documents/QtProjects/IVI-System-App/DeviceStats/SystemStats/cpucore.cpp",
 			"MU",
