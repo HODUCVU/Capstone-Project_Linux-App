@@ -30,6 +30,11 @@ QString ProcessStats::getPName()
     return PName;
 }
 
+QString ProcessStats::getUser()
+{
+    return user;
+}
+
 float ProcessStats::getPCPUUsagePercent()
 {
     return PCPUUsagePercent;
@@ -38,11 +43,6 @@ float ProcessStats::getPCPUUsagePercent()
 float ProcessStats::getPMEMUsagePercent()
 {
     return PMEMUsagePercent;
-}
-
-void ProcessStats::setPID(int id)
-{
-    this->PID = id;
 }
 
 void ProcessStats::setPCPUUsagePercent(int PCPUUsagePercent)

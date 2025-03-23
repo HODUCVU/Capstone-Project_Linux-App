@@ -1,5 +1,9 @@
 IVI-System-App_autogen/timestamp: \
 	/home/duc-vu/Documents/QtProjects/IVI-System-App/CMakeLists.txt \
+	/home/duc-vu/Documents/QtProjects/IVI-System-App/DeviceStats/ProcessesStats/processesstats.cpp \
+	/home/duc-vu/Documents/QtProjects/IVI-System-App/DeviceStats/ProcessesStats/processesstats.h \
+	/home/duc-vu/Documents/QtProjects/IVI-System-App/DeviceStats/ProcessesStats/processstats.cpp \
+	/home/duc-vu/Documents/QtProjects/IVI-System-App/DeviceStats/ProcessesStats/processstats.h \
 	/home/duc-vu/Documents/QtProjects/IVI-System-App/DeviceStats/SystemStats/cpucore.cpp \
 	/home/duc-vu/Documents/QtProjects/IVI-System-App/DeviceStats/SystemStats/cpucore.h \
 	/home/duc-vu/Documents/QtProjects/IVI-System-App/DeviceStats/SystemStats/systemcpu.cpp \
@@ -21,6 +25,7 @@ IVI-System-App_autogen/timestamp: \
 	/home/duc-vu/Documents/QtProjects/IVI-System-App/utils/commands.h \
 	/home/duc-vu/Documents/QtProjects/IVI-System-App/utils/processcommand.cpp \
 	/home/duc-vu/Documents/QtProjects/IVI-System-App/utils/processcommand.h \
+	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/QHash \
 	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/QObject \
 	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/QString \
 	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/q20functional.h \
@@ -61,6 +66,7 @@ IVI-System-App_autogen/timestamp: \
 	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qgenericatomic.h \
 	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qglobal.h \
 	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qglobalstatic.h \
+	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qhash.h \
 	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qhashfunctions.h \
 	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qiodevicebase.h \
 	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qiterable.h \

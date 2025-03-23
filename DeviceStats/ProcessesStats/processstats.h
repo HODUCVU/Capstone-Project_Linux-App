@@ -17,6 +17,7 @@ public:
     ProcessStats();
     ProcessStats(QString PName, QString user);
     ProcessStats(QString PName, QString user, int PID, float PCPUUsagePercent, float PMEMUsagePercent);
+    // ProcessStats &operator=(const ProcessStats &other);
     // Getter
     QString getPName();
     QString getUser();
@@ -25,7 +26,6 @@ public:
     float getPMEMUsagePercent();
     float getPMEMUsageMB();
     // Setter
-    void setPID(int id);
     void setPCPUUsagePercent(int PCPUUsagePercent);
     void setPMEMUsagePercent(int PMEMUsagePercent);
 };

@@ -1,5 +1,5 @@
 #include "systemnetworkio.h"
-#include "../../utils/processcommand.h";
+#include "../../utils/processcommand.h"
 
 SystemNetworkIO::SystemNetworkIO()
     : ExecuteSystemNetworkIOCommand()

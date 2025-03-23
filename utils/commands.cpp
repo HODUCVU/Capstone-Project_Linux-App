@@ -121,9 +121,7 @@ QString ExecuteSystemDiskIOCommand::getDiskIOInfoCommand(QString diskType)
 }
 
 // ========================================
-ExecuteProcessStatsCommand::ExecuteProcessStatsCommand()
-{
-    /*
+/*
     // QString Commands::ProcessStats = "ps -eo pid,comm,%cpu,%mem,rss --sort=-%cpu | awk '$4>0'";
     > ps -eo pid,comm,%cpu --sort=-%cpu | awk -v cores=$(nproc) '{if (NR>1) printf "%d %s %.2f\n", $1, $2, $3/cores}'
     > pidstat -druht 1 1
@@ -163,7 +161,10 @@ ExecuteProcessStatsCommand::ExecuteProcessStatsCommand()
                        }'
 
     */
-    processesInfoCommand = "ps -eo comm,user,pid,%cpu,%mem --sort=-%cpu | awk 'NR>1'";
+ExecuteProcessStatsCommand::ExecuteProcessStatsCommand()
+{
+   processesInfoCommand = "ps -eo comm,user,pid,%cpu,%mem | grep $(whoami) |awk 'NR>1'";
+    // => Lệnh này chiếm tài nguyên để trích xuất thông tin, vì vậy nếu việc dùng lệnh cat để tiết kiệm tài nguyên và có những thông số chinh xác thì nên dùng cách đọc file
 }
 QString ExecuteProcessStatsCommand::getprocessesInfoCommand()
 {
