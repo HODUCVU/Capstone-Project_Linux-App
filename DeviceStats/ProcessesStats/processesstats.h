@@ -14,14 +14,14 @@ class ProcessesStats : public QObject, public ExecuteProcessStatsCommand
 {
     Q_OBJECT
 public:
-    QHash<QString, ProcessStats> processesStats;
+    QHash<int, ProcessStats> processesStats;
 public:
     explicit ProcessesStats(QObject *parent = nullptr);
     ~ProcessesStats();
     void getProcessStatsFromDevice();
 private:
     void extractProcessesInfo(QStringList lines);
-    void updateProcessStats(ProcessStats processStats);
+    // void updateProcessStats(ProcessStats processStats);
 
 public: // unit tests
     void testingProcessesStats();
