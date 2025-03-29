@@ -50,3 +50,17 @@
 7	29	1743237991113671321	/home/duc-vu/Documents/QtProjects/IVI-System-App/build/Desktop_Qt_6_7_3-Debug/IVI-System-App_autogen/mocs_compilation.cpp	684f9610e8af2860
 29	1014	1743237991135672485	CMakeFiles/IVI-System-App.dir/DeviceStats/ProcessesStats/processstats.cpp.o	ae526229f72bcfcc
 1014	1187	1743237992120724593	IVI-System-App	e5c3af35a48f6539
+7	302	1743238925420947384	IVI-System-App_autogen/timestamp	684f9610e8af2860
+7	302	1743238925420947384	IVI-System-App_autogen/mocs_compilation.cpp	684f9610e8af2860
+7	302	1743238925420947384	/home/duc-vu/Documents/QtProjects/IVI-System-App/build/Desktop_Qt_6_7_3-Debug/IVI-System-App_autogen/timestamp	684f9610e8af2860
+7	302	1743238925420947384	/home/duc-vu/Documents/QtProjects/IVI-System-App/build/Desktop_Qt_6_7_3-Debug/IVI-System-App_autogen/mocs_compilation.cpp	684f9610e8af2860
+303	2412	1743238925424946849	CMakeFiles/IVI-System-App.dir/utils/commands.cpp.o	9fdf46c5c91642b4
+304	2616	1743238925425946715	CMakeFiles/IVI-System-App.dir/testing.cpp.o	65114a05fe38a161
+304	2658	1743238925425946715	CMakeFiles/IVI-System-App.dir/DeviceStats/ProcessesStats/processstats.cpp.o	ae526229f72bcfcc
+303	3281	1743238925424946849	CMakeFiles/IVI-System-App.dir/DeviceStats/ProcessesStats/processesstats.cpp.o	f6d6f6bdccd68036
+304	3380	1743238925425946715	CMakeFiles/IVI-System-App.dir/OverloadSolution/terminateprocesses.cpp.o	b9297916bdd870ab
+303	3520	1743238925424946849	CMakeFiles/IVI-System-App.dir/DeviceStats/SystemStats/systemmem.cpp.o	fd39c52266ebdac7
+302	3535	1743238925424946849	CMakeFiles/IVI-System-App.dir/IVI-System-App_autogen/mocs_compilation.cpp.o	e62cd47dbcac7f
+303	3573	1743238925424946849	CMakeFiles/IVI-System-App.dir/DeviceStats/SystemStats/systemcpu.cpp.o	7a3accc7042c4ebb
+303	3590	1743238925424946849	CMakeFiles/IVI-System-App.dir/DeviceStats/SystemStats/systemstats.cpp.o	d5750cee4f45f74
+3590	3762	1743238928712508194	IVI-System-App	e5c3af35a48f6539

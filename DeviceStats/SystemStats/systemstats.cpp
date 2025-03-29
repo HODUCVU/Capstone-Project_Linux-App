@@ -44,10 +44,10 @@ void SystemStats::printCoreCPUStats()
     }
 }
 
-void SystemStats::testingMEMUStats()
-{
-    MEMStats.getMEMUtilizationFromDevice();
-    qDebug() << "*****************************";
-    qDebug() << "Max MEM" << "\tMEM Usage" << "\tOccupied";
-    qDebug() << SystemMEM::maxMEMSystem << "\t" << MEMStats.getMEMUtilization() << "\t" << MEMStats.getMEMUtilizationPercent()*100 << "%";
-}
+// void SystemStats::testingMEMUStats()
+// {
+//     MEMStats.getMEMUtilizationFromDevice();
+//     qDebug() << "*****************************";
+//     qDebug() << "Max MEM" << "\tMEM Usage" << "\tOccupied";
+//     qDebug() << SystemMEM::maxMEMSystem << "\t" << MEMStats.getMEMUtilization() << "\t" << MEMStats.getMEMUtilizationPercent()*100 << "%";
+// }
