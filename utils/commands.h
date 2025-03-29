@@ -39,27 +39,6 @@ public:
     ExecuteSystemMEMCommand();
 };
 
-class ExecuteSystemNetworkIOCommand {
-private:
-    QString networkInterfaceTypeCommand;
-protected:
-    QString getnetworkInterfaceTypeCommand();
-    QString getTotalReceivedCommand(QString interface);
-    QString getTotalSentCommand(QString interface);
-public:
-    ExecuteSystemNetworkIOCommand();
-};
-
-class ExecuteSystemDiskIOCommand{
-private:
-    QString DiskTypeCommand;
-protected:
-    QString getDiskTypeCommand();
-    QString getDiskIOInfoCommand(QString diskType);
-public:
-    ExecuteSystemDiskIOCommand();
-};
-
 class ExecuteProcessStatsCommand {
 private:
     QString processesInfoCommand;
