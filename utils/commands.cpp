@@ -62,8 +62,8 @@ QString ExecuteCPUCoreCommand::getcoreCPUFrequencyCommand()
 */
 ExecuteSystemMEMCommand::ExecuteSystemMEMCommand()
 {
-    MEMUtilizationCommand = "free -m | awk 'NR==2 {print $3}'";
-    maxMEMSystemCommand = "free -m | awk 'NR==2 {print $2}'";
+    MEMUtilizationCommand = "free -m | awk 'NR>=2 {print $3}'";
+    maxMEMSystemCommand = "free -m | awk 'NR>=2 {print $2}'";
 }
 QString ExecuteSystemMEMCommand::getMEMUtilizationCommand()
 {
@@ -73,51 +73,6 @@ QString ExecuteSystemMEMCommand::getMEMUtilizationCommand()
 QString ExecuteSystemMEMCommand::getMaxMEMSystemCommand()
 {
     return maxMEMSystemCommand;
-}
-
-// ========================================
-/*
-     *  Đang dùng wifỉ: wlp0s20f3
-     *  Đang dùng ethernet: enp0s31f6@
-     *  ip link show | grep "state UP"
-     *  -> 3: wlp0s20f3: <BROADCAST,MULTICAST,UP,LOWER_UP>
-     *      mtu 1500 qdisc noqueue state UP mode DORMANT group default qlen 1000
-     *  -> Đang dùng wlp0s20f3
-*/
-ExecuteSystemNetworkIOCommand::ExecuteSystemNetworkIOCommand()
-{
-    networkInterfaceTypeCommand = "ip link show | grep 'state UP' | awk -F: '{print $2}' | tr -d ' '";
-}
-QString ExecuteSystemNetworkIOCommand::getnetworkInterfaceTypeCommand()
-{
-    return networkInterfaceTypeCommand;
-}
-
-QString ExecuteSystemNetworkIOCommand::getTotalReceivedCommand(QString interface)
-{
-    return "cat /sys/class/net/" + interface + "/statistics/rx_bytes";
-}
-
-QString ExecuteSystemNetworkIOCommand::getTotalSentCommand(QString interface)
-{
-    return "cat /sys/class/net/" + interface + "/statistics/tx_bytes";
-}
-
-// ========================================
-ExecuteSystemDiskIOCommand::ExecuteSystemDiskIOCommand()
-{
-    // QString Commands::DiskIO = "iostat -d 1 1 | awk '{print $3 \" KB/s Read, \" $4 \" KB/s Write\"}'";
-    // Có nhiều loại disk, vì vậy cần kiểm tra loại disk để lấy thông tin chính xác
-    DiskTypeCommand = "lsblk -d -o NAME,TYPE | grep disk | awk '{print $1}'";
-}
-QString ExecuteSystemDiskIOCommand::getDiskTypeCommand()
-{
-    return DiskTypeCommand;
-}
-
-QString ExecuteSystemDiskIOCommand::getDiskIOInfoCommand(QString diskType)
-{
-    return "iostat -d 1 1 | grep " + diskType +" | awk '{print $3, $4, $6, $7}'";
 }
 
 // ========================================
@@ -163,7 +118,6 @@ QString ExecuteSystemDiskIOCommand::getDiskIOInfoCommand(QString diskType)
 ExecuteProcessStatsCommand::ExecuteProcessStatsCommand()
 {
    processesInfoCommand = "ps -eo comm,user,pid,%cpu,%mem |awk 'NR>1'";
-    // => Lệnh này chiếm tài nguyên để trích xuất thông tin, vì vậy nếu việc dùng lệnh cat để tiết kiệm tài nguyên và có những thông số chinh xác thì nên dùng cách đọc file
 }
 QString ExecuteProcessStatsCommand::getprocessesInfoCommand()
 {

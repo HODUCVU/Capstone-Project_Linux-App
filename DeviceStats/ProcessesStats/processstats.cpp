@@ -17,7 +17,7 @@ ProcessStats::ProcessStats(QString PName, QString user)
 ProcessStats::ProcessStats(QString PName, QString user, int PID, float PCPUUsagePercent, float PMEMUsagePercent)
     : PName(PName), user(user), PID(PID), PCPUUsagePercent(PCPUUsagePercent), PMEMUsagePercent(PMEMUsagePercent)
 {
-    this->PMEMUsageMB = SystemMEM::maxMEMSystem*PMEMUsagePercent/100;
+    this->PMEMUsageMB = SystemMEM::maxRAMSystem*PMEMUsagePercent/100;
 }
 
 int ProcessStats::getPID()
@@ -56,7 +56,7 @@ float ProcessStats::getPMEMUsageMB()
 void ProcessStats::setPMEMUsagePercent(int PMEMUsagePercent)
 {
     this->PMEMUsagePercent = PMEMUsagePercent;
-    this->PMEMUsageMB = SystemMEM::maxMEMSystem*PMEMUsagePercent/100;
+    this->PMEMUsageMB = SystemMEM::maxRAMSystem*PMEMUsagePercent/100;
 }
 
 
