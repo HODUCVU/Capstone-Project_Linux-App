@@ -6,21 +6,24 @@
 class SystemMEM : public ExecuteSystemMEMCommand
 {
 private:
-    float MEMUtilization;
-    // float SWAPUtilization;
+    float RAMUtilization;
+    float SWAPMEMUtilization;
 public: // Getter
-    float getMEMUtilization();
-
+    float getRAMUtilization();
+    float getRAMUtilizationPercent();
+    float getSWAPMEMUtilization();
+    float getSWAPMEMUtilizationPercent();
 public:
     SystemMEM();
-    static float maxMEMSystem;
-    float getMEMUtilizationPercent();
-
+    static float maxRAMSystem;
+    static float maxSWAPMEMSystem;
     // Get stats from device
     void getMEMUtilizationFromDevice();
 
 private:
     void getMaxMEMSystemFromDevice();
+    void extractMEMUtilizationInfo(QStringList info);
+    void extractMaxMEMSystemInfo(QStringList info);
 };
 
 #endif // SYSTEMMEM_H
