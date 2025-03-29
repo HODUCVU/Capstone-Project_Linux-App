@@ -8,19 +8,19 @@ IVI-System-App_autogen/timestamp: \
 	/home/duc-vu/Documents/QtProjects/IVI-System-App/DeviceStats/SystemStats/cpucore.h \
 	/home/duc-vu/Documents/QtProjects/IVI-System-App/DeviceStats/SystemStats/systemcpu.cpp \
 	/home/duc-vu/Documents/QtProjects/IVI-System-App/DeviceStats/SystemStats/systemcpu.h \
-	/home/duc-vu/Documents/QtProjects/IVI-System-App/DeviceStats/SystemStats/systemdiskio.cpp \
-	/home/duc-vu/Documents/QtProjects/IVI-System-App/DeviceStats/SystemStats/systemdiskio.h \
 	/home/duc-vu/Documents/QtProjects/IVI-System-App/DeviceStats/SystemStats/systemmem.cpp \
 	/home/duc-vu/Documents/QtProjects/IVI-System-App/DeviceStats/SystemStats/systemmem.h \
-	/home/duc-vu/Documents/QtProjects/IVI-System-App/DeviceStats/SystemStats/systemnetworkio.cpp \
-	/home/duc-vu/Documents/QtProjects/IVI-System-App/DeviceStats/SystemStats/systemnetworkio.h \
 	/home/duc-vu/Documents/QtProjects/IVI-System-App/DeviceStats/SystemStats/systemstats.cpp \
 	/home/duc-vu/Documents/QtProjects/IVI-System-App/DeviceStats/SystemStats/systemstats.h \
+	/home/duc-vu/Documents/QtProjects/IVI-System-App/OverloadSolution/terminateprocesses.cpp \
+	/home/duc-vu/Documents/QtProjects/IVI-System-App/OverloadSolution/terminateprocesses.h \
 	/home/duc-vu/Documents/QtProjects/IVI-System-App/build/Desktop_Qt_6_7_3-Debug/.qtc/package-manager/auto-setup.cmake \
 	/home/duc-vu/Documents/QtProjects/IVI-System-App/build/Desktop_Qt_6_7_3-Debug/CMakeFiles/3.29.3/CMakeCXXCompiler.cmake \
 	/home/duc-vu/Documents/QtProjects/IVI-System-App/build/Desktop_Qt_6_7_3-Debug/CMakeFiles/3.29.3/CMakeSystem.cmake \
 	/home/duc-vu/Documents/QtProjects/IVI-System-App/build/Desktop_Qt_6_7_3-Debug/IVI-System-App_autogen/moc_predefs.h \
 	/home/duc-vu/Documents/QtProjects/IVI-System-App/main.cpp \
+	/home/duc-vu/Documents/QtProjects/IVI-System-App/testing.cpp \
+	/home/duc-vu/Documents/QtProjects/IVI-System-App/testing.h \
 	/home/duc-vu/Documents/QtProjects/IVI-System-App/utils/commands.cpp \
 	/home/duc-vu/Documents/QtProjects/IVI-System-App/utils/commands.h \
 	/home/duc-vu/Documents/QtProjects/IVI-System-App/utils/processcommand.cpp \

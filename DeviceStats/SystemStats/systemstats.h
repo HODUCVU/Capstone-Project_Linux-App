@@ -3,8 +3,6 @@
 
 #include "systemcpu.h"
 #include "systemmem.h"
-#include "systemnetworkio.h"
-#include "systemdiskio.h"
 #include <QObject>
 
 class SystemStats : public QObject
@@ -13,8 +11,6 @@ class SystemStats : public QObject
 public:
     SystemCPU CPUStats;
     SystemMEM MEMStats;
-    SystemNetworkIO NetworkIOStats;
-    SystemDiskIO DiskIOStats;
 public:
     explicit SystemStats(QObject *parent = nullptr);
 
@@ -28,12 +24,6 @@ public: // Unit Tests
 
     // Testing MEM Stats
     void testingMEMUStats();
-
-    // Testing Network IO Stats
-    void testingNetworkIDStats();
-
-    // Testing Disk IO Stats
-    void testingDiskIOStats();
 };
 
 #endif // SYSTEMSTATS_H

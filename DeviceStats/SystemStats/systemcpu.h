@@ -3,11 +3,6 @@
 #include "../../utils/commands.h"
 #include "cpucore.h"
 #include <QObject>
-/*
- * Tối ưu thông qua các công việc dưới đây ↓
- * Có thể kết hợp %,t,f vào 1 command và chạy 1 function?
- * => hạn chế delay do trích xuất thông tin nhiều lần -> được, nhưng như vậy thì code khó bảo trì và khó đọc
-*/
 class SystemCPU : public ExecuteCPUCoreCommand
 {
 public:

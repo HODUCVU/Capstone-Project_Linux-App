@@ -52,16 +52,16 @@ QString ExecuteCPUCoreCommand::getcoreCPUFrequencyCommand()
 }
 
 // ========================================
-ExecuteSystemMEMCommand::ExecuteSystemMEMCommand()
-{
-    /*
+/*
     > free -m
             total        used        free      shared  buff/cache   available
     Mem:    15648        3193        9018         611        4381       12455
     Swap:   4095           0        4095
     > free -m | awk 'NR==2 {print $2, $3}'
             15648 3081
-    */
+*/
+ExecuteSystemMEMCommand::ExecuteSystemMEMCommand()
+{
     MEMUtilizationCommand = "free -m | awk 'NR==2 {print $3}'";
     maxMEMSystemCommand = "free -m | awk 'NR==2 {print $2}'";
 }
@@ -76,16 +76,16 @@ QString ExecuteSystemMEMCommand::getMaxMEMSystemCommand()
 }
 
 // ========================================
-ExecuteSystemNetworkIOCommand::ExecuteSystemNetworkIOCommand()
-{
-    /*
+/*
      *  Đang dùng wifỉ: wlp0s20f3
      *  Đang dùng ethernet: enp0s31f6@
      *  ip link show | grep "state UP"
      *  -> 3: wlp0s20f3: <BROADCAST,MULTICAST,UP,LOWER_UP>
      *      mtu 1500 qdisc noqueue state UP mode DORMANT group default qlen 1000
      *  -> Đang dùng wlp0s20f3
-    */
+*/
+ExecuteSystemNetworkIOCommand::ExecuteSystemNetworkIOCommand()
+{
     networkInterfaceTypeCommand = "ip link show | grep 'state UP' | awk -F: '{print $2}' | tr -d ' '";
 }
 QString ExecuteSystemNetworkIOCommand::getnetworkInterfaceTypeCommand()
@@ -159,11 +159,10 @@ QString ExecuteSystemDiskIOCommand::getDiskIOInfoCommand(QString diskType)
                                printf "%-10s %-20s %-10s %-10.2f %-10.2f %-10.2f %-10.2f\n", uid[cmd], cmd, pid[cmd], cpu[cmd], mem[cmd], rd[cmd], wr[cmd];
                            }
                        }'
-
-    */
+*/
 ExecuteProcessStatsCommand::ExecuteProcessStatsCommand()
 {
-   processesInfoCommand = "ps -eo comm,user,pid,%cpu,%mem | grep $(whoami) |awk 'NR>1'";
+   processesInfoCommand = "ps -eo comm,user,pid,%cpu,%mem |awk 'NR>1'";
     // => Lệnh này chiếm tài nguyên để trích xuất thông tin, vì vậy nếu việc dùng lệnh cat để tiết kiệm tài nguyên và có những thông số chinh xác thì nên dùng cách đọc file
 }
 QString ExecuteProcessStatsCommand::getprocessesInfoCommand()
@@ -171,7 +170,12 @@ QString ExecuteProcessStatsCommand::getprocessesInfoCommand()
     return processesInfoCommand;
 }
 
-QString ExecuteProcessStatsCommand::getprocessesDiskIOCommand(int PID)
+ExecuteTerminateProcessesCommand::ExecuteTerminateProcessesCommand()
 {
-    return "";
+    terminateProcessCommand = "pkill --exact --echo ";
 }
+QString ExecuteTerminateProcessesCommand::getTerminateProcessCommand(QString PName)
+{
+    return terminateProcessCommand + PName;
+}
+

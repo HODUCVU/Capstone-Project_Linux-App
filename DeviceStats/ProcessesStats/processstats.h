@@ -11,13 +11,10 @@ class ProcessStats
     float PCPUUsagePercent;
     float PMEMUsagePercent;
     float PMEMUsageMB;
-    // float PDiskReading;
-    // float PDiskWriting;
 public:
     ProcessStats();
     ProcessStats(QString PName, QString user);
     ProcessStats(QString PName, QString user, int PID, float PCPUUsagePercent, float PMEMUsagePercent);
-    // ProcessStats &operator=(const ProcessStats &other);
     // Getter
     QString getPName();
     QString getUser();

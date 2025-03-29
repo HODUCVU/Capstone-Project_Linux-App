@@ -21,7 +21,6 @@ public:
     void getProcessStatsFromDevice();
 private:
     void extractProcessesInfo(QStringList lines);
-    // void updateProcessStats(ProcessStats processStats);
 
 public: // unit tests
     void testingProcessesStats();

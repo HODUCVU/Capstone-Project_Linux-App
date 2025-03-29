@@ -7,6 +7,7 @@ class SystemMEM : public ExecuteSystemMEMCommand
 {
 private:
     float MEMUtilization;
+    // float SWAPUtilization;
 public: // Getter
     float getMEMUtilization();
 

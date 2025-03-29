@@ -65,13 +65,18 @@ private:
     QString processesInfoCommand;
 protected:
     QString getprocessesInfoCommand();
-    QString getprocessesDiskIOCommand(int PID);
 public:
     ExecuteProcessStatsCommand();
 };
 
 class ExecuteTerminateProcessesCommand{
     // kill theo PName: pkill command
+private:
+    QString terminateProcessCommand;
+protected:
+    QString getTerminateProcessCommand(QString PName);
+public:
+    ExecuteTerminateProcessesCommand();
 };
 class ExecuteDeviceSpeakerCommand{};
 #endif // COMMANDS_H
