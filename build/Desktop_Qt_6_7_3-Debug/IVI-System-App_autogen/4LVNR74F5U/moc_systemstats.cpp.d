@@ -1,6 +1,7 @@
 /home/duc-vu/Documents/QtProjects/IVI-System-App/build/Desktop_Qt_6_7_3-Debug/IVI-System-App_autogen/4LVNR74F5U/moc_systemstats.cpp: /home/duc-vu/Documents/QtProjects/IVI-System-App/DeviceStats/SystemStats/systemstats.h \
   /home/duc-vu/Documents/QtProjects/IVI-System-App/build/Desktop_Qt_6_7_3-Debug/IVI-System-App_autogen/moc_predefs.h \
   /home/duc-vu/Documents/QtProjects/IVI-System-App/DeviceStats/SystemStats/cpucore.h \
+  /home/duc-vu/Documents/QtProjects/IVI-System-App/DeviceStats/SystemStats/cpugeneral.h \
   /home/duc-vu/Documents/QtProjects/IVI-System-App/DeviceStats/SystemStats/systemcpu.h \
   /home/duc-vu/Documents/QtProjects/IVI-System-App/DeviceStats/SystemStats/systemmem.h \
   /home/duc-vu/Documents/QtProjects/IVI-System-App/utils/commands.h \

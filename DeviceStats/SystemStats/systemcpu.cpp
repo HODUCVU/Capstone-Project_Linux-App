@@ -27,8 +27,8 @@ void SystemCPU::getFrequencyMaxMinFromDevice()
     QString command = getCPUFrequencyMaxMinCommand();
     QString output = ProcessCommand::execute(command);
     QStringList lines = output.split("\n");
-    this->CPUFrequencyMax = lines[0].toFloat();
-    this->CPUFrequencyMin = lines[1].toFloat();
+    this->general.CPUFrequencyMax = lines[0].toFloat();
+    this->general.CPUFrequencyMin = lines[1].toFloat();
 }
 
 SystemCPU::~SystemCPU()
@@ -36,43 +36,25 @@ SystemCPU::~SystemCPU()
     this->cores.clear();
 }
 
-float SystemCPU::getCPUUtilization()
-{
-    return this->CPUUtilization;
-}
-float SystemCPU::getCPUTemperature()
-{
-    return this->CPUTemperature;
-}
-float SystemCPU::getCPUFrequencyPercent()
-{
-    return this->CPUFrequencyPercent;
-}
-float SystemCPU::getCPUFrequency()
-{
-    float range = (this->CPUFrequencyMax - this->CPUFrequencyMin);
-    return this->CPUFrequencyMin + range*this->CPUFrequencyPercent/100;
-}
-
 void SystemCPU::getCPUUtilizationStatsFromDevice()
 {
     QString command = getCPUUtilizationCommand();
     QString output = ProcessCommand::execute(command);
-    this->CPUUtilization = output.split("\n").first().toFloat();
+    this->general.CPUUtilization = output.split("\n").first().toFloat();
 }
 
 void SystemCPU::getCPUTemperatureStatsFromDevice()
 {
     QString command = getCPUTemperatureCommand();
     QString output = ProcessCommand::execute(command);
-    this->CPUTemperature = output.remove("+").remove("°C").toFloat();
+    this->general.CPUTemperature = output.remove("+").remove("°C").toFloat();
 }
 
 void SystemCPU::getCPUFrequencyPercentFromDevice()
 {
     QString command = getCPUFrequencyPercentCommand();
     QString output = ProcessCommand::execute(command);
-    this->CPUFrequencyPercent = output.remove("%").toFloat();
+    this->general.CPUFrequencyPercent = output.remove("%").toFloat();
 }
 
 void SystemCPU::getCoresCPUUtilizationStatsFromDevice()
@@ -86,7 +68,7 @@ void SystemCPU::extractCoresCPUUsageInfo(QStringList lines)
 {
     for(int i = 0; i < lines.size(); i++) {
         float coreCPUUsage = lines[i].toFloat();
-        this->cores[i].setCoreCPUUtilization(coreCPUUsage);
+        this->cores[i].coreCPUUtilization = coreCPUUsage;
     }
 }
 
@@ -103,8 +85,8 @@ void SystemCPU::extractCoresCPUTemperatureInfo(QStringList lines)
     for(int physicalCore = 0; physicalCore < lines.size(); physicalCore++) {
         lines[physicalCore].remove("+").remove("°C");
         float temperature = lines[physicalCore].toFloat();
-        this->cores[physicalCore].setCoreTemperature(temperature);
-        this->cores[LogicalCore++].setCoreTemperature(temperature);
+        this->cores[physicalCore].coreTemperature = temperature;
+        this->cores[LogicalCore++].coreTemperature = temperature;
     }
 }
 
@@ -120,7 +102,7 @@ void SystemCPU::extractCoreCPUFrequencyInfo(QStringList lines)
 {
     for(int i = 0; i < lines.size(); i++) {
         float freqMHz = lines[i].toFloat()/1000.0;
-        this->cores[i].setCoreFrequency(freqMHz);
+        this->cores[i].coreFrequency = freqMHz;
     }
 }
 

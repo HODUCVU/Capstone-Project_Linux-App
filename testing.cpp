@@ -1,5 +1,6 @@
 #include "testing.h"
 #include "OverloadSolution/terminateprocesses.h"
+#include "DeviceStats/SystemStats/systemstats.h"
 
 Testing::Testing() {}
 

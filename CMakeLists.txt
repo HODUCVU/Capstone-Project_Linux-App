@@ -27,6 +27,7 @@ add_executable(IVI-System-App
   DeviceStats/ProcessesStats/processstats.h DeviceStats/ProcessesStats/processstats.cpp
   OverloadSolution/terminateprocesses.h OverloadSolution/terminateprocesses.cpp
   testing.h testing.cpp
+  DeviceStats/SystemStats/cpugeneral.h DeviceStats/SystemStats/cpugeneral.cpp
 
 
 )

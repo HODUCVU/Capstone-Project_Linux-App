@@ -13,17 +13,6 @@ public:
     SystemMEM MEMStats;
 public:
     explicit SystemStats(QObject *parent = nullptr);
-
-public: // Unit Tests
-    // Testing CPU Stats
-    void testingCPUStats();
-    void printCPUStats();
-
-    void testingCoreCPUStats();
-    void printCoreCPUStats();
-
-    // Testing MEM Stats
-    void testingMEMUStats();
 };
 
 #endif // SYSTEMSTATS_H

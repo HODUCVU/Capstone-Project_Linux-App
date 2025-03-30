@@ -29,27 +29,12 @@ float CPUCore::getCoreCPUUilization()
     return this->coreCPUUtilization;
 }
 
-void CPUCore::setCoreCPUUtilization(float coreCPUUtilization)
-{
-    this->coreCPUUtilization = coreCPUUtilization;
-}
-
 float CPUCore::getCoreTemperature()
 {
     return this->coreTemperature;
 }
 
-void CPUCore::setCoreTemperature(float coreTemperature)
-{
-    this->coreTemperature = coreTemperature;
-}
-
 float CPUCore::getCoreFrequency()
 {
     return this->coreFrequency;
-}
-
-void CPUCore::setCoreFrequency(float coreFrequency)
-{
-    this->coreFrequency = coreFrequency;
 }

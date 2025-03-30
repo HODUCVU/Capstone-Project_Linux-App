@@ -141,6 +141,12 @@
 			null
 		],
 		[
+			"/home/duc-vu/Documents/QtProjects/IVI-System-App/DeviceStats/SystemStats/cpugeneral.h",
+			"MU",
+			"4LVNR74F5U/moc_cpugeneral.cpp",
+			null
+		],
+		[
 			"/home/duc-vu/Documents/QtProjects/IVI-System-App/DeviceStats/SystemStats/systemcpu.h",
 			"MU",
 			"4LVNR74F5U/moc_systemcpu.cpp",
@@ -252,6 +258,11 @@
 		],
 		[
 			"/home/duc-vu/Documents/QtProjects/IVI-System-App/DeviceStats/SystemStats/cpucore.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/duc-vu/Documents/QtProjects/IVI-System-App/DeviceStats/SystemStats/cpugeneral.cpp",
 			"MU",
 			null
 		],

@@ -6,6 +6,8 @@ IVI-System-App_autogen/timestamp: \
 	/home/duc-vu/Documents/QtProjects/IVI-System-App/DeviceStats/ProcessesStats/processstats.h \
 	/home/duc-vu/Documents/QtProjects/IVI-System-App/DeviceStats/SystemStats/cpucore.cpp \
 	/home/duc-vu/Documents/QtProjects/IVI-System-App/DeviceStats/SystemStats/cpucore.h \
+	/home/duc-vu/Documents/QtProjects/IVI-System-App/DeviceStats/SystemStats/cpugeneral.cpp \
+	/home/duc-vu/Documents/QtProjects/IVI-System-App/DeviceStats/SystemStats/cpugeneral.h \
 	/home/duc-vu/Documents/QtProjects/IVI-System-App/DeviceStats/SystemStats/systemcpu.cpp \
 	/home/duc-vu/Documents/QtProjects/IVI-System-App/DeviceStats/SystemStats/systemcpu.h \
 	/home/duc-vu/Documents/QtProjects/IVI-System-App/DeviceStats/SystemStats/systemmem.cpp \
