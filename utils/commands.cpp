@@ -1,6 +1,17 @@
 #include "commands.h"
 
 
+ExecuteInstallLinuxAPICommand::ExecuteInstallLinuxAPICommand()
+{
+    installCommand = "apt update && apt install -y qtbase5-dev sysstat lm-sensors procps";
+}
+
+QString ExecuteInstallLinuxAPICommand::getinstallCommand()
+{
+    return installCommand;
+}
+
+// ========================================
 ExecuteCPUCoreCommand::ExecuteCPUCoreCommand()
 {
     CPUUtilizationCommand = "mpstat -P ALL 1 1 | awk '/all/ {print 100 - $NF}'";

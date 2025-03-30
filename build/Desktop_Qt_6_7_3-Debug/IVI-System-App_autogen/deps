@@ -25,6 +25,8 @@ IVI-System-App_autogen/timestamp: \
 	/home/duc-vu/Documents/QtProjects/IVI-System-App/testing.h \
 	/home/duc-vu/Documents/QtProjects/IVI-System-App/utils/commands.cpp \
 	/home/duc-vu/Documents/QtProjects/IVI-System-App/utils/commands.h \
+	/home/duc-vu/Documents/QtProjects/IVI-System-App/utils/installlinuxapi.cpp \
+	/home/duc-vu/Documents/QtProjects/IVI-System-App/utils/installlinuxapi.h \
 	/home/duc-vu/Documents/QtProjects/IVI-System-App/utils/processcommand.cpp \
 	/home/duc-vu/Documents/QtProjects/IVI-System-App/utils/processcommand.h \
 	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/QHash \

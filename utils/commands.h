@@ -2,6 +2,15 @@
 #define COMMANDS_H
 #include <QString>
 
+class ExecuteInstallLinuxAPICommand{
+private:
+    QString installCommand;
+protected:
+    QString getinstallCommand();
+public:
+    ExecuteInstallLinuxAPICommand();
+};
+
 class ExecuteCPUCoreCommand {
 private:
     QString CPUUtilizationCommand;

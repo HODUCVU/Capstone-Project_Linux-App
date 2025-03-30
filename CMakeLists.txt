@@ -28,6 +28,7 @@ add_executable(IVI-System-App
   OverloadSolution/terminateprocesses.h OverloadSolution/terminateprocesses.cpp
   testing.h testing.cpp
   DeviceStats/SystemStats/cpugeneral.h DeviceStats/SystemStats/cpugeneral.cpp
+  utils/installlinuxapi.h utils/installlinuxapi.cpp
 
 
 )

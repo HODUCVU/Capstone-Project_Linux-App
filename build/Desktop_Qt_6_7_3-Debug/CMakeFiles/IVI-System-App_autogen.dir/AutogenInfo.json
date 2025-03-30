@@ -183,6 +183,12 @@
 			null
 		],
 		[
+			"/home/duc-vu/Documents/QtProjects/IVI-System-App/utils/installlinuxapi.h",
+			"MU",
+			"7HEHEGDA3T/moc_installlinuxapi.cpp",
+			null
+		],
+		[
 			"/home/duc-vu/Documents/QtProjects/IVI-System-App/utils/processcommand.h",
 			"MU",
 			"7HEHEGDA3T/moc_processcommand.cpp",
@@ -298,6 +304,11 @@
 		],
 		[
 			"/home/duc-vu/Documents/QtProjects/IVI-System-App/utils/commands.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/duc-vu/Documents/QtProjects/IVI-System-App/utils/installlinuxapi.cpp",
 			"MU",
 			null
 		],
