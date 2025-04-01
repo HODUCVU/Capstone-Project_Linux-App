@@ -16,7 +16,7 @@ float SystemMEM::getRAMUtilization()
 }
 float SystemMEM::getRAMUtilizationPercent()
 {
-    return RAMUtilization/maxRAMSystem;
+    return RAMUtilization*100/maxRAMSystem;
 }
 
 float SystemMEM::getSWAPMEMUtilization()
@@ -25,7 +25,7 @@ float SystemMEM::getSWAPMEMUtilization()
 }
 float SystemMEM::getSWAPMEMUtilizationPercent()
 {
-    return SWAPMEMUtilization/maxSWAPMEMSystem;
+    return SWAPMEMUtilization*100/maxSWAPMEMSystem;
 }
 
 void SystemMEM::getMEMUtilizationFromDevice()

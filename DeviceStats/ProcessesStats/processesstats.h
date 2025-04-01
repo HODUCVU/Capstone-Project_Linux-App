@@ -22,8 +22,6 @@ public:
 private:
     void extractProcessesInfo(QStringList lines);
 
-public: // unit tests
-    void testingProcessesStats();
 };
 
 #endif // PROCESSESSTATS_H

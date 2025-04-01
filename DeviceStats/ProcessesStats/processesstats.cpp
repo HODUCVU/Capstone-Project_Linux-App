@@ -31,18 +31,3 @@ void ProcessesStats::extractProcessesInfo(QStringList lines)
         this->processesStats.insert(PID, ProcessStats(PName, user, PID, PCPUUsagePercent, PMEMUsagePercent));
     }
 }
-
-void ProcessesStats::testingProcessesStats()
-{
-    getProcessStatsFromDevice();
-    qDebug() << "User\tPID\t%CPU\tMEM\t%MEM\tCommand";
-    for(auto it = processesStats.begin(); it != processesStats.end(); ++it) {
-        qDebug() << it.value().getUser() << "\t"
-                 << it.value().getPID() << "\t"
-                 << it.value().getPCPUUsagePercent()/8.0 << "%\t"
-                 << it.value().getPMEMUsageMB() << "MB\t"
-                 << it.value().getPMEMUsagePercent()<< "%\t"
-                 << it.value().getPName();
-    }
-    qDebug() << "***********************************";
-}

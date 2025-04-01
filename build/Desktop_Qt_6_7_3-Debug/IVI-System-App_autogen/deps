@@ -32,6 +32,8 @@ IVI-System-App_autogen/timestamp: \
 	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/QHash \
 	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/QObject \
 	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/QString \
+	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/QStringList \
+	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/QTimer \
 	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/q20functional.h \
 	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/q20memory.h \
 	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/q20type_traits.h \
@@ -44,6 +46,7 @@ IVI-System-App_autogen/timestamp: \
 	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qatomic.h \
 	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qatomic_cxx11.h \
 	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qbasicatomic.h \
+	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qbasictimer.h \
 	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qbindingstorage.h \
 	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qbytearray.h \
 	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qbytearrayalgorithms.h \
@@ -117,6 +120,7 @@ IVI-System-App_autogen/timestamp: \
 	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qtcoreexports.h \
 	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qtdeprecationmarkers.h \
 	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qtenvironmentvariables.h \
+	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qtimer.h \
 	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qtmetamacros.h \
 	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qtnoop.h \
 	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qtpreprocessorsupport.h \
