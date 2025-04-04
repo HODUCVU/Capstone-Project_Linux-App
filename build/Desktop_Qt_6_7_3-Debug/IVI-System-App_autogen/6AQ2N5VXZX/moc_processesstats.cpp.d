@@ -2,9 +2,9 @@
   /home/duc-vu/Documents/QtProjects/IVI-System-App/build/Desktop_Qt_6_7_3-Debug/IVI-System-App_autogen/moc_predefs.h \
   /home/duc-vu/Documents/QtProjects/IVI-System-App/DeviceStats/ProcessesStats/processstats.h \
   /home/duc-vu/Documents/QtProjects/IVI-System-App/utils/commands.h \
-  /home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/QHash \
   /home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/QObject \
   /home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/QString \
+  /home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/QVector \
   /home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/q20functional.h \
   /home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/q20memory.h \
   /home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/q20type_traits.h \
@@ -43,7 +43,6 @@
   /home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qgenericatomic.h \
   /home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qglobal.h \
   /home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qglobalstatic.h \
-  /home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qhash.h \
   /home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qhashfunctions.h \
   /home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qiodevicebase.h \
   /home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qiterable.h \
@@ -101,6 +100,7 @@
   /home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qtypeinfo.h \
   /home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qtypes.h \
   /home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qutf8stringview.h \
+  /home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qvector.h \
   /home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qversiontagging.h \
   /home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qxptype_traits.h \
   /home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qyieldcpu.h \

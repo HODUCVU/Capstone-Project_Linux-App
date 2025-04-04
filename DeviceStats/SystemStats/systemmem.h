@@ -2,6 +2,7 @@
 #define SYSTEMMEM_H
 
 #include "../../utils/commands.h"
+#include "QStringList"
 
 class SystemMEM : public ExecuteSystemMEMCommand
 {

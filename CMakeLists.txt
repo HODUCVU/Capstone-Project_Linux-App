@@ -11,9 +11,11 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Core)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Core)
+find_package(Qt6 REQUIRED COMPONENTS Network)
 
 add_executable(IVI-System-App
   main.cpp
+  testing.h testing.cpp
 
   utils/commands.h utils/commands.cpp
   DeviceStats/SystemStats/systemcpu.h DeviceStats/SystemStats/systemcpu.cpp
@@ -26,13 +28,16 @@ add_executable(IVI-System-App
   DeviceStats/ProcessesStats/processesstats.h DeviceStats/ProcessesStats/processesstats.cpp
   DeviceStats/ProcessesStats/processstats.h DeviceStats/ProcessesStats/processstats.cpp
   OverloadSolution/terminateprocesses.h OverloadSolution/terminateprocesses.cpp
-  testing.h testing.cpp
   DeviceStats/SystemStats/cpugeneral.h DeviceStats/SystemStats/cpugeneral.cpp
   utils/installlinuxapi.h utils/installlinuxapi.cpp
+  TCPService/tcpservice.h TCPService/tcpservice.cpp
+  TCPService/receiverworker.h TCPService/receiverworker.cpp
+  TCPService/senderworker.h TCPService/senderworker.cpp
 
 
 )
-target_link_libraries(IVI-System-App Qt${QT_VERSION_MAJOR}::Core)
+target_link_libraries(IVI-System-App Qt${QT_VERSION_MAJOR}::Core
+    Qt6::Network)
 
 include(GNUInstallDirs)
 install(TARGETS IVI-System-App

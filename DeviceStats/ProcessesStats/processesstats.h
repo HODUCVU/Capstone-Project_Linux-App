@@ -3,8 +3,8 @@
 
 #include "../../utils/commands.h"
 #include "processstats.h"
-#include <QHash>
 #include <QObject>
+#include <QVector>
 /*
  * Fix query task stats
  * Testing that functions
@@ -14,7 +14,7 @@ class ProcessesStats : public QObject, public ExecuteProcessStatsCommand
 {
     Q_OBJECT
 public:
-    QHash<int, ProcessStats> processesStats;
+    QVector<ProcessStats> processes;
 public:
     explicit ProcessesStats(QObject *parent = nullptr);
     ~ProcessesStats();

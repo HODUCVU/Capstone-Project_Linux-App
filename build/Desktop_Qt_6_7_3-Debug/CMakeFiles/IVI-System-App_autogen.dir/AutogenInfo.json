@@ -114,6 +114,60 @@
 		"/home/duc-vu/Qt/6.7.3/gcc_64/lib/cmake/Qt6Core/Qt6CoreConfigExtras.cmake",
 		"/home/duc-vu/Qt/6.7.3/gcc_64/lib/cmake/Qt6Core/QtInstallPaths.cmake",
 		"/home/duc-vu/Qt/Tools/CMake/share/cmake-3.29/Modules/GNUInstallDirs.cmake",
+		"/home/duc-vu/Qt/6.7.3/gcc_64/lib/cmake/Qt6/Qt6ConfigVersion.cmake",
+		"/home/duc-vu/Qt/6.7.3/gcc_64/lib/cmake/Qt6/Qt6ConfigVersionImpl.cmake",
+		"/home/duc-vu/Qt/6.7.3/gcc_64/lib/cmake/Qt6/Qt6Config.cmake",
+		"/home/duc-vu/Qt/6.7.3/gcc_64/lib/cmake/Qt6/Qt6ConfigExtras.cmake",
+		"/home/duc-vu/Qt/6.7.3/gcc_64/lib/cmake/Qt6/QtPublicCMakeVersionHelpers.cmake",
+		"/home/duc-vu/Qt/6.7.3/gcc_64/lib/cmake/Qt6/Qt6Targets.cmake",
+		"/home/duc-vu/Qt/6.7.3/gcc_64/lib/cmake/Qt6/Qt6VersionlessTargets.cmake",
+		"/home/duc-vu/Qt/6.7.3/gcc_64/lib/cmake/Qt6/QtFeature.cmake",
+		"/home/duc-vu/Qt/Tools/CMake/share/cmake-3.29/Modules/CheckCXXCompilerFlag.cmake",
+		"/home/duc-vu/Qt/6.7.3/gcc_64/lib/cmake/Qt6/QtFeatureCommon.cmake",
+		"/home/duc-vu/Qt/6.7.3/gcc_64/lib/cmake/Qt6/QtPublicAppleHelpers.cmake",
+		"/home/duc-vu/Qt/6.7.3/gcc_64/lib/cmake/Qt6/QtPublicCMakeHelpers.cmake",
+		"/home/duc-vu/Qt/6.7.3/gcc_64/lib/cmake/Qt6/QtPublicCMakeVersionHelpers.cmake",
+		"/home/duc-vu/Qt/6.7.3/gcc_64/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake",
+		"/home/duc-vu/Qt/6.7.3/gcc_64/lib/cmake/Qt6/QtPublicExternalProjectHelpers.cmake",
+		"/home/duc-vu/Qt/6.7.3/gcc_64/lib/cmake/Qt6/QtPublicFinalizerHelpers.cmake",
+		"/home/duc-vu/Qt/6.7.3/gcc_64/lib/cmake/Qt6/QtPublicFindPackageHelpers.cmake",
+		"/home/duc-vu/Qt/6.7.3/gcc_64/lib/cmake/Qt6/QtPublicPluginHelpers.cmake",
+		"/home/duc-vu/Qt/6.7.3/gcc_64/lib/cmake/Qt6/QtPublicTargetHelpers.cmake",
+		"/home/duc-vu/Qt/6.7.3/gcc_64/lib/cmake/Qt6/QtPublicTestHelpers.cmake",
+		"/home/duc-vu/Qt/6.7.3/gcc_64/lib/cmake/Qt6/QtPublicToolHelpers.cmake",
+		"/home/duc-vu/Qt/6.7.3/gcc_64/lib/cmake/Qt6/QtPublicWalkLibsHelpers.cmake",
+		"/home/duc-vu/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake",
+		"/home/duc-vu/Qt/6.7.3/gcc_64/lib/cmake/Qt6/Qt6Dependencies.cmake",
+		"/home/duc-vu/Qt/6.7.3/gcc_64/lib/cmake/Qt6Network/Qt6NetworkConfigVersion.cmake",
+		"/home/duc-vu/Qt/6.7.3/gcc_64/lib/cmake/Qt6Network/Qt6NetworkConfigVersionImpl.cmake",
+		"/home/duc-vu/Qt/6.7.3/gcc_64/lib/cmake/Qt6Network/Qt6NetworkConfig.cmake",
+		"/home/duc-vu/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake",
+		"/home/duc-vu/Qt/6.7.3/gcc_64/lib/cmake/Qt6Network/Qt6NetworkDependencies.cmake",
+		"/home/duc-vu/Qt/6.7.3/gcc_64/lib/cmake/Qt6Network/Qt6NetworkTargets.cmake",
+		"/home/duc-vu/Qt/6.7.3/gcc_64/lib/cmake/Qt6Network/Qt6NetworkTargets-relwithdebinfo.cmake",
+		"/home/duc-vu/Qt/6.7.3/gcc_64/lib/cmake/Qt6Network/Qt6NetworkAdditionalTargetInfo.cmake",
+		"/home/duc-vu/Qt/6.7.3/gcc_64/lib/cmake/Qt6Network/Qt6NetworkVersionlessTargets.cmake",
+		"/home/duc-vu/Qt/6.7.3/gcc_64/lib/cmake/Qt6Network/Qt6NetworkPlugins.cmake",
+		"/home/duc-vu/Qt/6.7.3/gcc_64/lib/cmake/Qt6Network/Qt6QGlibNetworkInformationPluginConfig.cmake",
+		"/home/duc-vu/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake",
+		"/home/duc-vu/Qt/6.7.3/gcc_64/lib/cmake/Qt6Network/Qt6QGlibNetworkInformationPluginTargets.cmake",
+		"/home/duc-vu/Qt/6.7.3/gcc_64/lib/cmake/Qt6Network/Qt6QGlibNetworkInformationPluginTargets-relwithdebinfo.cmake",
+		"/home/duc-vu/Qt/6.7.3/gcc_64/lib/cmake/Qt6Network/Qt6QGlibNetworkInformationPluginAdditionalTargetInfo.cmake",
+		"/home/duc-vu/Qt/6.7.3/gcc_64/lib/cmake/Qt6Network/Qt6QNetworkManagerNetworkInformationPluginConfig.cmake",
+		"/home/duc-vu/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake",
+		"/home/duc-vu/Qt/6.7.3/gcc_64/lib/cmake/Qt6Network/Qt6QNetworkManagerNetworkInformationPluginTargets.cmake",
+		"/home/duc-vu/Qt/6.7.3/gcc_64/lib/cmake/Qt6Network/Qt6QNetworkManagerNetworkInformationPluginTargets-relwithdebinfo.cmake",
+		"/home/duc-vu/Qt/6.7.3/gcc_64/lib/cmake/Qt6Network/Qt6QNetworkManagerNetworkInformationPluginAdditionalTargetInfo.cmake",
+		"/home/duc-vu/Qt/6.7.3/gcc_64/lib/cmake/Qt6Network/Qt6QTlsBackendCertOnlyPluginConfig.cmake",
+		"/home/duc-vu/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake",
+		"/home/duc-vu/Qt/6.7.3/gcc_64/lib/cmake/Qt6Network/Qt6QTlsBackendCertOnlyPluginTargets.cmake",
+		"/home/duc-vu/Qt/6.7.3/gcc_64/lib/cmake/Qt6Network/Qt6QTlsBackendCertOnlyPluginTargets-relwithdebinfo.cmake",
+		"/home/duc-vu/Qt/6.7.3/gcc_64/lib/cmake/Qt6Network/Qt6QTlsBackendCertOnlyPluginAdditionalTargetInfo.cmake",
+		"/home/duc-vu/Qt/6.7.3/gcc_64/lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginConfig.cmake",
+		"/home/duc-vu/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake",
+		"/home/duc-vu/Qt/6.7.3/gcc_64/lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginTargets.cmake",
+		"/home/duc-vu/Qt/6.7.3/gcc_64/lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginTargets-relwithdebinfo.cmake",
+		"/home/duc-vu/Qt/6.7.3/gcc_64/lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginAdditionalTargetInfo.cmake",
 		"/home/duc-vu/Qt/Tools/CMake/share/cmake-3.29/Modules/GNUInstallDirs.cmake"
 	],
 	"CMAKE_SOURCE_DIR" : "/home/duc-vu/Documents/QtProjects/IVI-System-App",
@@ -171,6 +225,24 @@
 			null
 		],
 		[
+			"/home/duc-vu/Documents/QtProjects/IVI-System-App/TCPService/receiverworker.h",
+			"MU",
+			"3IJZYC4PSX/moc_receiverworker.cpp",
+			null
+		],
+		[
+			"/home/duc-vu/Documents/QtProjects/IVI-System-App/TCPService/senderworker.h",
+			"MU",
+			"3IJZYC4PSX/moc_senderworker.cpp",
+			null
+		],
+		[
+			"/home/duc-vu/Documents/QtProjects/IVI-System-App/TCPService/tcpservice.h",
+			"MU",
+			"3IJZYC4PSX/moc_tcpservice.cpp",
+			null
+		],
+		[
 			"/home/duc-vu/Documents/QtProjects/IVI-System-App/testing.h",
 			"MU",
 			"EWIEGA46WW/moc_testing.cpp",
@@ -198,7 +270,7 @@
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
 	"INCLUDE_DIR" : "/home/duc-vu/Documents/QtProjects/IVI-System-App/build/Desktop_Qt_6_7_3-Debug/IVI-System-App_autogen/include",
 	"MOC_COMPILATION_FILE" : "/home/duc-vu/Documents/QtProjects/IVI-System-App/build/Desktop_Qt_6_7_3-Debug/IVI-System-App_autogen/mocs_compilation.cpp",
-	"MOC_DEFINITIONS" : [ "QT_CORE_LIB" ],
+	"MOC_DEFINITIONS" : [ "QT_CORE_LIB", "QT_NETWORK_LIB" ],
 	"MOC_DEPEND_FILTERS" : 
 	[
 		[
@@ -211,6 +283,7 @@
 		"/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore",
 		"/home/duc-vu/Qt/6.7.3/gcc_64/include",
 		"/home/duc-vu/Qt/6.7.3/gcc_64/mkspecs/linux-g++",
+		"/home/duc-vu/Qt/6.7.3/gcc_64/include/QtNetwork",
 		"/usr/include/c++/13",
 		"/usr/include/x86_64-linux-gnu/c++/13",
 		"/usr/include/c++/13/backward",
@@ -289,6 +362,21 @@
 		],
 		[
 			"/home/duc-vu/Documents/QtProjects/IVI-System-App/OverloadSolution/terminateprocesses.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/duc-vu/Documents/QtProjects/IVI-System-App/TCPService/receiverworker.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/duc-vu/Documents/QtProjects/IVI-System-App/TCPService/senderworker.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/duc-vu/Documents/QtProjects/IVI-System-App/TCPService/tcpservice.cpp",
 			"MU",
 			null
 		],

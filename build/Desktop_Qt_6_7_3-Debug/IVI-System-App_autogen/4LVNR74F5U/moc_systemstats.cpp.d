@@ -7,6 +7,7 @@
   /home/duc-vu/Documents/QtProjects/IVI-System-App/utils/commands.h \
   /home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/QObject \
   /home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/QString \
+  /home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/QStringList \
   /home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/q20functional.h \
   /home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/q20memory.h \
   /home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/q20type_traits.h \

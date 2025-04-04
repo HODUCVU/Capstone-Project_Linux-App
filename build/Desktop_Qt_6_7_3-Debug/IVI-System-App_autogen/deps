@@ -16,6 +16,12 @@ IVI-System-App_autogen/timestamp: \
 	/home/duc-vu/Documents/QtProjects/IVI-System-App/DeviceStats/SystemStats/systemstats.h \
 	/home/duc-vu/Documents/QtProjects/IVI-System-App/OverloadSolution/terminateprocesses.cpp \
 	/home/duc-vu/Documents/QtProjects/IVI-System-App/OverloadSolution/terminateprocesses.h \
+	/home/duc-vu/Documents/QtProjects/IVI-System-App/TCPService/receiverworker.cpp \
+	/home/duc-vu/Documents/QtProjects/IVI-System-App/TCPService/receiverworker.h \
+	/home/duc-vu/Documents/QtProjects/IVI-System-App/TCPService/senderworker.cpp \
+	/home/duc-vu/Documents/QtProjects/IVI-System-App/TCPService/senderworker.h \
+	/home/duc-vu/Documents/QtProjects/IVI-System-App/TCPService/tcpservice.cpp \
+	/home/duc-vu/Documents/QtProjects/IVI-System-App/TCPService/tcpservice.h \
 	/home/duc-vu/Documents/QtProjects/IVI-System-App/build/Desktop_Qt_6_7_3-Debug/.qtc/package-manager/auto-setup.cmake \
 	/home/duc-vu/Documents/QtProjects/IVI-System-App/build/Desktop_Qt_6_7_3-Debug/CMakeFiles/3.29.3/CMakeCXXCompiler.cmake \
 	/home/duc-vu/Documents/QtProjects/IVI-System-App/build/Desktop_Qt_6_7_3-Debug/CMakeFiles/3.29.3/CMakeSystem.cmake \
@@ -29,14 +35,16 @@ IVI-System-App_autogen/timestamp: \
 	/home/duc-vu/Documents/QtProjects/IVI-System-App/utils/installlinuxapi.h \
 	/home/duc-vu/Documents/QtProjects/IVI-System-App/utils/processcommand.cpp \
 	/home/duc-vu/Documents/QtProjects/IVI-System-App/utils/processcommand.h \
-	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/QHash \
+	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/QJsonObject \
 	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/QObject \
 	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/QString \
 	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/QStringList \
 	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/QTimer \
+	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/QVector \
 	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/q20functional.h \
 	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/q20memory.h \
 	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/q20type_traits.h \
+	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/q23utility.h \
 	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qalgorithms.h \
 	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qanystringview.h \
 	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qarraydata.h \
@@ -52,6 +60,9 @@ IVI-System-App_autogen/timestamp: \
 	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qbytearrayalgorithms.h \
 	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qbytearraylist.h \
 	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qbytearrayview.h \
+	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qcalendar.h \
+	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qcborcommon.h \
+	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qcborvalue.h \
 	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qchar.h \
 	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qcompare.h \
 	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qcompare_impl.h \
@@ -62,8 +73,12 @@ IVI-System-App_autogen/timestamp: \
 	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qcontainerfwd.h \
 	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qcontainerinfo.h \
 	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qcontainertools_impl.h \
+	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qcontiguouscache.h \
 	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qdarwinhelpers.h \
 	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qdatastream.h \
+	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qdatetime.h \
+	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qdebug.h \
+	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qendian.h \
 	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qexceptionhandling.h \
 	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qflags.h \
 	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qfloat16.h \
@@ -75,13 +90,18 @@ IVI-System-App_autogen/timestamp: \
 	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qglobalstatic.h \
 	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qhash.h \
 	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qhashfunctions.h \
+	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qiodevice.h \
 	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qiodevicebase.h \
 	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qiterable.h \
 	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qiterator.h \
+	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qjsonobject.h \
+	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qjsonvalue.h \
 	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qlatin1stringview.h \
 	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qlist.h \
+	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qlocale.h \
 	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qlogging.h \
 	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qmalloc.h \
+	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qmap.h \
 	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qmath.h \
 	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qmetacontainer.h \
 	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qmetatype.h \
@@ -96,8 +116,14 @@ IVI-System-App_autogen/timestamp: \
 	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qpair.h \
 	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qprocessordetection.h \
 	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qrefcount.h \
+	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qregularexpression.h \
 	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qscopedpointer.h \
 	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qscopeguard.h \
+	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qset.h \
+	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qshareddata.h \
+	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qshareddata_impl.h \
+	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qsharedpointer.h \
+	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qsharedpointer_impl.h \
 	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qstring.h \
 	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qstringalgorithms.h \
 	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qstringbuilder.h \
@@ -120,6 +146,7 @@ IVI-System-App_autogen/timestamp: \
 	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qtcoreexports.h \
 	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qtdeprecationmarkers.h \
 	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qtenvironmentvariables.h \
+	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qtextstream.h \
 	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qtimer.h \
 	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qtmetamacros.h \
 	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qtnoop.h \
@@ -131,10 +158,22 @@ IVI-System-App_autogen/timestamp: \
 	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qtversionchecks.h \
 	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qtypeinfo.h \
 	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qtypes.h \
+	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qurl.h \
 	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qutf8stringview.h \
+	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/quuid.h \
+	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qvariant.h \
+	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qvarlengtharray.h \
+	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qvector.h \
 	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qversiontagging.h \
 	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qxptype_traits.h \
 	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qyieldcpu.h \
+	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtNetwork/QTcpSocket \
+	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtNetwork/qabstractsocket.h \
+	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtNetwork/qhostaddress.h \
+	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtNetwork/qtcpsocket.h \
+	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtNetwork/qtnetwork-config.h \
+	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtNetwork/qtnetworkexports.h \
+	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtNetwork/qtnetworkglobal.h \
 	/home/duc-vu/Qt/6.7.3/gcc_64/lib/cmake/Qt6/FindWrapAtomic.cmake \
 	/home/duc-vu/Qt/6.7.3/gcc_64/lib/cmake/Qt6/Qt6Config.cmake \
 	/home/duc-vu/Qt/6.7.3/gcc_64/lib/cmake/Qt6/Qt6ConfigExtras.cmake \
@@ -176,6 +215,31 @@ IVI-System-App_autogen/timestamp: \
 	/home/duc-vu/Qt/6.7.3/gcc_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsTargets-relwithdebinfo.cmake \
 	/home/duc-vu/Qt/6.7.3/gcc_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsTargets.cmake \
 	/home/duc-vu/Qt/6.7.3/gcc_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsVersionlessTargets.cmake \
+	/home/duc-vu/Qt/6.7.3/gcc_64/lib/cmake/Qt6Network/Qt6NetworkAdditionalTargetInfo.cmake \
+	/home/duc-vu/Qt/6.7.3/gcc_64/lib/cmake/Qt6Network/Qt6NetworkConfig.cmake \
+	/home/duc-vu/Qt/6.7.3/gcc_64/lib/cmake/Qt6Network/Qt6NetworkConfigVersion.cmake \
+	/home/duc-vu/Qt/6.7.3/gcc_64/lib/cmake/Qt6Network/Qt6NetworkConfigVersionImpl.cmake \
+	/home/duc-vu/Qt/6.7.3/gcc_64/lib/cmake/Qt6Network/Qt6NetworkDependencies.cmake \
+	/home/duc-vu/Qt/6.7.3/gcc_64/lib/cmake/Qt6Network/Qt6NetworkPlugins.cmake \
+	/home/duc-vu/Qt/6.7.3/gcc_64/lib/cmake/Qt6Network/Qt6NetworkTargets-relwithdebinfo.cmake \
+	/home/duc-vu/Qt/6.7.3/gcc_64/lib/cmake/Qt6Network/Qt6NetworkTargets.cmake \
+	/home/duc-vu/Qt/6.7.3/gcc_64/lib/cmake/Qt6Network/Qt6NetworkVersionlessTargets.cmake \
+	/home/duc-vu/Qt/6.7.3/gcc_64/lib/cmake/Qt6Network/Qt6QGlibNetworkInformationPluginAdditionalTargetInfo.cmake \
+	/home/duc-vu/Qt/6.7.3/gcc_64/lib/cmake/Qt6Network/Qt6QGlibNetworkInformationPluginConfig.cmake \
+	/home/duc-vu/Qt/6.7.3/gcc_64/lib/cmake/Qt6Network/Qt6QGlibNetworkInformationPluginTargets-relwithdebinfo.cmake \
+	/home/duc-vu/Qt/6.7.3/gcc_64/lib/cmake/Qt6Network/Qt6QGlibNetworkInformationPluginTargets.cmake \
+	/home/duc-vu/Qt/6.7.3/gcc_64/lib/cmake/Qt6Network/Qt6QNetworkManagerNetworkInformationPluginAdditionalTargetInfo.cmake \
+	/home/duc-vu/Qt/6.7.3/gcc_64/lib/cmake/Qt6Network/Qt6QNetworkManagerNetworkInformationPluginConfig.cmake \
+	/home/duc-vu/Qt/6.7.3/gcc_64/lib/cmake/Qt6Network/Qt6QNetworkManagerNetworkInformationPluginTargets-relwithdebinfo.cmake \
+	/home/duc-vu/Qt/6.7.3/gcc_64/lib/cmake/Qt6Network/Qt6QNetworkManagerNetworkInformationPluginTargets.cmake \
+	/home/duc-vu/Qt/6.7.3/gcc_64/lib/cmake/Qt6Network/Qt6QTlsBackendCertOnlyPluginAdditionalTargetInfo.cmake \
+	/home/duc-vu/Qt/6.7.3/gcc_64/lib/cmake/Qt6Network/Qt6QTlsBackendCertOnlyPluginConfig.cmake \
+	/home/duc-vu/Qt/6.7.3/gcc_64/lib/cmake/Qt6Network/Qt6QTlsBackendCertOnlyPluginTargets-relwithdebinfo.cmake \
+	/home/duc-vu/Qt/6.7.3/gcc_64/lib/cmake/Qt6Network/Qt6QTlsBackendCertOnlyPluginTargets.cmake \
+	/home/duc-vu/Qt/6.7.3/gcc_64/lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginAdditionalTargetInfo.cmake \
+	/home/duc-vu/Qt/6.7.3/gcc_64/lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginConfig.cmake \
+	/home/duc-vu/Qt/6.7.3/gcc_64/lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginTargets-relwithdebinfo.cmake \
+	/home/duc-vu/Qt/6.7.3/gcc_64/lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginTargets.cmake \
 	/home/duc-vu/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeCXXInformation.cmake \
 	/home/duc-vu/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake \
 	/home/duc-vu/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeCommonLanguageInclude.cmake \
@@ -302,6 +366,7 @@ IVI-System-App_autogen/timestamp: \
 	/usr/include/c++/13/cctype \
 	/usr/include/c++/13/cerrno \
 	/usr/include/c++/13/chrono \
+	/usr/include/c++/13/climits \
 	/usr/include/c++/13/clocale \
 	/usr/include/c++/13/cmath \
 	/usr/include/c++/13/compare \
@@ -448,6 +513,7 @@ IVI-System-App_autogen/timestamp: \
 	/usr/lib/llvm-18/lib/clang/18/include/__stddef_ptrdiff_t.h \
 	/usr/lib/llvm-18/lib/clang/18/include/__stddef_size_t.h \
 	/usr/lib/llvm-18/lib/clang/18/include/__stddef_wchar_t.h \
+	/usr/lib/llvm-18/lib/clang/18/include/limits.h \
 	/usr/lib/llvm-18/lib/clang/18/include/stdarg.h \
 	/usr/lib/llvm-18/lib/clang/18/include/stdbool.h \
 	/usr/lib/llvm-18/lib/clang/18/include/stddef.h \

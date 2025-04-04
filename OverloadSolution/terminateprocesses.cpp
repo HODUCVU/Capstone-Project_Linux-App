@@ -1,6 +1,6 @@
 #include "terminateprocesses.h"
 #include "../utils/processcommand.h"
-#include <QDebug>
+#include <QString>
 
 TerminateProcesses::TerminateProcesses()
     : ExecuteTerminateProcessesCommand()
@@ -18,9 +18,8 @@ void TerminateProcesses::getPNamsFromMessage(QStringList PNames)
 
 void TerminateProcesses::terminateProcessByPName()
 {
-    QString command;
-    for(const auto PName : PNames) {
-        command = getTerminateProcessCommand(PName);
+    for(QString &PName : PNames) {
+        QString command = getTerminateProcessCommand(PName);
         ProcessCommand::execute(command);
     }
 }

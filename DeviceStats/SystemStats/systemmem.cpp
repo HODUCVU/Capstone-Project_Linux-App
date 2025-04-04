@@ -1,6 +1,5 @@
 #include "systemmem.h"
 #include "../../utils/processcommand.h"
-#include <QDebug>
 
 SystemMEM::SystemMEM()
     : ExecuteSystemMEMCommand()

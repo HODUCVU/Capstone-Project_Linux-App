@@ -5,6 +5,7 @@
 
 class ProcessStats
 {
+private:
     int PID;
     QString PName;
     QString user;

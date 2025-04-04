@@ -1,6 +1,5 @@
 #include "systemcpu.h"
 #include "../../utils/processcommand.h"
-#include <QDebug>
 
 SystemCPU::SystemCPU()
     : ExecuteCPUCoreCommand()
