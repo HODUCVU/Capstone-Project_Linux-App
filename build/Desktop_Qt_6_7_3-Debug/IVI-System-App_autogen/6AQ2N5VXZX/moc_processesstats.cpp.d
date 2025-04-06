@@ -2,7 +2,6 @@
   /home/duc-vu/Documents/QtProjects/IVI-System-App/build/Desktop_Qt_6_7_3-Debug/IVI-System-App_autogen/moc_predefs.h \
   /home/duc-vu/Documents/QtProjects/IVI-System-App/DeviceStats/ProcessesStats/processstats.h \
   /home/duc-vu/Documents/QtProjects/IVI-System-App/utils/commands.h \
-  /home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/QObject \
   /home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/QString \
   /home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/QVector \
   /home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/q20functional.h \
@@ -17,56 +16,38 @@
   /home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qatomic.h \
   /home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qatomic_cxx11.h \
   /home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qbasicatomic.h \
-  /home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qbindingstorage.h \
   /home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qbytearray.h \
   /home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qbytearrayalgorithms.h \
   /home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qbytearraylist.h \
   /home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qbytearrayview.h \
   /home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qchar.h \
-  /home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qcompare.h \
   /home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qcompare_impl.h \
-  /home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qcomparehelpers.h \
   /home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qcompilerdetection.h \
   /home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qconfig.h \
   /home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qconstructormacros.h \
   /home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qcontainerfwd.h \
-  /home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qcontainerinfo.h \
   /home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qcontainertools_impl.h \
   /home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qdarwinhelpers.h \
-  /home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qdatastream.h \
   /home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qexceptionhandling.h \
   /home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qflags.h \
-  /home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qfloat16.h \
   /home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qforeach.h \
-  /home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qfunctionaltools_impl.h \
   /home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qfunctionpointer.h \
   /home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qgenericatomic.h \
   /home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qglobal.h \
   /home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qglobalstatic.h \
   /home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qhashfunctions.h \
-  /home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qiodevicebase.h \
-  /home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qiterable.h \
   /home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qiterator.h \
   /home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qlatin1stringview.h \
   /home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qlist.h \
   /home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qlogging.h \
   /home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qmalloc.h \
-  /home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qmath.h \
-  /home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qmetacontainer.h \
-  /home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qmetatype.h \
   /home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qminmax.h \
   /home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qnamespace.h \
   /home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qnumeric.h \
-  /home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qobject.h \
-  /home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qobject_impl.h \
-  /home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qobjectdefs.h \
-  /home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qobjectdefs_impl.h \
   /home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qoverload.h \
   /home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qpair.h \
   /home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qprocessordetection.h \
   /home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qrefcount.h \
-  /home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qscopedpointer.h \
-  /home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qscopeguard.h \
   /home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qstring.h \
   /home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qstringalgorithms.h \
   /home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qstringbuilder.h \
@@ -81,7 +62,6 @@
   /home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qswap.h \
   /home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qsysinfo.h \
   /home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qsystemdetection.h \
-  /home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qtaggedpointer.h \
   /home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qtclasshelpermacros.h \
   /home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qtconfiginclude.h \
   /home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qtconfigmacros.h \
@@ -124,7 +104,6 @@
   /usr/include/c++/13/bits/basic_string.tcc \
   /usr/include/c++/13/bits/char_traits.h \
   /usr/include/c++/13/bits/charconv.h \
-  /usr/include/c++/13/bits/chrono.h \
   /usr/include/c++/13/bits/concept_check.h \
   /usr/include/c++/13/bits/cpp_type_traits.h \
   /usr/include/c++/13/bits/cxxabi_forced.h \
@@ -141,7 +120,6 @@
   /usr/include/c++/13/bits/hashtable_policy.h \
   /usr/include/c++/13/bits/invoke.h \
   /usr/include/c++/13/bits/ios_base.h \
-  /usr/include/c++/13/bits/list.tcc \
   /usr/include/c++/13/bits/locale_classes.h \
   /usr/include/c++/13/bits/locale_classes.tcc \
   /usr/include/c++/13/bits/localefwd.h \
@@ -174,15 +152,11 @@
   /usr/include/c++/13/bits/stl_iterator.h \
   /usr/include/c++/13/bits/stl_iterator_base_funcs.h \
   /usr/include/c++/13/bits/stl_iterator_base_types.h \
-  /usr/include/c++/13/bits/stl_list.h \
-  /usr/include/c++/13/bits/stl_map.h \
-  /usr/include/c++/13/bits/stl_multimap.h \
   /usr/include/c++/13/bits/stl_numeric.h \
   /usr/include/c++/13/bits/stl_pair.h \
   /usr/include/c++/13/bits/stl_raw_storage_iter.h \
   /usr/include/c++/13/bits/stl_relops.h \
   /usr/include/c++/13/bits/stl_tempbuf.h \
-  /usr/include/c++/13/bits/stl_tree.h \
   /usr/include/c++/13/bits/stl_uninitialized.h \
   /usr/include/c++/13/bits/stl_vector.h \
   /usr/include/c++/13/bits/stream_iterator.h \
@@ -199,7 +173,6 @@
   /usr/include/c++/13/bits/vector.tcc \
   /usr/include/c++/13/cctype \
   /usr/include/c++/13/cerrno \
-  /usr/include/c++/13/chrono \
   /usr/include/c++/13/clocale \
   /usr/include/c++/13/cmath \
   /usr/include/c++/13/compare \
@@ -208,7 +181,6 @@
   /usr/include/c++/13/cstdio \
   /usr/include/c++/13/cstdlib \
   /usr/include/c++/13/cstring \
-  /usr/include/c++/13/ctime \
   /usr/include/c++/13/cwchar \
   /usr/include/c++/13/debug/assertions.h \
   /usr/include/c++/13/debug/debug.h \
@@ -225,8 +197,6 @@
   /usr/include/c++/13/iosfwd \
   /usr/include/c++/13/iterator \
   /usr/include/c++/13/limits \
-  /usr/include/c++/13/list \
-  /usr/include/c++/13/map \
   /usr/include/c++/13/memory \
   /usr/include/c++/13/new \
   /usr/include/c++/13/numeric \
@@ -235,7 +205,6 @@
   /usr/include/c++/13/pstl/glue_algorithm_defs.h \
   /usr/include/c++/13/pstl/glue_memory_defs.h \
   /usr/include/c++/13/pstl/glue_numeric_defs.h \
-  /usr/include/c++/13/ratio \
   /usr/include/c++/13/stdexcept \
   /usr/include/c++/13/stdlib.h \
   /usr/include/c++/13/streambuf \

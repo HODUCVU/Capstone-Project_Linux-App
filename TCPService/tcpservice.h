@@ -3,7 +3,6 @@
 
 #include "senderworker.h"
 #include "receiverworker.h"
-#include <QObject>
 #include <QThread>
 #include <QString>
 

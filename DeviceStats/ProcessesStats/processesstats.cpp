@@ -1,8 +1,8 @@
 #include "processesstats.h"
 #include "../../utils/processcommand.h"
 
-ProcessesStats::ProcessesStats(QObject *parent)
-    : QObject(parent), ExecuteProcessStatsCommand() {}
+ProcessesStats::ProcessesStats()
+    : ExecuteProcessStatsCommand() {}
 
 ProcessesStats::~ProcessesStats()
 {

@@ -7,6 +7,7 @@
 #include <QTcpSocket>
 #include <QTimer>
 #include <QJsonObject>
+#include <QString>
 
 class SenderWorker : public QObject
 {
@@ -14,6 +15,7 @@ class SenderWorker : public QObject
 private:
     QTcpSocket socket;
     QTimer *timer;
+    QString timestamp;
     // Stats here
     SystemStats systemStats;
     ProcessesStats processesStats;
@@ -23,6 +25,8 @@ public slots:
     void run();
     void collectStats();
 private:
+    // Timestamp
+    void currentDateTime();
     // Collect stats
     void collectSystemStats();
     void collectGeneralCPUStats();

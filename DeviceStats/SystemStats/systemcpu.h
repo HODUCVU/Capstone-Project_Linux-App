@@ -3,7 +3,7 @@
 #include "../../utils/commands.h"
 #include "cpucore.h"
 #include "cpugeneral.h"
-#include <QObject>
+#include <QVector>
 
 class SystemCPU : public ExecuteCPUCoreCommand
 {

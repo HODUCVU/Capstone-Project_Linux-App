@@ -3,20 +3,18 @@
 
 #include "../../utils/commands.h"
 #include "processstats.h"
-#include <QObject>
 #include <QVector>
 /*
  * Fix query task stats
  * Testing that functions
  * Build Connect to Client function
 */
-class ProcessesStats : public QObject, public ExecuteProcessStatsCommand
+class ProcessesStats : public ExecuteProcessStatsCommand
 {
-    Q_OBJECT
 public:
     QVector<ProcessStats> processes;
 public:
-    explicit ProcessesStats(QObject *parent = nullptr);
+    ProcessesStats();
     ~ProcessesStats();
     void getProcessStatsFromDevice();
 private:

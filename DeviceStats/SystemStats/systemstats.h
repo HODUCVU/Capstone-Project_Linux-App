@@ -3,16 +3,14 @@
 
 #include "systemcpu.h"
 #include "systemmem.h"
-#include <QObject>
 
-class SystemStats : public QObject
+class SystemStats
 {
-    Q_OBJECT
 public:
     SystemCPU CPUStats;
     SystemMEM MEMStats;
 public:
-    explicit SystemStats(QObject *parent = nullptr);
+    SystemStats();
 };
 
 #endif // SYSTEMSTATS_H

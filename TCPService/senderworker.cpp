@@ -1,8 +1,7 @@
 #include "senderworker.h"
 #include "../utils/hostIPAddress.h"
 #include <QJsonDocument>
-#include <QString>
-
+#include <QDateTime>
 
 #define TIMEOUT_COLLECTION 1000
 
@@ -21,9 +20,15 @@ void SenderWorker::run()
 
 void SenderWorker::collectStats()
 {
+    currentDateTime();
     collectSystemStats();
     collectProcessesStats();
     sendStats();
+}
+
+void SenderWorker::currentDateTime()
+{
+    timestamp = QDateTime::currentDateTime().toString("yyyy-MM-dd hh:mm:ss");
 }
 
 void SenderWorker::collectSystemStats()
@@ -58,7 +63,7 @@ void SenderWorker::collectProcessesStats()
 void SenderWorker::sendStats()
 {
     QJsonObject obj;
-    obj["type"] = "DeviceStats";
+    obj["timestamp"] = timestamp;
     obj["SystemStats"] = systemStatsToJson();
     obj["ProcessesStats"] = processesStatsToJson();
     QJsonDocument doc(obj);

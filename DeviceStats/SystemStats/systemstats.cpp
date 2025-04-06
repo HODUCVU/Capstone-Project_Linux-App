@@ -1,7 +1,6 @@
 #include "systemstats.h"
 
-SystemStats::SystemStats(QObject *parent)
-    : QObject(parent)
+SystemStats::SystemStats()
 {
     CPUStats = SystemCPU();
     MEMStats = SystemMEM();

@@ -19,7 +19,7 @@ public slots:
     void run();
     void onReadyRead();
 signals:
-    void messagesReceived(const QStringList &PNames);
+    void messagesReceived(const QString &message);
 private:
     void parseMessage(QString &message);
     bool authMessage(QJsonDocument &doc);

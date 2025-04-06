@@ -1,6 +1,5 @@
 #include "tcpservice.h"
 
-
 TcpService::TcpService(QObject *parent)
     : QObject(parent)
 {
@@ -36,5 +35,4 @@ void TcpService::establishReceiverThread()
     receiver->moveToThread(&receiverThread);
     connect(&receiverThread, &QThread::started, receiver, &ReceiverWorker::run);
     connect(&receiverThread, &QThread::finished, receiver, &QObject::deleteLater);
-    connect(receiver, &ReceiverWorker::messagesReceived, this, &TcpService::messageReceived);
 }
