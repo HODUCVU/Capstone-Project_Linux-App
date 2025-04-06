@@ -109,13 +109,15 @@ QJsonObject SenderWorker::processesStatsToJson()
 {
     QJsonObject PStats;
     for(ProcessStats process:processesStats.processes) {
-        QJsonObject info;
-        info["PID"] = process.getPID();
-        info["PName"] = process.getPName();
-        info["PCPUUsagePercent"] = process.getPCPUUsagePercent();
-        info["PMEMUsageMB"] = process.getPMEMUsageMB();
-        info["PMEMUsagePercent"] = process.getPMEMUsagePercent();
-        PStats[QString::number(process.getPID())] = info;
+        if(process.getPCPUUsagePercent() > 0 && process.getPMEMUsagePercent() > 0) {
+            QJsonObject info;
+            info["PID"] = process.getPID();
+            info["PName"] = process.getPName();
+            info["PCPUUsagePercent"] = process.getPCPUUsagePercent();
+            info["PMEMUsageMB"] = process.getPMEMUsageMB();
+            info["PMEMUsagePercent"] = process.getPMEMUsagePercent();
+            PStats[QString::number(process.getPID())] = info;
+        }
     }
     return PStats;
 }
