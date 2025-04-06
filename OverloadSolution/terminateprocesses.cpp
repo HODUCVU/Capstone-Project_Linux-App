@@ -11,15 +11,20 @@ TerminateProcesses::~TerminateProcesses()
     this->PNames.clear();
 }
 
-void TerminateProcesses::getPNamsFromMessage(QStringList PNames)
+void TerminateProcesses::terminateProcessByPName(QString PName)
 {
-    this->PNames = PNames;
+    QString command = getTerminateProcessCommand(PName);
+    ProcessCommand::execute(command);
 }
 
-void TerminateProcesses::terminateProcessByPName()
-{
-    for(QString &PName : PNames) {
-        QString command = getTerminateProcessCommand(PName);
-        ProcessCommand::execute(command);
-    }
-}
+// void TerminateProcesses::setPNamsFromMessage(QStringList PNames)
+// {
+//     this->PNames = PNames;
+// }
+
+// void TerminateProcesses::terminateProcessesByPName()
+// {
+//     for(QString &PName : PNames) {
+//         terminateProcessByPName(PName);
+//     }
+// }

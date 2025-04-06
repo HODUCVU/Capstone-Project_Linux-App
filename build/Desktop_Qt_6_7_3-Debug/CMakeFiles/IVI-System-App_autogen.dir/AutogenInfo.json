@@ -255,6 +255,12 @@
 			null
 		],
 		[
+			"/home/duc-vu/Documents/QtProjects/IVI-System-App/utils/hostIPAddress.h",
+			"MU",
+			"7HEHEGDA3T/moc_hostIPAddress.cpp",
+			null
+		],
+		[
 			"/home/duc-vu/Documents/QtProjects/IVI-System-App/utils/installlinuxapi.h",
 			"MU",
 			"7HEHEGDA3T/moc_installlinuxapi.cpp",

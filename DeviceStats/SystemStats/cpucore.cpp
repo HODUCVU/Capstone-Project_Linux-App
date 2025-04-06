@@ -24,7 +24,7 @@ int CPUCore::getCoreID()
     return this->coreID;
 }
 
-float CPUCore::getCoreCPUUilization()
+float CPUCore::getCoreCPUUtilization()
 {
     return this->coreCPUUtilization;
 }

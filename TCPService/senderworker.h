@@ -22,15 +22,15 @@ public:
 public slots:
     void run();
     void collectStats();
-    void sendStats();
 private:
     // Collect stats
     void collectSystemStats();
     void collectGeneralCPUStats();
     void collectCoreCPUStats();
     void collectMEMStats();
-
     void collectProcessesStats();
+
+    void sendStats();
     // Stats to Json Data type
     QJsonObject systemStatsToJson();
     QJsonObject systemGeneralCPUToJson();

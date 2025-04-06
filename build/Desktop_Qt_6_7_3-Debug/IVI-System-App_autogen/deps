@@ -31,10 +31,12 @@ IVI-System-App_autogen/timestamp: \
 	/home/duc-vu/Documents/QtProjects/IVI-System-App/testing.h \
 	/home/duc-vu/Documents/QtProjects/IVI-System-App/utils/commands.cpp \
 	/home/duc-vu/Documents/QtProjects/IVI-System-App/utils/commands.h \
+	/home/duc-vu/Documents/QtProjects/IVI-System-App/utils/hostIPAddress.h \
 	/home/duc-vu/Documents/QtProjects/IVI-System-App/utils/installlinuxapi.cpp \
 	/home/duc-vu/Documents/QtProjects/IVI-System-App/utils/installlinuxapi.h \
 	/home/duc-vu/Documents/QtProjects/IVI-System-App/utils/processcommand.cpp \
 	/home/duc-vu/Documents/QtProjects/IVI-System-App/utils/processcommand.h \
+	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/QJsonDocument \
 	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/QJsonObject \
 	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/QObject \
 	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/QString \
@@ -94,6 +96,7 @@ IVI-System-App_autogen/timestamp: \
 	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qiodevicebase.h \
 	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qiterable.h \
 	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qiterator.h \
+	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qjsondocument.h \
 	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qjsonobject.h \
 	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qjsonvalue.h \
 	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/qlatin1stringview.h \

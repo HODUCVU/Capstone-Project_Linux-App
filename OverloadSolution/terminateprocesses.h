@@ -11,8 +11,9 @@ private:
 public:
     TerminateProcesses();
     ~TerminateProcesses();
-    void getPNamsFromMessage(QStringList PNames);
-    void terminateProcessByPName();
+    void terminateProcessByPName(QString PName);
+    // void setPNamsFromMessage(QStringList PNames);
+    // void terminateProcessesByPName();
 };
 
 #endif // TERMINATEPROCESSES_H

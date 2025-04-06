@@ -1,10 +1,9 @@
 #include "senderworker.h"
+#include "../utils/hostIPAddress.h"
 #include <QJsonDocument>
 #include <QString>
 
-#define HOST "127.0.0.1"
-#define PORT 1234
-#define WAIT_TIME_TO_CONNECT_TO_SERVER 3000
+
 #define TIMEOUT_COLLECTION 1000
 
 SenderWorker::SenderWorker(QObject *parent)
@@ -13,7 +12,7 @@ SenderWorker::SenderWorker(QObject *parent)
 void SenderWorker::run()
 {
     socket.connectToHost(HOST,PORT);
-    if(socket.waitForConnected(WAIT_TIME_TO_CONNECT_TO_SERVER)) {
+    if(socket.waitForConnected(TIME_WAIT_TO_CONNECT_TO_SERVER)) {
         timer = new QTimer(this);
         QObject::connect(timer, &QTimer::timeout, this, &SenderWorker::collectStats);
         timer->start(TIMEOUT_COLLECTION);
@@ -61,7 +60,10 @@ void SenderWorker::sendStats()
     QJsonObject obj;
     obj["type"] = "DeviceStats";
     obj["SystemStats"] = systemStatsToJson();
-    obj["ProceesesStats"] = processesStatsToJson();
+    obj["ProcessesStats"] = processesStatsToJson();
+    QJsonDocument doc(obj);
+    socket.write(doc.toJson(QJsonDocument::Compact) + '\n');
+    socket.flush();
 }
 
 QJsonObject SenderWorker::systemStatsToJson() {
@@ -85,7 +87,7 @@ QJsonObject SenderWorker::systemCoresCPUToJson() {
     QJsonObject coresCPU;
     for(CPUCore core:systemStats.CPUStats.cores) {
         QJsonObject coreCPU;
-        coreCPU["CPUUtilization"] = core.getCoreCPUUilization();
+        coreCPU["CPUUtilization"] = core.getCoreCPUUtilization();
         coreCPU["CPUTemperature"] = core.getCoreTemperature();
         coreCPU["CPUFrequency"] = core.getCoreFrequency();
         coresCPU[QString::number(core.getCoreID())] = coreCPU;
@@ -117,3 +119,4 @@ QJsonObject SenderWorker::processesStatsToJson()
     }
     return PStats;
 }
+

@@ -33,6 +33,7 @@ add_executable(IVI-System-App
   TCPService/tcpservice.h TCPService/tcpservice.cpp
   TCPService/receiverworker.h TCPService/receiverworker.cpp
   TCPService/senderworker.h TCPService/senderworker.cpp
+  utils/hostIPAddress.h
 
 
 )

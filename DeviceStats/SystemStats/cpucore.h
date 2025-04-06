@@ -17,7 +17,7 @@ public:
     friend class SystemCPU;
 // Getter
     int getCoreID();
-    float getCoreCPUUilization();
+    float getCoreCPUUtilization();
     float getCoreTemperature();
     float getCoreFrequency();
 };
