@@ -8,6 +8,11 @@
 SenderWorker::SenderWorker(QObject *parent)
     : QObject(parent), timer(nullptr){}
 
+SenderWorker::~SenderWorker()
+{
+    timer->stop();
+}
+
 void SenderWorker::run()
 {
     socket.connectToHost(HOST,PORT);

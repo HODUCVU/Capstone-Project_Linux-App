@@ -21,6 +21,7 @@ private:
     ProcessesStats processesStats;
 public:
     explicit SenderWorker(QObject *parent = nullptr);
+    ~SenderWorker();
 public slots:
     void run();
     void collectStats();

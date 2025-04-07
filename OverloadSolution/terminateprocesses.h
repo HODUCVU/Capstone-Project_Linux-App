@@ -6,14 +6,9 @@
 
 class TerminateProcesses : public ExecuteTerminateProcessesCommand
 {
-private:
-    QStringList PNames;
 public:
     TerminateProcesses();
-    ~TerminateProcesses();
     void terminateProcessByPName(QString PName);
-    // void setPNamsFromMessage(QStringList PNames);
-    // void terminateProcessesByPName();
 };
 
 #endif // TERMINATEPROCESSES_H
