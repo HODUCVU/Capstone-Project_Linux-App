@@ -31,6 +31,7 @@ void ReceiverWorker::terminate(QJsonObject &obj)
     if(!(obj.contains("PNames") && obj["PNames"].isArray())) return;
     QJsonArray PNameArray = obj["PNames"].toArray();
     for(const QJsonValue &val:PNameArray) {
+        qDebug() << "PName: " << val.toString();
         terminateProcesses.terminateProcessByPName(val.toString());
     }
 }

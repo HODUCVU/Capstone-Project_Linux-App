@@ -60,7 +60,6 @@ void SenderWorker::collectProcessesStats()
     processesStats.getProcessStatsFromDevice();
 }
 
-
 void SenderWorker::sendStats()
 {
     QJsonObject obj;

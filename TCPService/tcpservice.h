@@ -3,6 +3,7 @@
 
 #include "senderworker.h"
 #include "receiverworker.h"
+#include <QTcpSocket>
 #include <QThread>
 #include <QString>
 #include <QJsonObject>

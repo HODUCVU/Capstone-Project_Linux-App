@@ -4,7 +4,6 @@
 #include "../DeviceStats/SystemStats/systemstats.h"
 #include "../DeviceStats/ProcessesStats/processesstats.h"
 #include <QObject>
-#include <QTcpSocket>
 #include <QTimer>
 #include <QJsonObject>
 #include <QString>
@@ -13,7 +12,6 @@ class SenderWorker : public QObject
 {
     Q_OBJECT
 private:
-    // QTcpSocket *socket;
     QTimer *timer;
     QString timestamp;
     // Stats here

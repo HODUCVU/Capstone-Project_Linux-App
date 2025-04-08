@@ -63,7 +63,7 @@ void TcpService::writeToSocket(const QJsonObject &obj)
     if(socket && socket->isOpen()) {
         QJsonDocument doc(obj);
         socket->write(doc.toJson(QJsonDocument::Compact) + '\n');
-        socket->flush();
+        // socket->flush();
     }
 }
 
@@ -72,6 +72,7 @@ void TcpService::onReadyRead()
     while(socket->canReadLine()) {
         QByteArray data = socket->readLine();
         QString message = QString::fromUtf8(data.trimmed());
+        qDebug() << message;
         emit messageReceived(message);
     }
 }
