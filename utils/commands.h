@@ -66,5 +66,12 @@ protected:
 public:
     ExecuteTerminateProcessesCommand();
 };
-class ExecuteDeviceSpeakerCommand{};
+class ExecuteDeviceSpeakerCommand{
+private:
+    QString alarmCommand;
+protected:
+    QString getAlarmCommand(int repeat, float freq, float length);
+public:
+    ExecuteDeviceSpeakerCommand();
+};
 #endif // COMMANDS_H

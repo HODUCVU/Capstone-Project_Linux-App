@@ -219,6 +219,12 @@
 			null
 		],
 		[
+			"/home/duc-vu/Documents/QtProjects/IVI-System-App/OverloadSolution/devicespeaker.h",
+			"MU",
+			"3CBC3I2GBW/moc_devicespeaker.cpp",
+			null
+		],
+		[
 			"/home/duc-vu/Documents/QtProjects/IVI-System-App/OverloadSolution/terminateprocesses.h",
 			"MU",
 			"3CBC3I2GBW/moc_terminateprocesses.cpp",
@@ -363,6 +369,11 @@
 		],
 		[
 			"/home/duc-vu/Documents/QtProjects/IVI-System-App/DeviceStats/SystemStats/systemstats.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/duc-vu/Documents/QtProjects/IVI-System-App/OverloadSolution/devicespeaker.cpp",
 			"MU",
 			null
 		],

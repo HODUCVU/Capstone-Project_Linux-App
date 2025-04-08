@@ -96,6 +96,7 @@ QString ExecuteProcessStatsCommand::getprocessesInfoCommand()
     return processesInfoCommand;
 }
 
+// ========================================
 ExecuteTerminateProcessesCommand::ExecuteTerminateProcessesCommand()
 {
     terminateProcessCommand = "pkill --exact --echo ";
@@ -105,3 +106,13 @@ QString ExecuteTerminateProcessesCommand::getTerminateProcessCommand(QString PNa
     return terminateProcessCommand + PName;
 }
 
+// ========================================
+ExecuteDeviceSpeakerCommand::ExecuteDeviceSpeakerCommand()
+{
+    alarmCommand = "softbeep";
+}
+
+QString ExecuteDeviceSpeakerCommand::getAlarmCommand(int repeat, float freq, float length)
+{
+    return alarmCommand + " -f " + QString::number(freq) + " -l " + QString::number(length) + " -r " + QString::number(repeat);
+}
