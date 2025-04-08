@@ -5,8 +5,6 @@
 #include "receiverworker.h"
 #include <QTcpSocket>
 #include <QThread>
-#include <QString>
-#include <QJsonObject>
 
 class TcpService : public QObject
 {

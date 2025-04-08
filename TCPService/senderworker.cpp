@@ -1,6 +1,5 @@
 #include "senderworker.h"
 #include <QDateTime>
-#include <QDebug>
 
 #define TIMEOUT_COLLECTION 500
 

@@ -2,7 +2,6 @@
 #include "../utils/hostIPAddress.h"
 #include <QJsonArray>
 #include <QString>
-#include <QDebug>
 
 ReceiverWorker::ReceiverWorker(QObject *parent)
     : QObject(parent){}
@@ -14,6 +13,7 @@ void ReceiverWorker::handleMessage(const QString &message)
     QJsonObject obj = doc.object();
     QString type = obj["type"].toString();
     if(type == "PNames") {
+        alertSpeaker();
         terminate(obj);
     }
 }
@@ -34,4 +34,9 @@ void ReceiverWorker::terminate(QJsonObject &obj)
         qDebug() << "PName: " << val.toString();
         terminateProcesses.terminateProcessByPName(val.toString());
     }
+}
+
+void ReceiverWorker::alertSpeaker()
+{
+    speaker.alertUserViaSound();
 }
