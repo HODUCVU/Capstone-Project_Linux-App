@@ -1,8 +1,8 @@
 #ifndef HOSTIPADDRESS_H
 #define HOSTIPADDRESS_H
 
-#define HOST "127.0.0.1"
-#define PORT 1234
+#define HOST "172.20.0.128"
+#define PORT 8000
 #define TIME_WAIT_TO_CONNECT_TO_SERVER 3000
 
 #endif // HOSTIPADDRESS_H

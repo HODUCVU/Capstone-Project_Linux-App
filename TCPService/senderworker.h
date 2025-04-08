@@ -13,7 +13,7 @@ class SenderWorker : public QObject
 {
     Q_OBJECT
 private:
-    QTcpSocket socket;
+    // QTcpSocket *socket;
     QTimer *timer;
     QString timestamp;
     // Stats here
@@ -24,7 +24,10 @@ public:
     ~SenderWorker();
 public slots:
     void run();
+private slots:
     void collectStats();
+signals:
+    void sendMessage(const QJsonObject &obj);
 private:
     // Timestamp
     void currentDateTime();

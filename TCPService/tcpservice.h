@@ -5,11 +5,13 @@
 #include "receiverworker.h"
 #include <QThread>
 #include <QString>
+#include <QJsonObject>
 
 class TcpService : public QObject
 {
     Q_OBJECT
 private:
+    QTcpSocket *socket;
     QThread senderThread;
     QThread receiverThread;
     SenderWorker *sender;
@@ -20,7 +22,11 @@ public:
     void start();
 signals:
     void messageReceived(const QString &message);
+private slots:
+    void writeToSocket(const QJsonObject &obj);
+    void onReadyRead();
 private:
+    void establishSocket();
     void establishSenderThread();
     void establishReceiverThread();
 };

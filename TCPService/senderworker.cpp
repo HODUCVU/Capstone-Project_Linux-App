@@ -1,9 +1,8 @@
 #include "senderworker.h"
-#include "../utils/hostIPAddress.h"
-#include <QJsonDocument>
 #include <QDateTime>
+#include <QDebug>
 
-#define TIMEOUT_COLLECTION 1000
+#define TIMEOUT_COLLECTION 500
 
 SenderWorker::SenderWorker(QObject *parent)
     : QObject(parent), timer(nullptr){}
@@ -15,19 +14,16 @@ SenderWorker::~SenderWorker()
 
 void SenderWorker::run()
 {
-    socket.connectToHost(HOST,PORT);
-    if(socket.waitForConnected(TIME_WAIT_TO_CONNECT_TO_SERVER)) {
-        timer = new QTimer(this);
-        QObject::connect(timer, &QTimer::timeout, this, &SenderWorker::collectStats);
-        timer->start(TIMEOUT_COLLECTION);
-    }
+    timer = new QTimer(this);
+    QObject::connect(timer, &QTimer::timeout, this, &SenderWorker::collectStats);
+    timer->start(TIMEOUT_COLLECTION);
 }
 
 void SenderWorker::collectStats()
 {
-    currentDateTime();
     collectSystemStats();
     collectProcessesStats();
+    currentDateTime();
     sendStats();
 }
 
@@ -71,9 +67,8 @@ void SenderWorker::sendStats()
     obj["timestamp"] = timestamp;
     obj["SystemStats"] = systemStatsToJson();
     obj["ProcessesStats"] = processesStatsToJson();
-    QJsonDocument doc(obj);
-    socket.write(doc.toJson(QJsonDocument::Compact) + '\n');
-    socket.flush();
+    emit sendMessage(obj);
+
 }
 
 QJsonObject SenderWorker::systemStatsToJson() {
@@ -122,6 +117,7 @@ QJsonObject SenderWorker::processesStatsToJson()
         if(process.getPCPUUsagePercent() > 0 && process.getPMEMUsagePercent() > 0) {
             QJsonObject info;
             info["PID"] = process.getPID();
+            info["User"] = process.getUser();
             info["PName"] = process.getPName();
             info["PCPUUsagePercent"] = process.getPCPUUsagePercent();
             info["PMEMUsageMB"] = process.getPMEMUsageMB();

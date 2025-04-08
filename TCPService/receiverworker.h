@@ -11,17 +11,14 @@ class ReceiverWorker : public QObject
 {
     Q_OBJECT
 private:
-    QTcpSocket socket;
+    // QTcpSocket *socket;
     TerminateProcesses terminateProcesses;
 public:
     explicit ReceiverWorker(QObject *parent=nullptr);
 public slots:
-    void run();
-    void onReadyRead();
-signals:
-    void messagesReceived(const QString &message);
+    // void run();
+    void handleMessage(const QString &message);
 private:
-    void parseMessage(QString &message);
     bool authMessage(QJsonDocument &doc);
     void terminate(QJsonObject &obj);
 

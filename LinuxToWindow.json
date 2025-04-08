@@ -59,6 +59,7 @@
 	"ProceesesStats" : {
 		"<<xxx>>": {
 			"PID": xxx,
+			"User": duc-vu,
 			"PName": chrome,
 			"PCPUUsagePercent": 15,
 			"PMEMUsageMB": 12345,
@@ -66,6 +67,7 @@
 		},
 		"<<yyy>>": {
 			"PID": yyy,
+			"User": duc-vu,
 			"PName": VLC,
 			"PCPUUsagePercent": 15,
 			"PMEMUsageMB": 12345,
