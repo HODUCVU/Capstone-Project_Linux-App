@@ -1,7 +1,7 @@
 #include "senderworker.h"
 #include <QDateTime>
 
-#define TIMEOUT_COLLECTION 500
+#define TIMEOUT_COLLECTION 200
 
 SenderWorker::SenderWorker(QObject *parent)
     : QObject(parent), timer(nullptr){}
@@ -20,10 +20,11 @@ void SenderWorker::run()
 
 void SenderWorker::collectStats()
 {
-    collectSystemStats();
+    collectSystemStats(); // 2s
     collectProcessesStats();
     currentDateTime();
     sendStats();
+    print();
 }
 
 void SenderWorker::currentDateTime()
@@ -33,13 +34,13 @@ void SenderWorker::currentDateTime()
 
 void SenderWorker::collectSystemStats()
 {
-    collectGeneralCPUStats();
-    collectCoreCPUStats();
+    collectGeneralCPUStats(); // 1s
+    collectCoreCPUStats(); // 1s
     collectMEMStats();
 }
 void SenderWorker::collectGeneralCPUStats()
 {
-    systemStats.CPUStats.getCPUUtilizationStatsFromDevice();
+    systemStats.CPUStats.getCPUUtilizationStatsFromDevice(); //1s
     systemStats.CPUStats.getCPUTemperatureStatsFromDevice();
     systemStats.CPUStats.getCPUFrequencyPercentFromDevice();
 }
@@ -124,5 +125,11 @@ QJsonObject SenderWorker::processesStatsToJson()
         }
     }
     return PStats;
+}
+
+#include <QDebug>
+void SenderWorker::print()
+{
+    qDebug() << "Time: " << timestamp;
 }
 
