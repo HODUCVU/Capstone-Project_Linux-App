@@ -74,3 +74,4 @@ CMakeLists.txt.user*
 
 # Custom file
 build/*
+build/Desktop_Qt_6_7_3-Debug/*
