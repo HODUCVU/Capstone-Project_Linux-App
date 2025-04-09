@@ -3,11 +3,11 @@
 #include <QString>
 
 DeviceSpeaker::DeviceSpeaker()
-    : ExecuteDeviceSpeakerCommand(), isAlert(false)
+    : ExecuteDeviceSpeakerCommand()
 {}
 
 void DeviceSpeaker::alertUserViaSound(int repeat, float freq, float length)
 {
-    QString command = getAlarmCommand(repeat, free, length);
+    QString command = getAlarmCommand(repeat, freq, length);
     ProcessCommand::execute(command);
 }

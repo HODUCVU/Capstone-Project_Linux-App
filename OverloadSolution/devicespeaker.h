@@ -5,8 +5,6 @@
 
 class DeviceSpeaker : ExecuteDeviceSpeakerCommand
 {
-private:
-    bool isAlert;
 public:
     DeviceSpeaker();
     void alertUserViaSound(int repeat = 5, float freq = 750, float length = 200);
