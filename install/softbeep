@@ -1,0 +1,42 @@
+#!/bin/bash
+
+# softbeep - A user-space replacement for the "beep" command using sox/play
+# Usage: softbeep [-f freq] [-l duration] [-r repeat]
+
+freq=1000     # Default frequency in Hz
+length=200    # Default length in ms
+repeat=1      # Default repeat count
+
+# Parse options
+while [[ $# -gt 0 ]]; do
+    case "$1" in
+        -f|--freq)
+            freq="$2"
+            shift 2
+            ;;
+        -l|--length)
+            length="$2"
+            shift 2
+            ;;
+        -r|--repeat)
+            repeat="$2"
+            shift 2
+            ;;
+        *)
+            echo "Usage: $0 [-f freq] [-l length] [-r repeat]"
+            exit 1
+            ;;
+    esac
+done
+
+# Check if 'play' is installed
+if ! command -v play &>/dev/null; then
+    echo "Error: 'play' (sox) is not installed. Install with: sudo apt install sox"
+    exit 1
+fi
+
+# Play beep(s)
+for ((i = 0; i < repeat; i++)); do
+    play -nq synth $(bc -l <<< "$length/1000") sine "$freq"
+    sleep 0.1
+done

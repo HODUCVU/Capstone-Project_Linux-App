@@ -1,0 +1,52 @@
+struct CpuInfo {
+    double cpuUsage;
+    int numberOfCore;
+};
+
+int getCpuCount() {
+    QString command = "nproc";
+    QString output = ProcessCommand::execute(command);
+    qDebug() << output;
+    return output.trimmed().toInt();
+}
+CpuInfo getCpuUsage() {
+    QString command = "mpstat -P ALL 1 1 | awk '/all/ {print 100 - $NF}'";
+    QString output = ProcessCommand::execute(command);
+    qDebug() << output;
+    double cpuUsage = output.split("\n").first().toDouble();
+    int cpuCount = getCpuCount();
+    return {cpuUsage, cpuCount};
+}
+void getStats() {
+    CpuInfo info = getCpuUsage();
+    qDebug() << "cpuUsage: " << info.cpuUsage;
+}
+struct CoreCPUUsage {
+    int core;
+    double CPUUsage;
+};
+void getCpuUsagePerCore() {
+    // QProcess process;
+    // process.start("/bin/bash", QStringList() << "-c" << "mpstat -P ALL 1 1 | awk 'NR>4 && NR<13 {print $3,100-$NF}'"); // $4+$6
+    // process.waitForFinished();
+
+    // QString output = process.readAllStandardOutput().trimmed();
+    QString command = "mpstat -P ALL 1 1 | awk 'NR>4 && NR<13 {print $3,100-$NF}'";
+    QString output = ProcessCommand::execute(command);
+    qDebug() << output;
+    QStringList lines = output.split("\n");
+
+    QVector<CoreCPUUsage> coreUsages;
+    double totalUsage = 0;
+
+    for(const QString &line: lines) {
+        qDebug() << line;
+        QStringList coreInfo = line.split(" ");
+        int core = coreInfo[0].toInt();
+        double coreCpuUsage = coreInfo[1].toDouble();
+        coreUsages.append({core, coreCpuUsage});
+        totalUsage += coreCpuUsage;
+    }
+    double avgUsage = coreUsages.isEmpty() ? 0.0 : totalUsage/coreUsages.size();
+    qDebug() << "Average: " << avgUsage;
+}
