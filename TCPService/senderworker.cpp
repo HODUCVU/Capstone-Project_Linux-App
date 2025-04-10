@@ -7,7 +7,7 @@ SenderWorker::SenderWorker(QObject *parent)
     : QObject(parent)
 {
     timer = nullptr;
-    systemStats =new SystemStats();
+    systemStats = new SystemStats();
     processesStats = new ProcessesStats();
 }
 
@@ -28,7 +28,7 @@ void SenderWorker::run()
 
 void SenderWorker::collectStats()
 {
-    collectSystemStats(); // 2s
+    collectSystemStats(); // 1s
     collectProcessesStats();
     currentDateTime();
     sendStats();

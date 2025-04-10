@@ -62,7 +62,7 @@ void SystemCPU::extractCPUUsageInfo(QStringList lines)
     this->general.CPUUtilization = lines[0].toFloat();
     for(int i = 1; i < lines.size(); i++) {
         float coreCPUUsage = lines[i].toFloat();
-        this->cores[i].coreCPUUtilization = coreCPUUsage;
+        this->cores[i-1].coreCPUUtilization = coreCPUUsage;
     }
 }
 
