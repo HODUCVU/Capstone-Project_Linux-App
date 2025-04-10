@@ -4,7 +4,8 @@
 #define TIMEOUT_COLLECTION 200
 
 SenderWorker::SenderWorker(QObject *parent)
-    : QObject(parent), timer(nullptr){}
+    : QObject(parent), timer(nullptr), systemStats(SystemStats()), processesStats(ProcessesStats())
+{}
 
 SenderWorker::~SenderWorker()
 {
