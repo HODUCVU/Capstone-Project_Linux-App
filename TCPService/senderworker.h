@@ -31,8 +31,7 @@ private:
     void currentDateTime();
     // Collect stats
     void collectSystemStats();
-    void collectGeneralCPUStats();
-    void collectCoreCPUStats();
+    void collectCPUStats();
     void collectMEMStats();
     void collectProcessesStats();
 

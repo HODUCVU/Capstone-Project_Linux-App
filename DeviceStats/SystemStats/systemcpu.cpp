@@ -39,7 +39,8 @@ void SystemCPU::getCPUUtilizationStatsFromDevice()
 {
     QString command = getCPUUtilizationCommand();
     QString output = ProcessCommand::execute(command);
-    this->general.CPUUtilization = output.split("\n").first().toFloat();
+    QStringList cpuUsageValues = output.split("\n");
+    extractCPUUsageInfo(cpuUsageValues);
 }
 
 void SystemCPU::getCPUTemperatureStatsFromDevice()
@@ -56,16 +57,10 @@ void SystemCPU::getCPUFrequencyPercentFromDevice()
     this->general.CPUFrequencyPercent = output.remove("%").toFloat();
 }
 
-void SystemCPU::getCoresCPUUtilizationStatsFromDevice()
+void SystemCPU::extractCPUUsageInfo(QStringList lines)
 {
-    QString command = getcoreCPUUtilizationCommand();
-    QString output = ProcessCommand::execute(command);
-    QStringList cpuUsageValues = output.split("\n");
-    extractCoresCPUUsageInfo(cpuUsageValues);
-}
-void SystemCPU::extractCoresCPUUsageInfo(QStringList lines)
-{
-    for(int i = 0; i < lines.size(); i++) {
+    this->general.CPUUtilization = lines[0].toFloat();
+    for(int i = 1; i < lines.size(); i++) {
         float coreCPUUsage = lines[i].toFloat();
         this->cores[i].coreCPUUtilization = coreCPUUsage;
     }

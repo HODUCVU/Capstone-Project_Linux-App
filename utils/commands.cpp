@@ -14,14 +14,14 @@ QString ExecuteInstallLinuxAPICommand::getinstallCommand()
 // ========================================
 ExecuteCPUCoreCommand::ExecuteCPUCoreCommand()
 {
-    CPUUtilizationCommand = "mpstat -P ALL 1 1 | awk '/all/ {print 100 - $NF}'";
+    numberOfCoreCPUCommand = "nproc";
+    CPUUtilizationCommand = "mpstat -P ALL 1 1 | awk 'NR>3 && NR<13 {print $3,100-$NF}'";
+
     CPUTemperatureCommand = "sensors | grep 'CPU' | awk '{print $NF}'";
+    coreCPUTemperatureCommand = "sensors | awk '/Core/ {print $3}'";
+
     CPUFrequencyMaxMinCommand = "lscpu | grep 'MHz' | awk 'NR>1 {print $NF}'";
     CPUFrequencyPercentCommand = "lscpu | grep 'MHz' | awk 'NR==1 {print $NF}'";
-
-    numberOfCoreCPUCommand = "nproc";
-    coreCPUUtilizationCommand = "mpstat -P ALL 1 1 | awk 'NR>4 && NR<13 {print 100-$NF}'";
-    coreCPUTemperatureCommand = "sensors | awk '/Core/ {print $3}'";
     coreCPUFrequencyCommand = "cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_cur_freq";
 }
 QString ExecuteCPUCoreCommand::getCPUUtilizationCommand()
@@ -49,10 +49,6 @@ QString ExecuteCPUCoreCommand::getnumberOfCoreCPUCommand()
     return numberOfCoreCPUCommand;
 }
 
-QString ExecuteCPUCoreCommand::getcoreCPUUtilizationCommand()
-{
-    return coreCPUUtilizationCommand;
-}
 QString ExecuteCPUCoreCommand::getcoreCPUTemperatureCommand()
 {
     return coreCPUTemperatureCommand;

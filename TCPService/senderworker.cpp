@@ -1,7 +1,7 @@
 #include "senderworker.h"
 #include <QDateTime>
 
-#define TIMEOUT_COLLECTION 200
+#define TIMEOUT_COLLECTION 1000
 
 SenderWorker::SenderWorker(QObject *parent)
     : QObject(parent)
@@ -42,20 +42,15 @@ void SenderWorker::currentDateTime()
 
 void SenderWorker::collectSystemStats()
 {
-    collectGeneralCPUStats(); // 1s
-    collectCoreCPUStats(); // 1s
+    collectCPUStats();
     collectMEMStats();
 }
-void SenderWorker::collectGeneralCPUStats()
+void SenderWorker::collectCPUStats()
 {
     systemStats->CPUStats.getCPUUtilizationStatsFromDevice(); //1s
     systemStats->CPUStats.getCPUTemperatureStatsFromDevice();
-    systemStats->CPUStats.getCPUFrequencyPercentFromDevice();
-}
-void SenderWorker::collectCoreCPUStats()
-{
-    systemStats->CPUStats.getCoresCPUUtilizationStatsFromDevice();
     systemStats->CPUStats.getCoresTemperatureStatsFromDevice();
+    systemStats->CPUStats.getCPUFrequencyPercentFromDevice();
     systemStats->CPUStats.getCoresFrequencyStatsFromDevice();
 }
 void SenderWorker::collectMEMStats()

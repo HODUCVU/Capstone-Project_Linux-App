@@ -17,17 +17,15 @@ public:
     // Get stats from device
     void getCPUUtilizationStatsFromDevice();
     void getCPUTemperatureStatsFromDevice();
-    void getCPUFrequencyPercentFromDevice();
-
-    void getCoresCPUUtilizationStatsFromDevice();
     void getCoresTemperatureStatsFromDevice();
+    void getCPUFrequencyPercentFromDevice();
     void getCoresFrequencyStatsFromDevice();
 private:
     void getNumberOfCoreCPUFromDevice();
     void setupCores();
     void getFrequencyMaxMinFromDevice();
 
-    void extractCoresCPUUsageInfo(QStringList lines);
+    void extractCPUUsageInfo(QStringList lines);
     void extractCoresCPUTemperatureInfo(QStringList lines);
     void extractCoreCPUFrequencyInfo(QStringList lines);
 };
