@@ -15,8 +15,8 @@ private:
     QTimer *timer;
     QString timestamp;
     // Stats here
-    SystemStats systemStats;
-    ProcessesStats processesStats;
+    SystemStats *systemStats;
+    ProcessesStats *processesStats;
 public:
     explicit SenderWorker(QObject *parent = nullptr);
     ~SenderWorker();

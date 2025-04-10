@@ -113,3 +113,13 @@
 8	22	1744262231444269989	/home/duc-vu/Documents/QtProjects/IVI-System-App/build/Desktop_Qt_6_7_3-Debug/IVI-System-App_autogen/mocs_compilation.cpp	684f9610e8af2860
 22	2283	1744262231458270613	CMakeFiles/IVI-System-App.dir/main.cpp.o	14d07a309dfe9c1e
 2283	2565	1744262233719371321	IVI-System-App	4af506a68610f45b
+18	957	1744282979641403504	IVI-System-App_autogen/timestamp	684f9610e8af2860
+18	957	1744282979641403504	IVI-System-App_autogen/mocs_compilation.cpp	684f9610e8af2860
+18	957	1744282979641403504	/home/duc-vu/Documents/QtProjects/IVI-System-App/build/Desktop_Qt_6_7_3-Debug/IVI-System-App_autogen/timestamp	684f9610e8af2860
+18	957	1744282979641403504	/home/duc-vu/Documents/QtProjects/IVI-System-App/build/Desktop_Qt_6_7_3-Debug/IVI-System-App_autogen/mocs_compilation.cpp	684f9610e8af2860
+963	8328	1744282979673410946	CMakeFiles/IVI-System-App.dir/TCPService/receiverworker.cpp.o	ca08317c9d10ca34
+966	8649	1744282979676411644	CMakeFiles/IVI-System-App.dir/TCPService/senderworker.cpp.o	ae6e4a68c723617d
+959	8779	1744282979669410016	CMakeFiles/IVI-System-App.dir/main.cpp.o	14d07a309dfe9c1e
+958	8912	1744282979668409784	CMakeFiles/IVI-System-App.dir/IVI-System-App_autogen/mocs_compilation.cpp.o	bddcbd3a402c9220
+962	9003	1744282979672410714	CMakeFiles/IVI-System-App.dir/TCPService/tcpservice.cpp.o	f23255e7298ea40f
+9003	9517	1744282987713250547	IVI-System-App	4af506a68610f45b
