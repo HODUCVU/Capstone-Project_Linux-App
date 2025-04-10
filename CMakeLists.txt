@@ -35,6 +35,7 @@ add_executable(IVI-System-App
   TCPService/senderworker.h TCPService/senderworker.cpp
   utils/hostIPAddress.h
   OverloadSolution/devicespeaker.h OverloadSolution/devicespeaker.cpp
+  OverloadSolution/stresstestsystem.h OverloadSolution/stresstestsystem.cpp
 
 
 )

@@ -16,6 +16,8 @@ IVI-System-App_autogen/timestamp: \
 	/home/duc-vu/Documents/QtProjects/IVI-System-App/DeviceStats/SystemStats/systemstats.h \
 	/home/duc-vu/Documents/QtProjects/IVI-System-App/OverloadSolution/devicespeaker.cpp \
 	/home/duc-vu/Documents/QtProjects/IVI-System-App/OverloadSolution/devicespeaker.h \
+	/home/duc-vu/Documents/QtProjects/IVI-System-App/OverloadSolution/stresstestsystem.cpp \
+	/home/duc-vu/Documents/QtProjects/IVI-System-App/OverloadSolution/stresstestsystem.h \
 	/home/duc-vu/Documents/QtProjects/IVI-System-App/OverloadSolution/terminateprocesses.cpp \
 	/home/duc-vu/Documents/QtProjects/IVI-System-App/OverloadSolution/terminateprocesses.h \
 	/home/duc-vu/Documents/QtProjects/IVI-System-App/TCPService/receiverworker.cpp \

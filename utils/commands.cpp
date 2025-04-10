@@ -116,3 +116,24 @@ QString ExecuteDeviceSpeakerCommand::getAlarmCommand(int repeat, float freq, flo
 {
     return alarmCommand + " -f " + QString::number(freq) + " -l " + QString::number(length) + " -r " + QString::number(repeat);
 }
+
+// ========================================
+ExecuteStressTestSystemCommand::ExecuteStressTestSystemCommand()
+{
+    stressTestCommand = "stress";
+    stopStressTestCommand = "killall stress";
+}
+
+QString ExecuteStressTestSystemCommand::getStressTestCommand(int numberOfTask, float MEMUsageGB, int numberOfCore, float timeout)
+{
+    return stressTestCommand +
+           " --vm " + QString::number(numberOfTask) +
+           " --vm-bytes " + QString::number(MEMUsageGB) + "G" +
+           " --cpu " + QString::number(numberOfCore) +
+           " --timeout " + QString::number(timeout);
+}
+
+QString ExecuteStressTestSystemCommand::getStopStressTestCommand()
+{
+    return stopStressTestCommand;
+}
