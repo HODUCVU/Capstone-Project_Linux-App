@@ -1,0 +1,14 @@
+{
+	"type" : "PNames"
+  	"PNames": ["chrome", "brave", "VLC" , "..."]
+}
+{
+	"type": "startStress",
+	"numberOfTaskToRun":2,
+	"MEMUsagePercent":70,
+	"numberOfCore":4,
+	"timeout":30
+}
+{
+	"type": "stopStress",
+}

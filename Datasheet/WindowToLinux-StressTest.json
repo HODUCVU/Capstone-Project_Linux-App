@@ -1,7 +1,0 @@
-{
-	"type": "stress",
-	"numberOfTaskToRun":2,
-	"MEMUsagePercent":70,
-	"numberOfCore":4,
-	"timeout":30
-}
