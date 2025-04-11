@@ -69,7 +69,6 @@ void SenderWorker::sendStats()
     obj["SystemStats"] = systemStatsToJson();
     obj["ProcessesStats"] = processesStatsToJson();
     emit sendMessage(obj);
-
 }
 
 QJsonObject SenderWorker::systemStatsToJson() {
