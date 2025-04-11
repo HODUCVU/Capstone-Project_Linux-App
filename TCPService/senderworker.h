@@ -43,8 +43,6 @@ private:
     QJsonObject systemMEMToJson();
 
     QJsonObject processesStatsToJson();
-
-    void print();
 };
 
 #endif // SENDERWORKER_H

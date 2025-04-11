@@ -32,12 +32,6 @@ void SenderWorker::collectStats()
     collectProcessesStats();
     currentDateTime();
     sendStats();
-    print();
-}
-
-void SenderWorker::currentDateTime()
-{
-    timestamp = QDateTime::currentDateTime().toString("yyyy-MM-dd hh:mm:ss");
 }
 
 void SenderWorker::collectSystemStats()
@@ -61,6 +55,11 @@ void SenderWorker::collectMEMStats()
 void SenderWorker::collectProcessesStats()
 {
     processesStats->getProcessStatsFromDevice();
+}
+
+void SenderWorker::currentDateTime()
+{
+    timestamp = QDateTime::currentDateTime().toString("yyyy-MM-dd hh:mm:ss");
 }
 
 void SenderWorker::sendStats()
@@ -129,10 +128,3 @@ QJsonObject SenderWorker::processesStatsToJson()
     }
     return PStats;
 }
-
-#include <QDebug>
-void SenderWorker::print()
-{
-    qDebug() << "Time: " << timestamp;
-}
-

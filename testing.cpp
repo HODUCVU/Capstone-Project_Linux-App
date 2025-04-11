@@ -1,115 +1,61 @@
-// #include "testing.h"
-// #include <QDebug>
-// Testing::Testing(QObject *parent)
-//     : QObject(parent)
-// {
-//     connect(&timer, &QTimer::timeout, this, &Testing::collectStats);
-// }
+#include "testing.h"
+#include <QDebug>
 
-// void Testing::start()
-// {
-//     timer.start(1000);
-// }
+#define OVERLOADING 50
+#define WARNING 45
 
-// void Testing::collectStats()
-// {
-//     collectGeneralCPUStats();
-//     collectCoreCPUStats();
-//     collectMEMStats();
-//     collectProcessesStats();
-// }
+#define WEIGHT_RAM 0.25
+#define WEIGHT_SWAP 0.25
+#define WEIGHT_CPU_USAGE 0.2
+#define WEIGHT_CPU_CORE_USAGE 0.15
+#define WEIGHT_CPU_TEMP 0.05
+#define WEIGHT_CPU_CORE_TEMP 0.05
+#define WEIGHT_CPU_FEQ 0.05
 
-// void Testing::testingGeneralCPUStats()
-// {
-//     collectGeneralCPUStats();
-//     printGeneralCPUStats(systemStats.CPUStats.general);
-// }
+#define TEMP_MIN 40
+#define TEMP_MAX 90
 
-// void Testing::collectGeneralCPUStats()
-// {
+Testing::Testing(QObject *parent)
+    : QObject(parent)
+{}
 
-//     systemStats.CPUStats.getCPUUtilizationStatsFromDevice();
-//     systemStats.CPUStats.getCPUTemperatureStatsFromDevice();
-//     systemStats.CPUStats.getCPUFrequencyPercentFromDevice();
-// }
-// void Testing::printGeneralCPUStats(CPUGeneral general)
-// {
-//     qDebug() << "***********************************";
-//     qDebug() << "%CPU\tTemperature\tFrequency";
-//     qDebug() << general.getCPUUtilization() << "\t"
-//              << general.getCPUTemperature() << "\t"
-//              << general.getCPUFrequency() << " ("
-//              << general.getCPUFrequencyPercent() << ")";
-// }
+int Testing::overloadingDetectAdvance(SystemStats &systemStats)
+{
+    double systemCPUUsagePercent = systemStats.CPUStats.general.getCPUUtilization();
+    double systemCPUTemperatue = systemStats.CPUStats.general.getCPUTemperature();
+    double systemCPUFreqPercent = systemStats.CPUStats.general.getCPUFrequencyPercent();
+    double avgCPUCoreUsagePercent = 0.0;
+    double avgCPUCoreTemperature = 0.0;
+    for(auto &core:systemStats.CPUStats.cores) {
+        avgCPUCoreUsagePercent += core.getCoreCPUUtilization();
+        avgCPUCoreTemperature += core.getCoreTemperature();
+    }
+    avgCPUCoreUsagePercent /= CPUCore::numberOfCore;
+    avgCPUCoreTemperature /= CPUCore::numberOfCore;
 
-// void Testing::testingCoreCPUStats()
-// {
-//     collectCoreCPUStats();
-//     qDebug() << "***********************************";
-//     qDebug() << "ID\t %CPU\tTemp\t Freq";
-//     for(auto &core: systemStats.CPUStats.cores)
-//         printCoreCPUStats(core);
-// }
+    double RAMUsagePercent = systemStats.MEMStats.getRAMUtilizationPercent();
+    double SWAPUsagePercent = systemStats.MEMStats.getSWAPMEMUtilizationPercent();
 
-// void Testing::collectCoreCPUStats()
-// {
-//     systemStats.CPUStats.getCoresCPUUtilizationStatsFromDevice();
-//     systemStats.CPUStats.getCoresTemperatureStatsFromDevice();
-//     systemStats.CPUStats.getCoresFrequencyStatsFromDevice();
-// }
-// void Testing::printCoreCPUStats(CPUCore core)
-// {
-//     qDebug() << core.getCoreID() << "\t"
-//              << core.getCoreCPUUilization() << "\t"
-//              << core.getCoreTemperature() << "\t"
-//              << core.getCoreFrequency();
-// }
+    // convert fom temp scale to percent scale
+    double normSystemCPUTemp = std::clamp((systemCPUTemperatue - TEMP_MIN)/(TEMP_MAX - TEMP_MIN)*100, 0.0, 100.0);
+    double normAvgCPUCoreTemp = std::clamp((avgCPUCoreTemperature - TEMP_MIN)/(TEMP_MAX - TEMP_MIN)*100, 0.0, 100.0);
 
-// void Testing::testingMEMStats()
-// {
-//     collectMEMStats();
-//     printMEMSats(systemStats.MEMStats);
-// }
+    double score =
+        WEIGHT_RAM*RAMUsagePercent +
+        WEIGHT_SWAP*SWAPUsagePercent +
+        WEIGHT_CPU_USAGE*systemCPUUsagePercent +
+        WEIGHT_CPU_CORE_USAGE*avgCPUCoreUsagePercent +
+        WEIGHT_CPU_TEMP*normSystemCPUTemp +
+        WEIGHT_CPU_CORE_TEMP*normAvgCPUCoreTemp +
+        WEIGHT_CPU_FEQ*systemCPUFreqPercent;
+    qDebug() << systemCPUUsagePercent << systemCPUFreqPercent << normSystemCPUTemp
+             << avgCPUCoreUsagePercent << normAvgCPUCoreTemp
+             << RAMUsagePercent << SWAPUsagePercent
+             << "Score:" << score;
+    if(score >= OVERLOADING)
+        return (int)LoadLevel::STATE_OVERLOADED;
+    else if(score >= WARNING)
+        return (int)LoadLevel::STATE_WARNING;
+    return (int)LoadLevel::STATE_NORMAL;
 
-// void Testing::collectMEMStats()
-// {
-//     systemStats.MEMStats.getMEMUtilizationFromDevice();
-// }
-// void Testing::printMEMSats(SystemMEM MEM)
-// {
-//     qDebug() << "***********************************";
-//     qDebug() << "\tUsed(MB)\tPercent";
-//     qDebug() << "RAM\t" << MEM.getRAMUtilization() << "\t" << MEM.getRAMUtilizationPercent();
-//     qDebug() << "SWAP\t" << MEM.getSWAPMEMUtilization() << "\t" << MEM.getSWAPMEMUtilizationPercent();
-// }
-
-// void Testing::testingProcessesStats()
-// {
-//     collectProcessesStats();
-//     printProcessesStats();
-// }
-
-// void Testing::collectProcessesStats()
-// {
-//     processes.getProcessStatsFromDevice();
-// }
-// void Testing::printProcessesStats()
-// {
-//     qDebug() << "User\tPID\t%CPU\tMEM\t%MEM\tCommand";
-//     for(auto it = processes.processesStats.begin(); it != processes.processesStats.end(); ++it) {
-//         qDebug() << it.value().getUser() << "\t"
-//                  << it.value().getPID() << "\t"
-//                  << it.value().getPCPUUsagePercent()/8.0 << "%\t"
-//                  << it.value().getPMEMUsageMB() << "MB\t"
-//                  << it.value().getPMEMUsagePercent()<< "%\t"
-//                  << it.value().getPName();
-//     }
-//     qDebug() << "***********************************";
-// }
-
-// void Testing::testingTerminateProcesses()
-// {
-//     QStringList PNames = {"brave", "chrome"};
-//     terminateCommand.getPNamsFromMessage(PNames);
-//     terminateCommand.terminateProcessByPName();
-// }
+}
