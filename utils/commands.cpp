@@ -15,7 +15,7 @@ QString ExecuteInstallLinuxAPICommand::getinstallCommand()
 ExecuteCPUCoreCommand::ExecuteCPUCoreCommand()
 {
     numberOfCoreCPUCommand = "nproc";
-    CPUUtilizationCommand = "mpstat -P ALL 1 1 | awk 'NR>3 && NR<13 {print $3,100-$NF}'";
+    CPUUtilizationCommand = "mpstat -P ALL 1 1 | awk 'NR>3 && NR<13 {print 100-$NF}'";
 
     CPUTemperatureCommand = "sensors | grep 'CPU' | awk '{print $NF}'";
     coreCPUTemperatureCommand = "sensors | awk '/Core/ {print $3}'";
