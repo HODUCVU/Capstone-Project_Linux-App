@@ -1,5 +1,6 @@
 #ifndef SYSTEMCPU_H
 #define SYSTEMCPU_H
+
 #include "../../utils/commands.h"
 #include "cpucore.h"
 #include "cpugeneral.h"

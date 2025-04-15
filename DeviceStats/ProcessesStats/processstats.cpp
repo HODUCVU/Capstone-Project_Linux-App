@@ -45,18 +45,8 @@ float ProcessStats::getPMEMUsagePercent()
     return PMEMUsagePercent;
 }
 
-void ProcessStats::setPCPUUsagePercent(int PCPUUsagePercent)
-{
-    this->PCPUUsagePercent = PCPUUsagePercent;
-}
 float ProcessStats::getPMEMUsageMB()
 {
     return this->PMEMUsageMB;
 }
-void ProcessStats::setPMEMUsagePercent(int PMEMUsagePercent)
-{
-    this->PMEMUsagePercent = PMEMUsagePercent;
-    this->PMEMUsageMB = SystemMEM::maxRAMSystem*PMEMUsagePercent/100;
-}
-
 

@@ -6,10 +6,11 @@
 
 #define HIGHEST_LEVEL_MEM_TO_STRESS 0.8
 #define CONVERT_MB_TO_GB 1024
+
 StressTestSystem::StressTestSystem()
     : ExecuteStressTestSystemCommand()
 {
-    numberOfTaskToRun = 1;
+    numberOfTaskToRun = 2;
     MEMUsage = 1;
     numberOfCore = 1;
     timeout = 1;

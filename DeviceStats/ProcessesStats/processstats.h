@@ -16,6 +16,7 @@ public:
     ProcessStats();
     ProcessStats(QString PName, QString user);
     ProcessStats(QString PName, QString user, int PID, float PCPUUsagePercent, float PMEMUsagePercent);
+    friend class ProcessesStats;
     // Getter
     QString getPName();
     QString getUser();
@@ -23,9 +24,6 @@ public:
     float getPCPUUsagePercent();
     float getPMEMUsagePercent();
     float getPMEMUsageMB();
-    // Setter
-    void setPCPUUsagePercent(int PCPUUsagePercent);
-    void setPMEMUsagePercent(int PMEMUsagePercent);
 };
 
 #endif // PROCESSSTATS_H
