@@ -16,7 +16,8 @@
 #define TEMP_MIN 40
 #define TEMP_MAX 90
 
-#define FILE_NAME "../../Datasheet/WhileList.txt"
+#define DATA_PATH_WHILELIST "../../Datasheet/WhileList.txt"
+#define DATA_PATH_PRIORITY "../../Datasheet/PRIORITY.txt"
 
 Testing::Testing(QObject *parent)
     : QObject(parent)
@@ -65,38 +66,124 @@ int Testing::overloadingDetectAdvance(SystemStats &systemStats)
 
 void Testing::processesFilter(ProcessesStats &processesStats)
 {
-    QStringList PNames;
-    processesFilterRootProcess(PNames, processesStats);
-    processesFilterWhileList(PNames);
-    qDebug() << PNames;
-}
+    QSet<QString> PNames;
+    QVector<ProcessStats*> filtered;
 
-void Testing::processesFilterRootProcess(QStringList &PNames, ProcessesStats &processesStats)
-{
-    for(auto &process:processesStats.processes) {
-        if(process.getUser() != "root")
-            PNames << process.getPName();
-    }
-}
-
-void Testing::processesFilterWhileList(QStringList &PNames)
-{
-    QFile file(FILE_NAME);
-    if(!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
-        qWarning() << "Can't open file:" << FILE_NAME;
-        return;
-    }
-    QTextStream in(&file);
-    while(!in.atEnd()) {
-        QString line = in.readLine().trimmed();
-        if(!line.isEmpty() && PNames.contains(line)) {
-            PNames.removeAll(line);
+    // B1: Lọc tiến trình không phải root (filter 1)
+    for (auto &process : processesStats.processes) {
+        if (process.getUser() != "root") {
+            QString name = process.getPName();
+            PNames.insert(name);
+            filtered.append(&process);
         }
     }
-    file.close();
+
+    // B2: Lọc theo whitelist (filter 2)
+    QFile whitelistFile(DATA_PATH_WHILELIST);
+    if (whitelistFile.open(QIODevice::ReadOnly | QIODevice::Text)) {
+        QTextStream in(&whitelistFile);
+        while (!in.atEnd()) {
+            QString line = in.readLine().trimmed();
+            if (!line.isEmpty())
+                PNames.remove(line);
+        }
+        whitelistFile.close();
+    }
+
+    // B3: Đọc file priority
+    QHash<QString, int> priorityMap = readPriority();
+
+    // B4: Tính điểm tiến trình (filter 3)
+    QVector<QPair<QString, float>> ranked;
+
+    for (ProcessStats *proc : filtered) {
+        QString name = proc->getPName();
+        if (!PNames.contains(name))
+            continue;
+
+        float cpu = proc->getPCPUUsagePercent();
+        float mem = proc->getPMEMUsagePercent();
+        int prio = priorityMap.value(name, 2); // mặc định pr = 2 nếu không có
+
+        float score = 0.4f * cpu + 0.4f * mem + 0.2f * prio;
+        ranked.append({name, score});
+    }
+
+    // B5: Xếp hạng và lấy top tiến trình
+    std::sort(ranked.begin(), ranked.end(),
+              [](const auto &a, const auto &b) {
+                  return a.second > b.second;
+              });
+
+    QStringList toKill;
+    for (int i = 0; i < qMin(maxKillCount, ranked.size()); ++i)
+        toKill << ranked[i].first;
+
+    // B6: Gửi danh sách tiến trình cần kill đến Linux App với cấu trúc Json như define
 }
 
-void Testing::processesFilterTaskToKill(QStringList &PNames)
+QHash<QString, int> Testing::readPriority()
 {
+    QHash<QString, int> priorities;
+    QFile file(DATA_PATH_PRIORITY);
+    if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
+        qWarning() << "Can't open priority file:" << DATA_PATH_PRIORITY;
+        return priorities;
+    }
 
+    QTextStream in(&file);
+    while (!in.atEnd()) {
+        QString line = in.readLine().trimmed();
+        if (line.isEmpty()) continue;
+
+        QStringList parts = line.split(":");
+        if (parts.size() != 2) continue;
+
+        QString name = parts[0].trimmed();
+        int pr = parts[1].toInt();
+        priorities[name] = pr;
+    }
+
+    file.close();
+    return priorities;
 }
+
+// void Testing::processesFilterRootProcess(QStringList &PNames, ProcessesStats &processesStats)
+// {
+//     for(auto &process:processesStats.processes)
+//         if(process.getUser() != "root") {
+//             PNames << process.getPName();
+//             processesStats.processes.erase(process);
+//         }
+// }
+
+// void Testing::processesFilterWhileList(QStringList &PNames)
+// {
+//     QFile file(DATA_PATH_WHILELIST);
+//     if(!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
+//         qWarning() << "Can't open file:" << DATA_PATH_WHILELIST;
+//         return;
+//     }
+//     QTextStream in(&file);
+//     while(!in.atEnd()) {
+//         QString line = in.readLine().trimmed();
+//         if(!line.isEmpty() && PNames.contains(line)) {
+//             PNames.removeAll(line);
+//         }
+//     }
+//     file.close();
+// }
+
+// void Testing::processesFilterTaskToKill(QStringList &PNames,ProcessesStats &processesStats)
+// {
+//     QHash<QString, int> priority = readPriority();
+//     QVector<int> scores;
+//     for(auto &process:processesStats.processes) {
+//         if(PNames.contains(process.getPName())) {
+//             float score = 0.4 * process.getPCPUUsagePercent()
+//                           + 0.4 * process.getPMEMUsagePercent() +
+//                           0.2 * priority[process.getPName()];
+//             scores.append(score);
+//         }
+//     }
+// }
