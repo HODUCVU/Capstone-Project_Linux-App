@@ -2,6 +2,7 @@
 #define TESTING_H
 
 #include "DeviceStats/SystemStats/systemstats.h"
+#include "DeviceStats/ProcessesStats/processesstats.h"
 #include <QObject>
 
 enum class LoadLevel {
@@ -17,9 +18,11 @@ public:
     explicit Testing(QObject *parent = nullptr);
     // void overloadingDetectSimple(SystemStats &systemStats);
     int overloadingDetectAdvance(SystemStats &systemStats);
+    void processesFilter(ProcessesStats &processesStats);
 private:
-    // void overloadingHard();
-    // void overloadingSoft();
+    void processesFilterRootProcess(QStringList &PNames, ProcessesStats &processesStats);
+    void processesFilterWhileList(QStringList &PNames);
+    void processesFilterTaskToKill(QStringList &PNames, ProcessesStats &processesStats);
 };
 
 #endif // TESTING_H

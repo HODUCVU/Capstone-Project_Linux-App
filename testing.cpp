@@ -1,5 +1,6 @@
 #include "testing.h"
 #include <QDebug>
+#include <QFile>
 
 #define OVERLOADING 50
 #define WARNING 45
@@ -14,6 +15,8 @@
 
 #define TEMP_MIN 40
 #define TEMP_MAX 90
+
+#define FILE_NAME "../../Datasheet/WhileList.txt"
 
 Testing::Testing(QObject *parent)
     : QObject(parent)
@@ -57,5 +60,43 @@ int Testing::overloadingDetectAdvance(SystemStats &systemStats)
     else if(score >= WARNING)
         return (int)LoadLevel::STATE_WARNING;
     return (int)LoadLevel::STATE_NORMAL;
+
+}
+
+void Testing::processesFilter(ProcessesStats &processesStats)
+{
+    QStringList PNames;
+    processesFilterRootProcess(PNames, processesStats);
+    processesFilterWhileList(PNames);
+    qDebug() << PNames;
+}
+
+void Testing::processesFilterRootProcess(QStringList &PNames, ProcessesStats &processesStats)
+{
+    for(auto &process:processesStats.processes) {
+        if(process.getUser() != "root")
+            PNames << process.getPName();
+    }
+}
+
+void Testing::processesFilterWhileList(QStringList &PNames)
+{
+    QFile file(FILE_NAME);
+    if(!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
+        qWarning() << "Can't open file:" << FILE_NAME;
+        return;
+    }
+    QTextStream in(&file);
+    while(!in.atEnd()) {
+        QString line = in.readLine().trimmed();
+        if(!line.isEmpty() && PNames.contains(line)) {
+            PNames.removeAll(line);
+        }
+    }
+    file.close();
+}
+
+void Testing::processesFilterTaskToKill(QStringList &PNames)
+{
 
 }
