@@ -30,7 +30,6 @@ void SenderWorker::collectStats()
 {
     collectSystemStats(); // 1s
     collectProcessesStats();
-    printProcesses();
     currentDateTime();
     sendStats();
 }
@@ -104,10 +103,12 @@ QJsonObject SenderWorker::systemCoresCPUToJson() {
 QJsonObject SenderWorker::systemMEMToJson()
 {
     QJsonObject MEM;
-    MEM["RAM"] = systemStats->MEMStats.getRAMUtilization();
+    MEM["RAMUsage"] = systemStats->MEMStats.getRAMUtilization();
     MEM["RAMPercent"] = systemStats->MEMStats.getRAMUtilizationPercent();
-    MEM["SWAP"] = systemStats->MEMStats.getSWAPMEMUtilization();
+    MEM["MaxRAM"] = SystemMEM::maxRAMSystem;
+    MEM["SWAPUsage"] = systemStats->MEMStats.getSWAPMEMUtilization();
     MEM["SWAPPercent"] = systemStats->MEMStats.getSWAPMEMUtilizationPercent();
+    MEM["MaxSWAP"] = SystemMEM::maxSWAPMEMSystem;
     return MEM;
 }
 

@@ -38,10 +38,6 @@ void ReceiverWorker::handleMessage(const QString &message)
 bool ReceiverWorker::authMessage(QJsonDocument &doc)
 {
     return doc.isObject();
-    // if(!doc.isObject()) {
-    //     return false;
-    // }
-    // return true;
 }
 
 void ReceiverWorker::terminate(QJsonObject &obj)

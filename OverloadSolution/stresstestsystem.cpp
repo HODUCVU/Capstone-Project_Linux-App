@@ -7,13 +7,14 @@
 #define HIGHEST_LEVEL_MEM_TO_STRESS 0.8
 #define CONVERT_MB_TO_GB 1024
 
-StressTestSystem::StressTestSystem()
-    : ExecuteStressTestSystemCommand()
+StressTestSystem::StressTestSystem(QObject *parent)
+    : QObject(parent), ExecuteStressTestSystemCommand()
 {
     numberOfTaskToRun = 2;
     MEMUsage = 1;
     numberOfCore = 1;
     timeout = 1;
+    thread = nullptr;
 }
 
 void StressTestSystem::setup(int numberOfTaskToRun, float MEMUsagePercent,int numberOfCore,
@@ -66,15 +67,30 @@ void StressTestSystem::setupTimeout(float timeout)
 
 void StressTestSystem::start()
 {
+    if(thread) return;
+    thread = new QThread();
+    this->moveToThread(thread);
+    connect(thread, &QThread::started, this, &StressTestSystem::run);
+    connect(this, &StressTestSystem::finished, thread, &QThread::quit);
+    connect(thread, &QThread::finished, thread, &QObject::deleteLater);
+    thread->start();
+}
+
+void StressTestSystem::run()
+{
     QString command = getStressTestCommand(numberOfTaskToRun, MEMUsage, numberOfCore,  timeout);
-    qDebug() << command;
     ProcessCommand::execute(command);
+    emit finished();
 }
 
 void StressTestSystem::stop()
 {
     QString command = getStopStressTestCommand();
-    qDebug() << command;
     ProcessCommand::execute(command);
+    if (thread && thread->isRunning()) {
+        thread->quit();
+        thread->wait();
+        thread = nullptr;
+    }
 }
 

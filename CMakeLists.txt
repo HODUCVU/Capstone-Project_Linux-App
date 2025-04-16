@@ -36,8 +36,6 @@ add_executable(IVI-System-App
   utils/hostIPAddress.h
   OverloadSolution/devicespeaker.h OverloadSolution/devicespeaker.cpp
   OverloadSolution/stresstestsystem.h OverloadSolution/stresstestsystem.cpp
-
-
 )
 target_link_libraries(IVI-System-App Qt${QT_VERSION_MAJOR}::Core
     Qt6::Network)
