@@ -40,6 +40,7 @@ IVI-System-App_autogen/timestamp: \
 	/home/duc-vu/Documents/QtProjects/IVI-System-App/utils/installlinuxapi.h \
 	/home/duc-vu/Documents/QtProjects/IVI-System-App/utils/processcommand.cpp \
 	/home/duc-vu/Documents/QtProjects/IVI-System-App/utils/processcommand.h \
+	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/QHash \
 	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/QJsonDocument \
 	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/QJsonObject \
 	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/QObject \

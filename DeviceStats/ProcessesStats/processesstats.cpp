@@ -1,5 +1,6 @@
 #include "processesstats.h"
 #include "../../utils/processcommand.h"
+#include "../SystemStats/systemmem.h"
 #include "../SystemStats/cpucore.h"
 #include <QDebug>
 
