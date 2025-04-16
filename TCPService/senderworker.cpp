@@ -30,6 +30,7 @@ void SenderWorker::collectStats()
 {
     collectSystemStats(); // 1s
     collectProcessesStats();
+    printProcesses();
     currentDateTime();
     sendStats();
 }
@@ -114,16 +115,25 @@ QJsonObject SenderWorker::processesStatsToJson()
 {
     QJsonObject PStats;
     for(ProcessStats process:processesStats->processes) {
-        if(process.getPCPUUsagePercent() > 0 && process.getPMEMUsagePercent() > 0) {
+        if(process.getPCPUUsagePercent() > 0 || process.getPMEMUsagePercent() > 0) {
             QJsonObject info;
             info["PID"] = process.getPID();
             info["User"] = process.getUser();
             info["PName"] = process.getPName();
             info["PCPUUsagePercent"] = process.getPCPUUsagePercent();
-            info["PMEMUsageMB"] = process.getPMEMUsageMB();
             info["PMEMUsagePercent"] = process.getPMEMUsagePercent();
+            info["PMEMUsageMB"] = process.getPMEMUsageMB();
             PStats[QString::number(process.getPID())] = info;
         }
     }
     return PStats;
+}
+
+void SenderWorker::printProcesses()
+{
+    for(auto &p:processesStats->processes) {
+        if(p.getPCPUUsagePercent() > 0 || p.getPMEMUsagePercent() > 0) {
+            p.print();
+        }
+    }
 }

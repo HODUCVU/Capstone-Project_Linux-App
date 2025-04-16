@@ -11,19 +11,22 @@ private:
     QString user;
     float PCPUUsagePercent;
     float PMEMUsagePercent;
-    float PMEMUsageMB;
+    float PMENUsageMB;
 public:
     ProcessStats();
-    ProcessStats(QString PName, QString user);
-    ProcessStats(QString PName, QString user, int PID, float PCPUUsagePercent, float PMEMUsagePercent);
+    ProcessStats(QString PName, QString user, int PID, float PCPUPercent);
+    ProcessStats(float PMEMPercent, float PMENUsageMB);
+    ProcessStats(QString PName, QString user, int PID,
+                 float PCPUUsagePercent, float PMEMUsagePercent, float PMENUsageMB);
     friend class ProcessesStats;
     // Getter
     QString getPName();
-    QString getUser();
     int getPID();
+    QString getUser();
     float getPCPUUsagePercent();
     float getPMEMUsagePercent();
     float getPMEMUsageMB();
+    void print();
 };
 
 #endif // PROCESSSTATS_H

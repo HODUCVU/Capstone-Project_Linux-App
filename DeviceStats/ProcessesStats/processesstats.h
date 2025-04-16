@@ -18,8 +18,10 @@ public:
     ~ProcessesStats();
     void getProcessStatsFromDevice();
 private:
-    void extractProcessesInfo(QStringList lines);
-
+    void extractProcessesInfo(QStringList &lines);
+    // void extractCPUInfo(QString &line, int idx);
+    // void extractMEMInfo(QString &line, int idx);
+    // QString whoami(int UID);
 };
 
 #endif // PROCESSESSTATS_H

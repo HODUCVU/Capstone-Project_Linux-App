@@ -1,24 +1,30 @@
 #include "processstats.h"
 #include "../SystemStats/systemmem.h"
+#include <QDebug>
 
 ProcessStats::ProcessStats()
 {
     PID = 0;
+    user = 0;
     PName = "";
     PCPUUsagePercent = 0.0;
     PMEMUsagePercent = 0.0;
-    PMEMUsageMB = 0.0;
+    PMENUsageMB = 0.0;
 }
 
-ProcessStats::ProcessStats(QString PName, QString user)
-    : PName(PName), user(user)
+ProcessStats::ProcessStats(QString PName, QString user, int PID, float PCPUPercent)
+    : PName(PName), user(user), PID(PID), PCPUUsagePercent(PCPUPercent)
 {}
 
-ProcessStats::ProcessStats(QString PName, QString user, int PID, float PCPUUsagePercent, float PMEMUsagePercent)
-    : PName(PName), user(user), PID(PID), PCPUUsagePercent(PCPUUsagePercent), PMEMUsagePercent(PMEMUsagePercent)
-{
-    this->PMEMUsageMB = SystemMEM::maxRAMSystem*PMEMUsagePercent/100;
-}
+ProcessStats::ProcessStats(float PMEMPercent, float PMENUsageMB)
+    : PMEMUsagePercent(PMEMPercent), PMENUsageMB(PMENUsageMB)
+{}
+
+ProcessStats::ProcessStats(QString PName, QString user, int PID,
+                           float PCPUUsagePercent, float PMEMUsagePercent, float PMENUsageMB)
+    : PName(PName), user(user), PID(PID),
+    PCPUUsagePercent(PCPUUsagePercent), PMEMUsagePercent(PMEMUsagePercent), PMENUsageMB(PMENUsageMB)
+{}
 
 int ProcessStats::getPID()
 {
@@ -47,6 +53,16 @@ float ProcessStats::getPMEMUsagePercent()
 
 float ProcessStats::getPMEMUsageMB()
 {
-    return this->PMEMUsageMB;
+    return PMENUsageMB;
+}
+
+void ProcessStats::print()
+{
+    qDebug() << PID << "\t"
+             << user << "\t"
+             << PCPUUsagePercent << "\t"
+             << PMEMUsagePercent << "\t"
+             << PMENUsageMB << "\t"
+             << PName;
 }
 

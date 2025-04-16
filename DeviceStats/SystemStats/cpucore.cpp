@@ -17,7 +17,7 @@ CPUCore::CPUCore(int coreID, float coreCPUUtilization, float coreTemperature, fl
     this->coreFrequency = coreFrequency;
 }
 
-int CPUCore::numberOfCore = 0;
+int CPUCore::numberOfCore = 1;
 
 int CPUCore::getCoreID()
 {

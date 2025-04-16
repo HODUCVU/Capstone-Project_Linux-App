@@ -86,6 +86,7 @@ QString ExecuteSystemMEMCommand::getMaxMEMSystemCommand()
 ExecuteProcessStatsCommand::ExecuteProcessStatsCommand()
 {
    processesInfoCommand = "ps -eo comm,user,pid,%cpu,%mem |awk 'NR>1'";
+    // processesInfoCommand = "pidstat -u -r -p ALL 1 1 | awk 'NR>3 && $1!=\"Average:\"'";
 }
 QString ExecuteProcessStatsCommand::getprocessesInfoCommand()
 {
