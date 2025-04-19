@@ -1,5 +1,4 @@
 #include "TCPService/tcpservice.h"
-#include "TCPService/senderworker.h"
 // #include "testing.h"
 #include "OverloadSolution/stresstestsystem.h"
 

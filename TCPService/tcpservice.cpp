@@ -19,18 +19,39 @@ TcpService::~TcpService()
     if (socket) {
         socket->disconnectFromHost();
         socket->deleteLater();
-    }
+    };
+    if(reconnectToServer)
+        reconnectToServer->deleteLater();
 }
 
 void TcpService::establishSocket()
 {
-    socket = new QTcpSocket();
+    socket = new QTcpSocket(this);
     socket->connectToHost(HOST,PORT);
-    if(socket->waitForConnected(TIME_WAIT_TO_CONNECT_TO_SERVER)) {
+    autoReconnectToServerIfFail();
+}
+
+void TcpService::autoReconnectToServerIfFail()
+{
+    reconnectToServer = new QTimer(this);
+    reconnectToServer->setInterval(TIME_TO_TRY_RECONNECT_TO_SEVER);
+    connect(socket, &QTcpSocket::connected, this, [=]() {
         qDebug() << "Tcp Service connected";
         establishSenderThread();
         establishReceiverThread();
-    }
+        reconnectToServer->stop();
+        reconnectToServer->deleteLater();
+    });
+    connect(socket, &QTcpSocket::errorOccurred, this, [=](){
+        qDebug() << "Connection failed, will retry...";
+        if(reconnectToServer && !reconnectToServer->isActive())
+            reconnectToServer->start();
+    });
+    connect(reconnectToServer, &QTimer::timeout, this, [=](){
+        qDebug() << "Attempting to reconnect...";
+        socket->abort();
+        socket->connectToHost(HOST, PORT);
+    });
 }
 
 void TcpService::establishSenderThread()

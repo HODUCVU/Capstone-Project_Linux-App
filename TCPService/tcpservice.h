@@ -11,6 +11,7 @@ class TcpService : public QObject
     Q_OBJECT
 private:
     QTcpSocket *socket;
+    QTimer *reconnectToServer;
     QThread senderThread;
     QThread receiverThread;
     SenderWorker *sender;
@@ -26,6 +27,7 @@ private slots:
     void onReadyRead();
 private:
     void establishSocket();
+    void autoReconnectToServerIfFail();
     void establishSenderThread();
     void establishReceiverThread();
 };
