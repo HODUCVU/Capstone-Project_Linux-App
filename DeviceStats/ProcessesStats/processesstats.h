@@ -4,11 +4,6 @@
 #include "../../utils/commands.h"
 #include "processstats.h"
 #include <QVector>
-/*
- * Fix query task stats
- * Testing that functions
- * Build Connect to Client function
-*/
 class ProcessesStats : public ExecuteProcessStatsCommand
 {
 public:
