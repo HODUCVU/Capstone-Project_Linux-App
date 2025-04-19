@@ -25,6 +25,7 @@ signals:
 private slots:
     void writeToSocket(const QJsonObject &obj);
     void onReadyRead();
+    // void disconnectedFromServer();
 private:
     void establishSocket();
     void autoReconnectToServerIfFail();

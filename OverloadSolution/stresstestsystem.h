@@ -17,12 +17,13 @@ private:
 public:
     StressTestSystem(QObject *parent = nullptr);
     void setup(int numberOfTaskToRun = 2, float MEMUsagePercent = 1, int numberOfCore = 1,  float timeout = 1);
-    void createNumberOfTaskToRun(int numberOfTaskToRun);
-    void setupMEMUsagePercent(float MEMUsagePercent);
-    void setupNumberOfCore(float numberOfCore);
-    void setupTimeout(float timeout);
     void start();
     void stop();
+private:
+    void createNumberOfTaskToRun(int numberOfTaskToRun);
+    void setupMEMUsagePercent(float MEMUsagePercent);
+    void setupNumberOfCore(int numberOfCore);
+    void setupTimeout(float timeout);
 private slots:
     void run();
 signals:

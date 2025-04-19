@@ -46,7 +46,7 @@ void StressTestSystem::setupMEMUsagePercent(float MEMUsagePercent)
     this->MEMUsage /= numberOfTaskToRun;
 }
 
-void StressTestSystem::setupNumberOfCore(float numberOfCore)
+void StressTestSystem::setupNumberOfCore(int numberOfCore)
 {
     if(numberOfCore > CPUCore::numberOfCore) {
         qDebug() << "Oh, looks like the device doesn't have CPU stats implemented yet";

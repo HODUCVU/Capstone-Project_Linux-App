@@ -24,7 +24,7 @@ private:
     bool authMessage(QJsonDocument &doc);
     void terminate(QJsonObject &obj);
     void alertSpeaker();
-    void extraStressPara(QJsonObject &obj);
+    void extraStressParam(QJsonObject &obj);
 };
 
 #endif // RECEIVERWORKER_H

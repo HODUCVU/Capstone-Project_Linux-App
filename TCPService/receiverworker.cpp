@@ -28,7 +28,7 @@ void ReceiverWorker::handleMessage(const QString &message)
         alertSpeaker();
         terminate(obj);
     } else if(type == "startStress") {
-        extraStressPara(obj);
+        extraStressParam(obj);
         stressTest->start();
     } else if(type == "stopStress") {
         stressTest->stop();
@@ -55,7 +55,7 @@ void ReceiverWorker::alertSpeaker()
     speaker->alertUserViaSound();
 }
 
-void ReceiverWorker::extraStressPara(QJsonObject &obj)
+void ReceiverWorker::extraStressParam(QJsonObject &obj)
 {
     int numbeOfTaskToRun = obj["numberOfTaskToRun"].toInt();
     float MEMUsagePercent = obj["MEMUsagePercent"].toDouble();
