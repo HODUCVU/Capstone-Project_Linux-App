@@ -20,6 +20,10 @@ IVI-System-App_autogen/timestamp: \
 	/home/duc-vu/Documents/QtProjects/IVI-System-App/OverloadSolution/stresstestsystem.h \
 	/home/duc-vu/Documents/QtProjects/IVI-System-App/OverloadSolution/terminateprocesses.cpp \
 	/home/duc-vu/Documents/QtProjects/IVI-System-App/OverloadSolution/terminateprocesses.h \
+	/home/duc-vu/Documents/QtProjects/IVI-System-App/OverloadingAlgorithm/OverloadingDetector.cpp \
+	/home/duc-vu/Documents/QtProjects/IVI-System-App/OverloadingAlgorithm/OverloadingDetector.h \
+	/home/duc-vu/Documents/QtProjects/IVI-System-App/OverloadingAlgorithm/OverloadingHandler.cpp \
+	/home/duc-vu/Documents/QtProjects/IVI-System-App/OverloadingAlgorithm/OverloadingHandler.h \
 	/home/duc-vu/Documents/QtProjects/IVI-System-App/TCPService/receiverworker.cpp \
 	/home/duc-vu/Documents/QtProjects/IVI-System-App/TCPService/receiverworker.h \
 	/home/duc-vu/Documents/QtProjects/IVI-System-App/TCPService/senderworker.cpp \
@@ -40,7 +44,6 @@ IVI-System-App_autogen/timestamp: \
 	/home/duc-vu/Documents/QtProjects/IVI-System-App/utils/installlinuxapi.h \
 	/home/duc-vu/Documents/QtProjects/IVI-System-App/utils/processcommand.cpp \
 	/home/duc-vu/Documents/QtProjects/IVI-System-App/utils/processcommand.h \
-	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/QHash \
 	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/QJsonDocument \
 	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/QJsonObject \
 	/home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore/QObject \

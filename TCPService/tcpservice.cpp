@@ -16,43 +16,26 @@ TcpService::~TcpService()
     senderThread.wait();
     receiverThread.quit();
     receiverThread.wait();
+    stressTestThread.quit();
+    stressTestThread.wait();
     if (socket) {
         socket->disconnectFromHost();
         socket->deleteLater();
     };
-    if(reconnectToServer)
-        reconnectToServer->deleteLater();
 }
 
 void TcpService::establishSocket()
 {
     socket = new QTcpSocket(this);
     socket->connectToHost(HOST,PORT);
-    autoReconnectToServerIfFail();
-}
-
-void TcpService::autoReconnectToServerIfFail()
-{
-    reconnectToServer = new QTimer(this);
-    reconnectToServer->setInterval(TIME_TO_TRY_RECONNECT_TO_SEVER);
-    connect(socket, &QTcpSocket::connected, this, [=]() {
+    if(socket->waitForConnected(TIME_WAIT_TO_CONNECT_TO_SERVER)) {
         qDebug() << "Tcp Service connected";
         establishSenderThread();
         establishReceiverThread();
-        reconnectToServer->stop();
-        reconnectToServer->deleteLater();
-    });
-    connect(socket, &QTcpSocket::errorOccurred, this, [=](){
-        qDebug() << "Connection failed, will retry...";
-        if(reconnectToServer && !reconnectToServer->isActive())
-            reconnectToServer->start();
-    });
-    connect(reconnectToServer, &QTimer::timeout, this, [=](){
-        qDebug() << "Attempting to reconnect...";
-        socket->abort();
-        socket->connectToHost(HOST, PORT);
-    });
+        establishStressTestThread();
+    }
 }
+
 
 void TcpService::establishSenderThread()
 {
@@ -69,14 +52,24 @@ void TcpService::establishReceiverThread()
     receiver->moveToThread(&receiverThread);
 
     connect(socket, &QTcpSocket::readyRead, this, &TcpService::onReadyRead);
-    connect(this, &TcpService::messageReceived, receiver, &ReceiverWorker::handleMessage, Qt::QueuedConnection);
+    connect(this, &TcpService::killProcess, receiver, &ReceiverWorker::handleKillProcess, Qt::QueuedConnection);
+    connect(this, &TcpService::stopStress, receiver, &ReceiverWorker::handleStopStress, Qt::QueuedConnection);
     connect(&receiverThread, &QThread::finished, receiver, &QObject::deleteLater);
+}
+
+void TcpService::establishStressTestThread()
+{
+    stressTest = new StressTestSystem();
+    stressTest->moveToThread(&stressTestThread);
+    connect(this, &TcpService::startStress, stressTest, &StressTestSystem::start, Qt::QueuedConnection);
+    connect(&stressTestThread, &QThread::finished, stressTest, &QObject::deleteLater);
 }
 
 void TcpService::start()
 {
     senderThread.start();
     receiverThread.start();
+    stressTestThread.start();
 }
 
 void TcpService::writeToSocket(const QJsonObject &obj)
@@ -94,7 +87,15 @@ void TcpService::onReadyRead()
         QByteArray data = socket->readLine();
         QString message = QString::fromUtf8(data.trimmed());
         qDebug() << message;
-        emit messageReceived(message);
+        handleTypeMessage(message);
     }
 }
-
+void TcpService::handleTypeMessage(const QString &msg) {
+    QJsonDocument doc = QJsonDocument::fromJson(msg.toUtf8());
+    if(!doc.isObject()) return;
+    QJsonObject obj = doc.object();
+    QString type = obj["type"].toString();
+    if(type == "killProcess") emit killProcess(obj);
+    else if(type == "startStress") emit startStress(obj);
+    else if(type == "stopStress") emit stopStress();
+}

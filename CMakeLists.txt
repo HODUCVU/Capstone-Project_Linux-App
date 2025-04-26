@@ -15,27 +15,26 @@ find_package(Qt6 REQUIRED COMPONENTS Network)
 
 add_executable(IVI-System-App
   main.cpp
-  testing.h testing.cpp
 
+  utils/installlinuxapi.h utils/installlinuxapi.cpp
   utils/commands.h utils/commands.cpp
+  utils/processcommand.h utils/processcommand.cpp
+  utils/hostIPAddress.h
   DeviceStats/SystemStats/systemcpu.h DeviceStats/SystemStats/systemcpu.cpp
   DeviceStats/SystemStats/cpucore.h DeviceStats/SystemStats/cpucore.cpp
-  utils/processcommand.h utils/processcommand.cpp
   DeviceStats/SystemStats/systemmem.h DeviceStats/SystemStats/systemmem.cpp
   DeviceStats/SystemStats/systemstats.h DeviceStats/SystemStats/systemstats.cpp
-
-
   DeviceStats/ProcessesStats/processesstats.h DeviceStats/ProcessesStats/processesstats.cpp
   DeviceStats/ProcessesStats/processstats.h DeviceStats/ProcessesStats/processstats.cpp
-  OverloadSolution/terminateprocesses.h OverloadSolution/terminateprocesses.cpp
   DeviceStats/SystemStats/cpugeneral.h DeviceStats/SystemStats/cpugeneral.cpp
-  utils/installlinuxapi.h utils/installlinuxapi.cpp
   TCPService/tcpservice.h TCPService/tcpservice.cpp
   TCPService/receiverworker.h TCPService/receiverworker.cpp
   TCPService/senderworker.h TCPService/senderworker.cpp
-  utils/hostIPAddress.h
   OverloadSolution/devicespeaker.h OverloadSolution/devicespeaker.cpp
   OverloadSolution/stresstestsystem.h OverloadSolution/stresstestsystem.cpp
+  OverloadSolution/terminateprocesses.h OverloadSolution/terminateprocesses.cpp
+  OverloadingAlgorithm/OverloadingDetector.h OverloadingAlgorithm/OverloadingDetector.cpp
+  OverloadingAlgorithm/OverloadingHandler.h OverloadingAlgorithm/OverloadingHandler.cpp
 )
 target_link_libraries(IVI-System-App Qt${QT_VERSION_MAJOR}::Core
     Qt6::Network)

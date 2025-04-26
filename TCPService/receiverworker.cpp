@@ -18,29 +18,18 @@ ReceiverWorker::~ReceiverWorker()
     delete stressTest;
 }
 
-void ReceiverWorker::handleMessage(const QString &message)
+void ReceiverWorker::handleKillProcess(const QJsonObject &obj)
 {
-    QJsonDocument doc = QJsonDocument::fromJson(message.toUtf8());
-    if(!authMessage(doc)) return;
-    QJsonObject obj = doc.object();
-    QString type = obj["type"].toString();
-    if(type == "PNames") {
-        alertSpeaker();
-        terminate(obj);
-    } else if(type == "startStress") {
-        extraStressParam(obj);
-        stressTest->start();
-    } else if(type == "stopStress") {
-        stressTest->stop();
-    }
+    qDebug() << "Terminate Process";
+    terminate(obj);
+    alertSpeaker();
+}
+void ReceiverWorker::handleStopStress() {
+    qDebug() << "Stop Stress Testing System";
+    stressTest->stop();
 }
 
-bool ReceiverWorker::authMessage(QJsonDocument &doc)
-{
-    return doc.isObject();
-}
-
-void ReceiverWorker::terminate(QJsonObject &obj)
+void ReceiverWorker::terminate(const QJsonObject &obj)
 {
     if(!(obj.contains("PNames") && obj["PNames"].isArray())) return;
     QJsonArray PNameArray = obj["PNames"].toArray();
@@ -53,13 +42,4 @@ void ReceiverWorker::terminate(QJsonObject &obj)
 void ReceiverWorker::alertSpeaker()
 {
     speaker->alertUserViaSound();
-}
-
-void ReceiverWorker::extraStressParam(QJsonObject &obj)
-{
-    int numbeOfTaskToRun = obj["numberOfTaskToRun"].toInt();
-    float MEMUsagePercent = obj["MEMUsagePercent"].toDouble();
-    int numberOfCore = obj["numberOfCore"].toInt();
-    float timeout = obj["timeout"].toDouble();
-    stressTest->setup(numbeOfTaskToRun, MEMUsagePercent, numberOfCore, timeout);
 }

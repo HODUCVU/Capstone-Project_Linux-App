@@ -2,6 +2,7 @@
 #include "../DeviceStats/SystemStats/cpucore.h"
 #include "../DeviceStats/SystemStats/systemmem.h"
 #include "../utils/processcommand.h"
+#include <QJsonDocument>
 #include <QDebug>
 
 #define HIGHEST_LEVEL_MEM_TO_STRESS 0.8
@@ -14,7 +15,6 @@ StressTestSystem::StressTestSystem(QObject *parent)
     MEMUsage = 1;
     numberOfCore = 1;
     timeout = 1;
-    thread = nullptr;
 }
 
 void StressTestSystem::setup(int numberOfTaskToRun, float MEMUsagePercent,int numberOfCore,
@@ -65,32 +65,32 @@ void StressTestSystem::setupTimeout(float timeout)
     this->timeout = timeout;
 }
 
-void StressTestSystem::start()
+void StressTestSystem::start(const QJsonObject &obj)
 {
-    if(thread) return;
-    thread = new QThread();
-    this->moveToThread(thread);
-    connect(thread, &QThread::started, this, &StressTestSystem::run);
-    connect(this, &StressTestSystem::finished, thread, &QThread::quit);
-    connect(thread, &QThread::finished, thread, &QObject::deleteLater);
-    thread->start();
+    qDebug() << "Start Stress";
+    extraStressParam(obj);
+    run();
+}
+
+void StressTestSystem::extraStressParam(const QJsonObject &obj)
+{
+    int numbeOfTaskToRun = obj["numberOfTaskToRun"].toInt();
+    float MEMUsagePercent = obj["MEMUsagePercent"].toDouble();
+    int numberOfCore = obj["numberOfCore"].toInt();
+    float timeout = obj["timeout"].toDouble();
+    setup(numbeOfTaskToRun, MEMUsagePercent, numberOfCore, timeout);
 }
 
 void StressTestSystem::run()
 {
+    qDebug() << "Run Stress";
     QString command = getStressTestCommand(numberOfTaskToRun, MEMUsage, numberOfCore,  timeout);
     ProcessCommand::execute(command);
-    emit finished();
 }
 
 void StressTestSystem::stop()
 {
     QString command = getStopStressTestCommand();
     ProcessCommand::execute(command);
-    if (thread && thread->isRunning()) {
-        thread->quit();
-        thread->wait();
-        thread = nullptr;
-    }
 }
 

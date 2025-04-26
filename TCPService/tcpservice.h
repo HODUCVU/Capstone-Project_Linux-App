@@ -3,6 +3,7 @@
 
 #include "senderworker.h"
 #include "receiverworker.h"
+#include "../OverloadSolution/stresstestsystem.h"
 #include <QTcpSocket>
 #include <QThread>
 
@@ -11,26 +12,30 @@ class TcpService : public QObject
     Q_OBJECT
 private:
     QTcpSocket *socket;
-    QTimer *reconnectToServer;
     QThread senderThread;
     QThread receiverThread;
+    QThread stressTestThread;
     SenderWorker *sender;
     ReceiverWorker *receiver;
+    StressTestSystem *stressTest;
 public:
     explicit TcpService(QObject *parent = nullptr);
     ~TcpService();
     void start();
 signals:
-    void messageReceived(const QString &message);
+    void killProcess(const QJsonObject &obj);
+    void startStress(const QJsonObject &obj);
+    void stopStress();
 private slots:
     void writeToSocket(const QJsonObject &obj);
     void onReadyRead();
     // void disconnectedFromServer();
 private:
     void establishSocket();
-    void autoReconnectToServerIfFail();
     void establishSenderThread();
     void establishReceiverThread();
+    void establishStressTestThread();
+    void handleTypeMessage(const QString &msg);
 };
 
 #endif // TCPSERVICE_H

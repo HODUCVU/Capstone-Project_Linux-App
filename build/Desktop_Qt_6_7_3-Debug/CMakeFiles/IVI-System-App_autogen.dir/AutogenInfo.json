@@ -237,6 +237,18 @@
 			null
 		],
 		[
+			"/home/duc-vu/Documents/QtProjects/IVI-System-App/OverloadingAlgorithm/OverloadingDetector.h",
+			"MU",
+			"BG43FRTCQH/moc_OverloadingDetector.cpp",
+			null
+		],
+		[
+			"/home/duc-vu/Documents/QtProjects/IVI-System-App/OverloadingAlgorithm/OverloadingHandler.h",
+			"MU",
+			"BG43FRTCQH/moc_OverloadingHandler.cpp",
+			null
+		],
+		[
 			"/home/duc-vu/Documents/QtProjects/IVI-System-App/TCPService/receiverworker.h",
 			"MU",
 			"3IJZYC4PSX/moc_receiverworker.cpp",
@@ -252,12 +264,6 @@
 			"/home/duc-vu/Documents/QtProjects/IVI-System-App/TCPService/tcpservice.h",
 			"MU",
 			"3IJZYC4PSX/moc_tcpservice.cpp",
-			null
-		],
-		[
-			"/home/duc-vu/Documents/QtProjects/IVI-System-App/testing.h",
-			"MU",
-			"EWIEGA46WW/moc_testing.cpp",
 			null
 		],
 		[
@@ -394,6 +400,16 @@
 			null
 		],
 		[
+			"/home/duc-vu/Documents/QtProjects/IVI-System-App/OverloadingAlgorithm/OverloadingDetector.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/duc-vu/Documents/QtProjects/IVI-System-App/OverloadingAlgorithm/OverloadingHandler.cpp",
+			"MU",
+			null
+		],
+		[
 			"/home/duc-vu/Documents/QtProjects/IVI-System-App/TCPService/receiverworker.cpp",
 			"MU",
 			null
@@ -410,11 +426,6 @@
 		],
 		[
 			"/home/duc-vu/Documents/QtProjects/IVI-System-App/main.cpp",
-			"MU",
-			null
-		],
-		[
-			"/home/duc-vu/Documents/QtProjects/IVI-System-App/testing.cpp",
 			"MU",
 			null
 		],

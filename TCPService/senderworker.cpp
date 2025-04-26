@@ -31,6 +31,7 @@ void SenderWorker::collectStats()
     collectSystemStats(); // 1s
     collectProcessesStats();
     currentDateTime();
+    // printProcesses();
     sendStats();
 }
 

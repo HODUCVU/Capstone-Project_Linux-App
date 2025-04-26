@@ -19,12 +19,12 @@ public:
     explicit ReceiverWorker(QObject *parent=nullptr);
     ~ReceiverWorker();
 public slots:
-    void handleMessage(const QString &message);
+    void handleKillProcess(const QJsonObject &obj);
+    void handleStopStress();
 private:
-    bool authMessage(QJsonDocument &doc);
-    void terminate(QJsonObject &obj);
+    void terminate(const QJsonObject &obj);
     void alertSpeaker();
-    void extraStressParam(QJsonObject &obj);
+    void establishStressTest();
 };
 
 #endif // RECEIVERWORKER_H
