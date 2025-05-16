@@ -2,6 +2,7 @@
 #include "../../utils/processcommand.h"
 #include "../SystemStats/systemmem.h" // for SystemMEM::maxRAMSystem
 #include "../SystemStats/cpucore.h" // for CPUCore::numberOfCore
+#include <QDebug>
 
 ProcessesStats::ProcessesStats()
     : ExecuteProcessStatsCommand() {}
@@ -33,3 +34,11 @@ void ProcessesStats::extractProcessesInfo(QStringList &lines)
         this->processes.append(ProcessStats(PName, user, PID, PCPUUsagePercent, PMEMUsagePercent, PMEMMB));
     }
 }
+
+// float ProcessesStats::getProcessesMEMUsageFromDevice(int PID)
+// {
+//     QString command = getprocessesMEMUsageInKBCommand(PID);
+//     QString output = ProcessCommand::execute(command);
+//     // qDebug() << "[" <<PID <<"]:" << output;
+//     return output.toFloat();
+// }

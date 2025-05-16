@@ -2,85 +2,55 @@
 #define COMMANDS_H
 #include <QString>
 
-class ExecuteInstallLinuxAPICommand{
-private:
-    QString installCommand;
-protected:
-    QString getinstallCommand();
-public:
-    ExecuteInstallLinuxAPICommand();
-};
-
 class ExecuteCPUCoreCommand {
-private:
-    QString numberOfCoreCPUCommand;
-    QString CPUUtilizationCommand;
-
-    QString CPUTemperatureCommand;
-    QString coreCPUTemperatureCommand;
-
-    QString CPUFrequencyMaxMinCommand;
-    QString CPUFrequencyPercentCommand;
-    QString coreCPUFrequencyCommand;
 protected:
-    QString getnumberOfCoreCPUCommand();
-    QString getCPUUtilizationCommand();
+    QString getnumberOfCoreCPUCommand()const;
+    QString getCPUUtilizationCommand() const;
 
-    QString getCPUTemperatureCommand();
-    QString getcoreCPUTemperatureCommand();
+    QString getCPUTemperatureCommand() const;
+    QString getcoreCPUTemperatureCommand() const;
 
-    QString getCPUFrequencyMaxMinCommand();
-    QString getCPUFrequencyPercentCommand();
-    QString getcoreCPUFrequencyCommand();
+    QString getCPUFrequencyMaxMinCommand() const;
+    QString getCPUFrequencyPercentCommand() const;
+    QString getcoreCPUFrequencyCommand() const;
 public:
     ExecuteCPUCoreCommand();
 };
 
 class ExecuteSystemMEMCommand {
-private:
-    QString MEMUtilizationCommand;
-    QString maxMEMSystemCommand;
 protected:
-    QString getMEMUtilizationCommand();
-    QString getMaxMEMSystemCommand();
+    QString getMEMUtilizationCommand() const;
+    QString getMaxMEMSystemCommand() const;
 public:
     ExecuteSystemMEMCommand();
 };
 
 class ExecuteProcessStatsCommand {
-private:
-    QString processesInfoCommand;
 protected:
-    QString getprocessesInfoCommand();
+    QString getprocessesInfoCommand() const;
+    // QString getprocessesMEMUsageInKBCommand(int PID) const;
 public:
     ExecuteProcessStatsCommand();
 };
 
 class ExecuteTerminateProcessesCommand {
     // kill theo PName: pkill command
-private:
-    QString terminateProcessCommand;
 protected:
-    QString getTerminateProcessCommand(QString PName);
+    QString getTerminateProcessCommand(QString PName) const;
 public:
     ExecuteTerminateProcessesCommand();
 };
 class ExecuteDeviceSpeakerCommand {
-private:
-    QString alarmCommand;
 protected:
-    QString getAlarmCommand(int repeat, float freq, float length);
+    QString getAlarmCommand(int repeat, float freq, float length) const;
 public:
     ExecuteDeviceSpeakerCommand();
 };
 
 class ExecuteStressTestSystemCommand {
-private:
-    QString stressTestCommand;
-    QString stopStressTestCommand;
 protected:
-    QString getStressTestCommand(int numberOfTask = 2, float MEMUsageGB = 6.5, int numberOfCore = 4, float timeout = 30);
-    QString getStopStressTestCommand();
+    QString getStressTestCommand(int numberOfTask = 2, float MEMUsageGB = 6.5, int numberOfCore = 4, float timeout = 30) const;
+    QString getStopStressTestCommand() const;
 public:
     ExecuteStressTestSystemCommand();
 };

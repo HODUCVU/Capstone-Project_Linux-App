@@ -60,9 +60,9 @@ void ProcessStats::print()
 {
     qDebug() << PID << "\t"
              << user << "\t"
-             << PCPUUsagePercent << "\t"
-             << PMEMUsagePercent << "\t"
-             << PMENUsageMB << "\t"
+             << PCPUUsagePercent << "%\t"
+             << PMEMUsagePercent << "%\t"
+             << PMENUsageMB << "MB\t"
              << PName;
 }
 

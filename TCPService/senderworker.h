@@ -20,6 +20,7 @@ private:
 public:
     explicit SenderWorker(QObject *parent = nullptr);
     ~SenderWorker();
+    void printProcesses();
 public slots:
     void run();
 private slots:
@@ -43,7 +44,6 @@ private:
     QJsonObject systemMEMToJson();
 
     QJsonObject processesStatsToJson();
-    void printProcesses();
 };
 
 #endif // SENDERWORKER_H

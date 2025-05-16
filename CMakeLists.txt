@@ -15,8 +15,6 @@ find_package(Qt6 REQUIRED COMPONENTS Network)
 
 add_executable(IVI-System-App
   main.cpp
-
-  utils/installlinuxapi.h utils/installlinuxapi.cpp
   utils/commands.h utils/commands.cpp
   utils/processcommand.h utils/processcommand.cpp
   utils/hostIPAddress.h

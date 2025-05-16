@@ -1,136 +1,93 @@
 #include "commands.h"
+// ========================================
+ExecuteCPUCoreCommand::ExecuteCPUCoreCommand() {}
 
-
-ExecuteInstallLinuxAPICommand::ExecuteInstallLinuxAPICommand()
+QString ExecuteCPUCoreCommand::getnumberOfCoreCPUCommand() const
 {
-    installCommand = "apt update && apt install -y qtbase5-dev sysstat lm-sensors procps";
+    return "nproc";
+}
+QString ExecuteCPUCoreCommand::getCPUUtilizationCommand() const
+{
+    return "mpstat -P ALL 1 1 | awk 'NR>3 && NR<13 {print 100-$NF}'";
 }
 
-QString ExecuteInstallLinuxAPICommand::getinstallCommand()
+QString ExecuteCPUCoreCommand::getCPUTemperatureCommand() const
 {
-    return installCommand;
+    return "sensors | grep 'CPU' | awk '{print $NF}'";
+}
+
+QString ExecuteCPUCoreCommand::getcoreCPUTemperatureCommand() const
+{
+    return "sensors | awk '/Core/ {print $3}'";
+}
+
+QString ExecuteCPUCoreCommand::getCPUFrequencyMaxMinCommand() const
+{
+    return "lscpu | grep 'MHz' | awk 'NR>1 {print $NF}'";
+}
+
+QString ExecuteCPUCoreCommand::getCPUFrequencyPercentCommand() const
+{
+    return "lscpu | grep 'MHz' | awk 'NR==1 {print $NF}'";
+}
+
+
+QString ExecuteCPUCoreCommand::getcoreCPUFrequencyCommand() const
+{
+    return "cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_cur_freq";
 }
 
 // ========================================
-ExecuteCPUCoreCommand::ExecuteCPUCoreCommand()
+ExecuteSystemMEMCommand::ExecuteSystemMEMCommand() {}
+QString ExecuteSystemMEMCommand::getMEMUtilizationCommand() const
 {
-    numberOfCoreCPUCommand = "nproc";
-    CPUUtilizationCommand = "mpstat -P ALL 1 1 | awk 'NR>3 && NR<13 {print 100-$NF}'";
-
-    CPUTemperatureCommand = "sensors | grep 'CPU' | awk '{print $NF}'";
-    coreCPUTemperatureCommand = "sensors | awk '/Core/ {print $3}'";
-
-    CPUFrequencyMaxMinCommand = "lscpu | grep 'MHz' | awk 'NR>1 {print $NF}'";
-    CPUFrequencyPercentCommand = "lscpu | grep 'MHz' | awk 'NR==1 {print $NF}'";
-    coreCPUFrequencyCommand = "cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_cur_freq";
-}
-QString ExecuteCPUCoreCommand::getCPUUtilizationCommand()
-{
-    return CPUUtilizationCommand;
+    return "free -m | awk 'NR>=2 {print $3}'";
 }
 
-QString ExecuteCPUCoreCommand::getCPUTemperatureCommand()
+QString ExecuteSystemMEMCommand::getMaxMEMSystemCommand() const
 {
-    return CPUTemperatureCommand;
-}
-
-QString ExecuteCPUCoreCommand::getCPUFrequencyPercentCommand()
-{
-    return CPUFrequencyPercentCommand;
-}
-
-QString ExecuteCPUCoreCommand::getCPUFrequencyMaxMinCommand()
-{
-    return CPUFrequencyMaxMinCommand;
-}
-
-QString ExecuteCPUCoreCommand::getnumberOfCoreCPUCommand()
-{
-    return numberOfCoreCPUCommand;
-}
-
-QString ExecuteCPUCoreCommand::getcoreCPUTemperatureCommand()
-{
-    return coreCPUTemperatureCommand;
-}
-QString ExecuteCPUCoreCommand::getcoreCPUFrequencyCommand()
-{
-    return coreCPUFrequencyCommand;
+    return "free -m | awk 'NR>=2 {print $2}'";
 }
 
 // ========================================
-/*
-    > free -m
-            total        used        free      shared  buff/cache   available
-    Mem:    15648        3193        9018         611        4381       12455
-    Swap:   4095           0        4095
-    > free -m | awk 'NR==2 {print $2, $3}'
-            15648 3081
-*/
-ExecuteSystemMEMCommand::ExecuteSystemMEMCommand()
+ExecuteProcessStatsCommand::ExecuteProcessStatsCommand() {}
+QString ExecuteProcessStatsCommand::getprocessesInfoCommand() const
 {
-    MEMUtilizationCommand = "free -m | awk 'NR>=2 {print $3}'";
-    maxMEMSystemCommand = "free -m | awk 'NR>=2 {print $2}'";
-}
-QString ExecuteSystemMEMCommand::getMEMUtilizationCommand()
-{
-    return MEMUtilizationCommand;
+    return "ps -eo comm,user,pid,%cpu,%mem |awk 'NR>1'";
 }
 
-QString ExecuteSystemMEMCommand::getMaxMEMSystemCommand()
+// QString ExecuteProcessStatsCommand::getprocessesMEMUsageInKBCommand(int PID) const
+// {
+//     return "grep ^Private /proc/" + QString::number(PID) + "/smaps | awk '{sum += $2} END {print sum}'";
+// }
+
+// ========================================
+ExecuteTerminateProcessesCommand::ExecuteTerminateProcessesCommand() {}
+QString ExecuteTerminateProcessesCommand::getTerminateProcessCommand(QString PName) const
 {
-    return maxMEMSystemCommand;
+    return "pkill --exact --echo " + PName;
 }
 
 // ========================================
-ExecuteProcessStatsCommand::ExecuteProcessStatsCommand()
+ExecuteDeviceSpeakerCommand::ExecuteDeviceSpeakerCommand() {}
+
+QString ExecuteDeviceSpeakerCommand::getAlarmCommand(int repeat, float freq, float length) const
 {
-   processesInfoCommand = "ps -eo comm,user,pid,%cpu,%mem |awk 'NR>1'";
-    // processesInfoCommand = "pidstat -u -r -p ALL 1 1 | awk 'NR>3 && $1!=\"Average:\"'";
-}
-QString ExecuteProcessStatsCommand::getprocessesInfoCommand()
-{
-    return processesInfoCommand;
+    return "softbeep -f " + QString::number(freq) + " -l " + QString::number(length) + " -r " + QString::number(repeat);
 }
 
 // ========================================
-ExecuteTerminateProcessesCommand::ExecuteTerminateProcessesCommand()
-{
-    terminateProcessCommand = "pkill --exact --echo ";
-}
-QString ExecuteTerminateProcessesCommand::getTerminateProcessCommand(QString PName)
-{
-    return terminateProcessCommand + PName;
-}
+ExecuteStressTestSystemCommand::ExecuteStressTestSystemCommand() {}
 
-// ========================================
-ExecuteDeviceSpeakerCommand::ExecuteDeviceSpeakerCommand()
+QString ExecuteStressTestSystemCommand::getStressTestCommand(int numberOfTask, float MEMUsageGB, int numberOfCore, float timeout) const
 {
-    alarmCommand = "softbeep";
-}
-
-QString ExecuteDeviceSpeakerCommand::getAlarmCommand(int repeat, float freq, float length)
-{
-    return alarmCommand + " -f " + QString::number(freq) + " -l " + QString::number(length) + " -r " + QString::number(repeat);
-}
-
-// ========================================
-ExecuteStressTestSystemCommand::ExecuteStressTestSystemCommand()
-{
-    stressTestCommand = "stress";
-    stopStressTestCommand = "killall stress";
-}
-
-QString ExecuteStressTestSystemCommand::getStressTestCommand(int numberOfTask, float MEMUsageGB, int numberOfCore, float timeout)
-{
-    return stressTestCommand +
-           " --vm " + QString::number(numberOfTask) +
+    return "stress --vm " + QString::number(numberOfTask) +
            " --vm-bytes " + QString::number(MEMUsageGB) + "G" +
            " --cpu " + QString::number(numberOfCore) +
            " --timeout " + QString::number(timeout);
 }
 
-QString ExecuteStressTestSystemCommand::getStopStressTestCommand()
+QString ExecuteStressTestSystemCommand::getStopStressTestCommand() const
 {
-    return stopStressTestCommand;
+    return "killall stress";
 }

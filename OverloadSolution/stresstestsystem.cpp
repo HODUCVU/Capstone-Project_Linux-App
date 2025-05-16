@@ -5,7 +5,7 @@
 #include <QJsonDocument>
 #include <QDebug>
 
-#define HIGHEST_LEVEL_MEM_TO_STRESS 0.8
+#define HIGHEST_LEVEL_MEM_TO_STRESS 0.9
 #define CONVERT_MB_TO_GB 1024
 
 StressTestSystem::StressTestSystem(QObject *parent)

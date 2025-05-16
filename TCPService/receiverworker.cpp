@@ -31,12 +31,9 @@ void ReceiverWorker::handleStopStress() {
 
 void ReceiverWorker::terminate(const QJsonObject &obj)
 {
-    if(!(obj.contains("PNames") && obj["PNames"].isArray())) return;
-    QJsonArray PNameArray = obj["PNames"].toArray();
-    for(const QJsonValue &val:PNameArray) {
-        qDebug() << "PName: " << val.toString();
-        terminateProcesses->terminateProcessByPName(val.toString());
-    }
+    QString PName = obj["PName"].toString();
+    qDebug() << "Kill" << PName;
+    terminateProcesses->terminateProcessByPName(PName);
 }
 
 void ReceiverWorker::alertSpeaker()

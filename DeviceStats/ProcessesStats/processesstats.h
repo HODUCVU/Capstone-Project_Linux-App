@@ -14,6 +14,7 @@ public:
     void getProcessStatsFromDevice();
 private:
     void extractProcessesInfo(QStringList &lines);
+    float getProcessesMEMUsageFromDevice(int PID);
 };
 
 #endif // PROCESSESSTATS_H
