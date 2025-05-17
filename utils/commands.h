@@ -28,7 +28,6 @@ public:
 class ExecuteProcessStatsCommand {
 protected:
     QString getprocessesInfoCommand() const;
-    // QString getprocessesMEMUsageInKBCommand(int PID) const;
 public:
     ExecuteProcessStatsCommand();
 };

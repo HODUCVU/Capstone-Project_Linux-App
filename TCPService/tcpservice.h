@@ -21,7 +21,6 @@ private:
 public:
     explicit TcpService(QObject *parent = nullptr);
     ~TcpService();
-    void start();
 signals:
     void killProcess(const QJsonObject &obj);
     void startStress(const QJsonObject &obj);
@@ -31,6 +30,7 @@ private slots:
     void onReadyRead();
     // void disconnectedFromServer();
 private:
+    void start();
     void establishSocket();
     void establishSenderThread();
     void establishReceiverThread();

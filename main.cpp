@@ -6,9 +6,7 @@
 int main(int argc, char *argv[]) {
     QCoreApplication a(argc, argv);
 
-    // TcpService service;
-    // service.start();
-    SenderWorker sender;
-    sender.printProcesses();
+    TcpService service;
+
     return a.exec();
 }

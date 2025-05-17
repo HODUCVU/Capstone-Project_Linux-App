@@ -56,11 +56,6 @@ QString ExecuteProcessStatsCommand::getprocessesInfoCommand() const
     return "ps -eo comm,user,pid,%cpu,%mem |awk 'NR>1'";
 }
 
-// QString ExecuteProcessStatsCommand::getprocessesMEMUsageInKBCommand(int PID) const
-// {
-//     return "grep ^Private /proc/" + QString::number(PID) + "/smaps | awk '{sum += $2} END {print sum}'";
-// }
-
 // ========================================
 ExecuteTerminateProcessesCommand::ExecuteTerminateProcessesCommand() {}
 QString ExecuteTerminateProcessesCommand::getTerminateProcessCommand(QString PName) const

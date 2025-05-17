@@ -3,6 +3,8 @@
 #include <QDebug>
 #include <QJsonDocument>
 #include <QByteArray>
+#include <QNetworkDatagram>
+#include <QUdpSocket>
 
 TcpService::TcpService(QObject *parent)
     : QObject(parent)
@@ -26,16 +28,40 @@ TcpService::~TcpService()
 
 void TcpService::establishSocket()
 {
-    socket = new QTcpSocket(this);
-    socket->connectToHost(HOST,PORT);
-    if(socket->waitForConnected(TIME_WAIT_TO_CONNECT_TO_SERVER)) {
-        qDebug() << "Tcp Service connected";
-        establishSenderThread();
-        establishReceiverThread();
-        establishStressTestThread();
-    }
-}
+    QUdpSocket *udpDiscovery = new QUdpSocket(this);
+    udpDiscovery->bind(QHostAddress::AnyIPv4, PORT);
 
+    connect(udpDiscovery, &QUdpSocket::readyRead, this, [=]() {
+        while (udpDiscovery->hasPendingDatagrams()) {
+            QNetworkDatagram datagram = udpDiscovery->receiveDatagram();
+            QString msg = datagram.data();
+            if (msg.startsWith("SERVER")) {
+                QString portStr = msg.split(":").value(1);
+                quint16 port = portStr.toUShort();
+                QHostAddress serverAddress = datagram.senderAddress();
+
+                qDebug() << "Discovered server at:" << serverAddress.toString() << ":" << port;
+
+                socket = new QTcpSocket(this);
+                socket->connectToHost(serverAddress, port);
+                if(socket->waitForConnected(TIME_WAIT_TO_CONNECT_TO_SERVER)) {
+                    udpDiscovery->close();
+                    udpDiscovery->deleteLater();
+                    qDebug() << "Tcp Service connected";
+                    establishSenderThread();
+                    establishReceiverThread();
+                    establishStressTestThread();
+                    start();
+                    return;
+
+                }
+            }
+        }
+    });
+    // Send broadcast to find server
+    QByteArray discovery = "DISCOVER_SERVER";
+    udpDiscovery->writeDatagram(discovery, QHostAddress::Broadcast, 45000);
+}
 
 void TcpService::establishSenderThread()
 {
@@ -77,7 +103,6 @@ void TcpService::writeToSocket(const QJsonObject &obj)
     if(socket && socket->isOpen()) {
         QJsonDocument doc(obj);
         socket->write(doc.toJson(QJsonDocument::Compact) + '\n');
-        // socket->flush();
     }
 }
 

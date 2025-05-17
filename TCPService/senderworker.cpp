@@ -132,11 +132,6 @@ QJsonObject SenderWorker::processesStatsToJson()
 
 void SenderWorker::printProcesses()
 {
-    QString temptimestamp1 = QDateTime::currentDateTime().toString("yyyy-MM-dd hh:mm:ss");
-    qDebug() << temptimestamp1 ;
-    collectProcessesStats();
-    temptimestamp1 = QDateTime::currentDateTime().toString("yyyy-MM-dd hh:mm:ss");
-    qDebug() << temptimestamp1 ;
     for(auto &p:processesStats->processes) {
         if(p.getPCPUUsagePercent() > 0 || p.getPMEMUsagePercent() > 0) {
             p.print();
