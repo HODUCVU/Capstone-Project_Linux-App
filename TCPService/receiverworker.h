@@ -21,6 +21,7 @@ public:
 public slots:
     void handleKillProcess(const QJsonObject &obj);
     void handleStopStress();
+    void handleWarningAlert();
 private:
     void terminate(const QJsonObject &obj);
     void alertSpeaker();

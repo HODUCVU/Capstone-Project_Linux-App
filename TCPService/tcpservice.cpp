@@ -53,7 +53,6 @@ void TcpService::establishSocket()
                     establishStressTestThread();
                     start();
                     return;
-
                 }
             }
         }
@@ -80,6 +79,7 @@ void TcpService::establishReceiverThread()
     connect(socket, &QTcpSocket::readyRead, this, &TcpService::onReadyRead);
     connect(this, &TcpService::killProcess, receiver, &ReceiverWorker::handleKillProcess, Qt::QueuedConnection);
     connect(this, &TcpService::stopStress, receiver, &ReceiverWorker::handleStopStress, Qt::QueuedConnection);
+    connect(this, &TcpService::warningAlert, receiver, &ReceiverWorker::handleWarningAlert, Qt::QueuedConnection);
     connect(&receiverThread, &QThread::finished, receiver, &QObject::deleteLater);
 }
 
@@ -121,6 +121,7 @@ void TcpService::handleTypeMessage(const QString &msg) {
     QJsonObject obj = doc.object();
     QString type = obj["type"].toString();
     if(type == "killProcess") emit killProcess(obj);
+    else if (type == "warningState") emit warningAlert();
     else if(type == "startStress") emit startStress(obj);
     else if(type == "stopStress") emit stopStress();
 }

@@ -29,6 +29,11 @@ void ReceiverWorker::handleStopStress() {
     stressTest->stop();
 }
 
+void ReceiverWorker::handleWarningAlert()
+{
+    speaker->alertUserViaSound(3, 500, 150);
+}
+
 void ReceiverWorker::terminate(const QJsonObject &obj)
 {
     QString PName = obj["PName"].toString();
@@ -36,7 +41,7 @@ void ReceiverWorker::terminate(const QJsonObject &obj)
     terminateProcesses->terminateProcessByPName(PName);
 }
 
-void ReceiverWorker::alertSpeaker()
+inline void ReceiverWorker::alertSpeaker()
 {
     speaker->alertUserViaSound();
 }

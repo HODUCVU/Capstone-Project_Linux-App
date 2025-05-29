@@ -20,10 +20,6 @@ IVI-System-App_autogen/timestamp: \
 	/home/duc-vu/Documents/QtProjects/IVI-System-App/OverloadSolution/stresstestsystem.h \
 	/home/duc-vu/Documents/QtProjects/IVI-System-App/OverloadSolution/terminateprocesses.cpp \
 	/home/duc-vu/Documents/QtProjects/IVI-System-App/OverloadSolution/terminateprocesses.h \
-	/home/duc-vu/Documents/QtProjects/IVI-System-App/OverloadingAlgorithm/OverloadingDetector.cpp \
-	/home/duc-vu/Documents/QtProjects/IVI-System-App/OverloadingAlgorithm/OverloadingDetector.h \
-	/home/duc-vu/Documents/QtProjects/IVI-System-App/OverloadingAlgorithm/OverloadingHandler.cpp \
-	/home/duc-vu/Documents/QtProjects/IVI-System-App/OverloadingAlgorithm/OverloadingHandler.h \
 	/home/duc-vu/Documents/QtProjects/IVI-System-App/TCPService/receiverworker.cpp \
 	/home/duc-vu/Documents/QtProjects/IVI-System-App/TCPService/receiverworker.h \
 	/home/duc-vu/Documents/QtProjects/IVI-System-App/TCPService/senderworker.cpp \

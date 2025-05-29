@@ -31,8 +31,6 @@ add_executable(IVI-System-App
   OverloadSolution/devicespeaker.h OverloadSolution/devicespeaker.cpp
   OverloadSolution/stresstestsystem.h OverloadSolution/stresstestsystem.cpp
   OverloadSolution/terminateprocesses.h OverloadSolution/terminateprocesses.cpp
-  OverloadingAlgorithm/OverloadingDetector.h OverloadingAlgorithm/OverloadingDetector.cpp
-  OverloadingAlgorithm/OverloadingHandler.h OverloadingAlgorithm/OverloadingHandler.cpp
 )
 target_link_libraries(IVI-System-App Qt${QT_VERSION_MAJOR}::Core
     Qt6::Network)

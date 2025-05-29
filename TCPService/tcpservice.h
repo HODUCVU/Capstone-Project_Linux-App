@@ -25,6 +25,7 @@ signals:
     void killProcess(const QJsonObject &obj);
     void startStress(const QJsonObject &obj);
     void stopStress();
+    void warningAlert();
 private slots:
     void writeToSocket(const QJsonObject &obj);
     void onReadyRead();

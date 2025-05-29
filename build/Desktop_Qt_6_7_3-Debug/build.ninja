@@ -185,22 +185,6 @@ build CMakeFiles/IVI-System-App.dir/OverloadSolution/terminateprocesses.cpp.o: C
   OBJECT_DIR = CMakeFiles/IVI-System-App.dir
   OBJECT_FILE_DIR = CMakeFiles/IVI-System-App.dir/OverloadSolution
 
-build CMakeFiles/IVI-System-App.dir/OverloadingAlgorithm/OverloadingDetector.cpp.o: CXX_COMPILER__IVI-System-App_unscanned_Debug /home/duc-vu/Documents/QtProjects/IVI-System-App/OverloadingAlgorithm/OverloadingDetector.cpp || cmake_object_order_depends_target_IVI-System-App
-  DEFINES = -DQT_CORE_LIB -DQT_NETWORK_LIB
-  DEP_FILE = CMakeFiles/IVI-System-App.dir/OverloadingAlgorithm/OverloadingDetector.cpp.o.d
-  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fcolor-diagnostics -fPIC
-  INCLUDES = -I/home/duc-vu/Documents/QtProjects/IVI-System-App/build/Desktop_Qt_6_7_3-Debug/IVI-System-App_autogen/include -isystem /home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore -isystem /home/duc-vu/Qt/6.7.3/gcc_64/include -isystem /home/duc-vu/Qt/6.7.3/gcc_64/mkspecs/linux-g++ -isystem /home/duc-vu/Qt/6.7.3/gcc_64/include/QtNetwork
-  OBJECT_DIR = CMakeFiles/IVI-System-App.dir
-  OBJECT_FILE_DIR = CMakeFiles/IVI-System-App.dir/OverloadingAlgorithm
-
-build CMakeFiles/IVI-System-App.dir/OverloadingAlgorithm/OverloadingHandler.cpp.o: CXX_COMPILER__IVI-System-App_unscanned_Debug /home/duc-vu/Documents/QtProjects/IVI-System-App/OverloadingAlgorithm/OverloadingHandler.cpp || cmake_object_order_depends_target_IVI-System-App
-  DEFINES = -DQT_CORE_LIB -DQT_NETWORK_LIB
-  DEP_FILE = CMakeFiles/IVI-System-App.dir/OverloadingAlgorithm/OverloadingHandler.cpp.o.d
-  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fcolor-diagnostics -fPIC
-  INCLUDES = -I/home/duc-vu/Documents/QtProjects/IVI-System-App/build/Desktop_Qt_6_7_3-Debug/IVI-System-App_autogen/include -isystem /home/duc-vu/Qt/6.7.3/gcc_64/include/QtCore -isystem /home/duc-vu/Qt/6.7.3/gcc_64/include -isystem /home/duc-vu/Qt/6.7.3/gcc_64/mkspecs/linux-g++ -isystem /home/duc-vu/Qt/6.7.3/gcc_64/include/QtNetwork
-  OBJECT_DIR = CMakeFiles/IVI-System-App.dir
-  OBJECT_FILE_DIR = CMakeFiles/IVI-System-App.dir/OverloadingAlgorithm
-
 
 # =============================================================================
 # Link build statements for EXECUTABLE target IVI-System-App
@@ -209,7 +193,7 @@ build CMakeFiles/IVI-System-App.dir/OverloadingAlgorithm/OverloadingHandler.cpp.
 #############################################
 # Link the executable IVI-System-App
 
-build IVI-System-App: CXX_EXECUTABLE_LINKER__IVI-System-App_Debug CMakeFiles/IVI-System-App.dir/IVI-System-App_autogen/mocs_compilation.cpp.o CMakeFiles/IVI-System-App.dir/main.cpp.o CMakeFiles/IVI-System-App.dir/utils/commands.cpp.o CMakeFiles/IVI-System-App.dir/utils/processcommand.cpp.o CMakeFiles/IVI-System-App.dir/DeviceStats/SystemStats/systemcpu.cpp.o CMakeFiles/IVI-System-App.dir/DeviceStats/SystemStats/cpucore.cpp.o CMakeFiles/IVI-System-App.dir/DeviceStats/SystemStats/systemmem.cpp.o CMakeFiles/IVI-System-App.dir/DeviceStats/SystemStats/systemstats.cpp.o CMakeFiles/IVI-System-App.dir/DeviceStats/ProcessesStats/processesstats.cpp.o CMakeFiles/IVI-System-App.dir/DeviceStats/ProcessesStats/processstats.cpp.o CMakeFiles/IVI-System-App.dir/DeviceStats/SystemStats/cpugeneral.cpp.o CMakeFiles/IVI-System-App.dir/TCPService/tcpservice.cpp.o CMakeFiles/IVI-System-App.dir/TCPService/receiverworker.cpp.o CMakeFiles/IVI-System-App.dir/TCPService/senderworker.cpp.o CMakeFiles/IVI-System-App.dir/OverloadSolution/devicespeaker.cpp.o CMakeFiles/IVI-System-App.dir/OverloadSolution/stresstestsystem.cpp.o CMakeFiles/IVI-System-App.dir/OverloadSolution/terminateprocesses.cpp.o CMakeFiles/IVI-System-App.dir/OverloadingAlgorithm/OverloadingDetector.cpp.o CMakeFiles/IVI-System-App.dir/OverloadingAlgorithm/OverloadingHandler.cpp.o | /home/duc-vu/Qt/6.7.3/gcc_64/lib/libQt6Network.so.6.7.3 /home/duc-vu/Qt/6.7.3/gcc_64/lib/libQt6Core.so.6.7.3 || IVI-System-App_autogen IVI-System-App_autogen_timestamp_deps
+build IVI-System-App: CXX_EXECUTABLE_LINKER__IVI-System-App_Debug CMakeFiles/IVI-System-App.dir/IVI-System-App_autogen/mocs_compilation.cpp.o CMakeFiles/IVI-System-App.dir/main.cpp.o CMakeFiles/IVI-System-App.dir/utils/commands.cpp.o CMakeFiles/IVI-System-App.dir/utils/processcommand.cpp.o CMakeFiles/IVI-System-App.dir/DeviceStats/SystemStats/systemcpu.cpp.o CMakeFiles/IVI-System-App.dir/DeviceStats/SystemStats/cpucore.cpp.o CMakeFiles/IVI-System-App.dir/DeviceStats/SystemStats/systemmem.cpp.o CMakeFiles/IVI-System-App.dir/DeviceStats/SystemStats/systemstats.cpp.o CMakeFiles/IVI-System-App.dir/DeviceStats/ProcessesStats/processesstats.cpp.o CMakeFiles/IVI-System-App.dir/DeviceStats/ProcessesStats/processstats.cpp.o CMakeFiles/IVI-System-App.dir/DeviceStats/SystemStats/cpugeneral.cpp.o CMakeFiles/IVI-System-App.dir/TCPService/tcpservice.cpp.o CMakeFiles/IVI-System-App.dir/TCPService/receiverworker.cpp.o CMakeFiles/IVI-System-App.dir/TCPService/senderworker.cpp.o CMakeFiles/IVI-System-App.dir/OverloadSolution/devicespeaker.cpp.o CMakeFiles/IVI-System-App.dir/OverloadSolution/stresstestsystem.cpp.o CMakeFiles/IVI-System-App.dir/OverloadSolution/terminateprocesses.cpp.o | /home/duc-vu/Qt/6.7.3/gcc_64/lib/libQt6Network.so.6.7.3 /home/duc-vu/Qt/6.7.3/gcc_64/lib/libQt6Core.so.6.7.3 || IVI-System-App_autogen IVI-System-App_autogen_timestamp_deps
   FLAGS = -DQT_QML_DEBUG -g
   LINK_LIBRARIES = -Wl,-rpath,/home/duc-vu/Qt/6.7.3/gcc_64/lib:  /home/duc-vu/Qt/6.7.3/gcc_64/lib/libQt6Network.so.6.7.3  /home/duc-vu/Qt/6.7.3/gcc_64/lib/libQt6Core.so.6.7.3
   OBJECT_DIR = CMakeFiles/IVI-System-App.dir
