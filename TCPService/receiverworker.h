@@ -25,7 +25,6 @@ public slots:
 private:
     void terminate(const QJsonObject &obj);
     void alertSpeaker();
-    void establishStressTest();
 };
 
 #endif // RECEIVERWORKER_H

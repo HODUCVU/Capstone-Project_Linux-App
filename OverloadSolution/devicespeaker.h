@@ -7,7 +7,7 @@ class DeviceSpeaker : ExecuteDeviceSpeakerCommand
 {
 public:
     DeviceSpeaker();
-    void alertUserViaSound(int repeat = 5, float freq = 750, float length = 200);
+    void alertUserViaSound(int repeat = 3, float freq = 750, float length = 200);
 };
 
 #endif // DEVICESPEAKER_H
